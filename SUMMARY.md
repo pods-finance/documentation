@@ -82,9 +82,10 @@
 
 ---
 
-* [Medium](https://medium.com/podsfinance)
+* [app.pods.finance](https://www.pods.finance/)
+* [Github](https://github.com/pods-finance)
+* [Blog](https://medium.com/podsfinance)
 * [Discord](https://discord.gg/Qf7utym)
 * [Twitter](https://twitter.com/PodsFinance)
-* [Github](https://github.com/pods-finance)
-* [Website](https://www.pods.finance/)
+* [Pods v0 Docs](https://pods-finance-1.gitbook.io/pods_v0/)
 
