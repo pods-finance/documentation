@@ -53,11 +53,11 @@ The team currently holds admin powers on the protocol. See the details [here](ht
 
 > This documentation is a **work-in-progress**, and some parts **may be unfinished or pending updates**.
 >
-> If you find any errors or bugs or find something unclear or confusing, [let us know](https://discord.gg/yfgcHg)! We are looking forward to hearing your suggestions, questions, and feedback.
+> If you find any errors or bugs or find something unclear or confusing, [let us know](https://discord.gg/Ed9YMznmS6)! We are looking forward to hearing your suggestions, questions, and feedback.
 
 The following sections describe how options contracts work, how options work within our code, and how to interact with it. It also explains how our one-side exposure AMM works and how to interact with it.
 
-Please join the \#development room in the [Pods community Discord server](https://discord.gg/yfgcHg); our team and community members look forward to helping you build on top of Pods.
+Please join the \#development room in the [Pods community Discord server](https://discord.gg/Ed9YMznmS6); our team and community members look forward to helping you build on top of Pods.
 
 {% hint style="success" %}
 Now you've got a high level! Time to dig a little deeper.

@@ -71,7 +71,7 @@ By minting and right away selling a call option in the AMM, a user is closer to 
 
 For example, if a user is minting one call option on aETH:DAI, strike 500 December 21st, they will lock 1 aETH as collateral and sell it in the AMM for the current market price. Let's assume it's 5 DAI. If the user decides to leave the position after a while \(and before expiration\), it has to "buy back" options tokens in the market and unmint its position. The options tokens could be worth 2 DAI or 11 DAI, depending on the market conditions. 
 
-If you want to learn more about price discovery, check [Pricing](https://app.gitbook.com/@pods-finance-1/s/teste/~/drafts/-MNLP_fs0A9a_1BYkVE8/options-amm-overview/optionamm/pricing). 
+If you want to learn more about price discovery, check [Pricing](../options-amm-overview/optionamm/pricing.md). 
 
 If exercised, the user will withdraw the yield generated during the period by the interest-bearing collateral and 500 DAI. If not exercised, the user will withdraw the aETH \(yield + principal\).
 
