@@ -6,7 +6,7 @@ description: Design components to be used in promotional materials.
 
 ## Logo
 
-![Suggested version](../.gitbook/assets/logo-gradient-2.svg)
+![Suggested version](../.gitbook/assets/logo-gradient-2%20%281%29.svg)
 
 The main version of the logo, together with some variations of shape and color. Available in multiple sizes and formats \(`svg`, `png`\). 
 
