@@ -83,11 +83,11 @@ The contract pool responsible for trade, add and remove liquidity of a pair `Pod
 
 This function is used to add new liquidity to the pool. Since we use a single-sided AMM, `amountOfA` or `amountOfB` can be 0 if you want to add liquidity to just one side of the pool. This function can only be called before option expiration.
 
-|  input name | Type | Required | Description |
+| input name | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
 | amountOfA | uint256 | - | Amount of Token A to add |
 | amountOfB | uint256 | - | Amount of Token B to add |
-| owner | address | - | Add on behalf of someone  |
+| owner | address | - | Add on behalf of someone |
 
 {% tabs %}
 {% tab title="Solidity" %}
@@ -101,7 +101,7 @@ uint256 amountOfB = 10000000000000; // Need to take in consideration asset decim
 address owner = '0x3ab...';
 
 optionAMMPool.addLiquidity(amountOfA, amountOfB, owner);
-    
+
 // OptionAMMPool.sol
     /**
      * @notice addLiquidity in any proportion of tokenA or tokenB
@@ -161,7 +161,7 @@ await optionAMMPool.addLiquidity(
 
 This function is used to remove liquidity from the pool. Since we use a single-sided AMM, `percentA` or `percentB` can be 0 if you want to remove liquidity from just one side of the pool. The percentA and percentB represent the percentage of the exposition in each asset you want to remove. If you want to check upfront what the amount represent certain exposition, you can call `getRemoveLiquidityAmounts.`
 
-|  input name | Type | Required | Description |
+| input name | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
 | percentA | uint256 | 0 - 100 | Percent of the exposition of amount of Token A to remove \(Eg: 100 = 100% available\) |
 | percentB | uint256 | 0 - 100 | Exposition of amount of Token B to remove |
@@ -176,7 +176,7 @@ uint256 percentA = 100; // Will remove 100% of exposition of Asset A
 uint256 percentB = 50; // Will remove 50% of exposition of Asset B
 
 optionAMMPool.removeLiquidity(percentA, percentB);
-    
+
 // OptionAMMPool.sol
   /**
      * @notice removeLiquidity in any proportion of tokenA or tokenB
@@ -229,7 +229,7 @@ await optionAMMPool.removeLiquidity(
 
 This function represents "selling token A to the pool" or "buying token B from the pool". `msg.sender` is able to trade exact amount of token A in exchange for minimum amount of token B and send the tokens B to the `owner`. After that, this function also updates the `priceProperties.currentSigma.`
 
-|  input name | Type | Required | Description |
+| input name | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
 | exactAmountAIn | uint256 | - | Exact amount of A token that will be transfer from `msg.sender` |
 | minAmountBOut | uint256 | - | Minimum acceptable amount of token B to transfer to `owner` |
@@ -243,7 +243,7 @@ This function represents "selling token A to the pool" or "buying token B from t
 OptionAMMPool optionAMMPool = optionAMMPool("/*address*/");
 
 // Parameters example
- 
+
 uint256 exactAmountAIn = 10000000; // Need to take in consideration asset decimals
 uint256 minAmountBOut = 10000000000000; // Need to take in consideration asset decimals
 address owner = 0x3a...
@@ -255,7 +255,7 @@ optionAMMPool.tradeExactAInput(
     owner,
     sigmaInitialGuess
     );
-  
+
 // IOptionAMMPool.sol  
 /**
      * @notice tradeExactAInput msg.sender is able to trade exact amount of token A in exchange for minimum
@@ -285,7 +285,7 @@ optionAMMPool.tradeExactAInput(
 
 This function represents "buying token A from the pool" or "selling token B to the pool". `owner` is able to receive exact amount of token A in exchange of a max acceptable amount of token B transfer from the `msg.sender`. After that, this function also updates the `priceProperties.currentSigma`
 
-|  input name | Type | Required | Description |
+| input name | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
 | exactAmountAOut | uint256 | - | Exact amount of token A that will be transfer to `owner` |
 | maxAmountBIn | uint256 | - | Maximum acceptable amount of token B to transfer from `msg.sender` |
@@ -299,7 +299,7 @@ This function represents "buying token A from the pool" or "selling token B to t
 OptionAMMPool optionAMMPool = optionAMMPool("/*address*/");
 
 // Parameters example
- 
+
 uint256 exactAmountAOut = 10000000; // Need to take in consideration asset decimals
 uint256 maxAmountBIn = 10000000000000; // Need to take in consideration asset decimals
 address owner = 0x3a...
@@ -311,7 +311,7 @@ optionAMMPool.tradeExactAOutput(
     owner,
     sigmaInitialGuess
     );
-    
+
 // IOptionAMMPool.sol
 /**
      * @notice _tradeExactAOutput owner is able to receive exact amount of token A in exchange of a max
@@ -341,7 +341,7 @@ optionAMMPool.tradeExactAOutput(
 
 This function represents "selling token B to the pool" or "buying token A from the pool". `msg.sender` is able to trade exact amount of token B in exchange for minimum amount of token A and send the tokens B to the `owner`. After that, this function also updates the `priceProperties.currentSigma.`
 
-|  input name | Type | Required | Description |
+| input name | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
 | exactAmountBIn | uint256 | - | Exact amount of A token that will be transfer from `msg.sender` |
 | minAmountAOut | uint256 | - | Minimum acceptable amount of token B to transfer to `owner` |
@@ -366,7 +366,7 @@ optionAMMPool.tradeExactBInput(
     owner,
     sigmaInitialGuess
     );
-    
+
 // IOptionAMMPool.sol
 /**
      * @notice _tradeExactBInput msg.sender is able to trade exact amount of token B in exchange for minimum
@@ -395,7 +395,7 @@ optionAMMPool.tradeExactBInput(
 
 This function represents "selling token A to the pool" or "buying token B from the pool". `owner` is able to receive exact amount of token B in exchange of a max acceptable amount of token A transfer from the `msg.sender`. After that, this function also updates the `priceProperties.currentSigma`
 
-|  input name | Type | Required | Description |
+| input name | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
 | exactAmountBOut | uint256 | - | Exact amount of token B that will be transfer to `owner` |
 | maxAmountAIn | uint256 | - | Maximum acceptable amount of token A to transfer from `msg.sender` |
@@ -409,7 +409,7 @@ This function represents "selling token A to the pool" or "buying token B from t
 OptionAMMPool optionAMMPool = optionAMMPool("/*address*/");
 
 // Parameters example
- 
+
 uint256 maxAmountBIn = 10000000; // Need to take in consideration asset decimals
 uint256 exactAmountBOut = 10000000000000; // Need to take in consideration asset decimals
 address owner = 0x3a...
@@ -421,7 +421,7 @@ optionAMMPool.tradeExactBOutput(
     owner,
     sigmaInitialGuess
     );
-    
+
 // IOptionAMMPool.sol
 /**
      * @notice _tradeExactAOutput owner is able to receive exact amount of token A in exchange of a max
@@ -466,7 +466,7 @@ OptionAMMPool optionAMMPool = optionAMMPool("/*address*/");
 
 // Parameters example
 (uint256 totalTokenA, uint256 totalTokenB) = optionAMMPool.getPoolBalances();
-    
+
 // IOptionAMMPool.sol
 /**
      * @notice getPoolBalances external function that returns the current pool balance of token A and token B
@@ -508,7 +508,7 @@ address user = '0x3aab...';
 
 (uint256 tokenABalance, uint256 tokenBBalance, uint256 fImpUser) = 
 optionAMMPool.getUserDepositSnapshot(user);
-    
+
 // IOptionAMMPool.sol
 /**
  * @notice getUserDepositSnapshot external function that User original balance of token A,
@@ -558,7 +558,7 @@ address exactAmountAIn = 100000;
 
 (uint256 amountBOut, uint256 newIV, uint256 feesTokenA, uint256 feesTokenB) = 
 optionAMMPool.getOptionTradeDetailsExactAInput(exactAmountAIn);
-    
+
 // IOptionAMMPool.sol
  /**
      * @notice getOptionTradeDetailsExactAInput view function that simulates a trade, in order the preview
@@ -616,7 +616,7 @@ address exactAmountAOut = 100000;
 
 (uint256 amountBIn, uint256 newIV, uint256 feesTokenA, uint256 feesTokenB) = 
 optionAMMPool.getOptionTradeDetailsExactAInput(exactAmountAOut);
-    
+
 // IOptionAMMPool.sol
 /**
      * @notice getOptionTradeDetailsExactAOutput view function that simulates a trade, in order the preview
@@ -674,7 +674,7 @@ address exactAmountBIn = 100000;
 
 (uint256 amountAOut, uint256 newIV, uint256 feesTokenA, uint256 feesTokenB) = 
 optionAMMPool.getOptionTradeDetailsExactAInput(exactAmountBIn);
-    
+
 // IOptionAMMPool.sol
  /**
      * @notice getOptionTradeDetailsExactBInput view function that simulates a trade, in order the preview
@@ -732,7 +732,7 @@ address exactAmountBOut = 100000;
 
 (uint256 amountAIn, uint256 newIV, uint256 feesTokenA, uint256 feesTokenB) = 
 optionAMMPool.getOptionTradeDetailsExactAInput(exactAmountBOut);
-    
+
 // IOptionAMMPool.sol
 /**
      * @notice getOptionTradeDetailsExactBOutput view function that simulates a trade, in order the preview

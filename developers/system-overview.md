@@ -14,5 +14,5 @@ We have our special model, an AMM designed specifically for options. If you want
 
 ### Option Exchange
 
-It's our connector. Although you can interact directly with the system, you can use this contract in order to reduce gas costs, batching transactions, also reducing multiple "allowances". 
+It's our connector. Although you can interact directly with the system, you can use this contract in order to reduce gas costs, batching transactions, also reducing multiple "allowances".
 

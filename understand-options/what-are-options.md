@@ -26,10 +26,10 @@ There are two types of options: **calls** and **puts**.
 
 {% embed url="https://www.youtube.com/watch?v=uQLMSU2NNlk" caption="\"Call vc Put Options Basics\" by Option Alpha" %}
 
-Another vital characteristic of options regards the rules to exercise the contract. Options can be either **European** or **American\*** options. An American option is a "continuous time instrument" because it allows the buyer to exercise it **at any moment until expiry**. European options are a "point in time instrument" since they will enable the buyer to exercise **only when the expiration is reached**. You can find both **American** and **European** options in our protocol. 
+Another vital characteristic of options regards the rules to exercise the contract. Options can be either **European** or **American\*** options. An American option is a "continuous time instrument" because it allows the buyer to exercise it **at any moment until expiry**. European options are a "point in time instrument" since they will enable the buyer to exercise **only when the expiration is reached**. You can find both **American** and **European** options in our protocol.
 
 {% hint style="info" %}
-**\***Although the code is ready to receive either American or European options, it is **not recommended** to implement American options using the current pricing model applied on the Options AMM. Find more about this in the Pricing section. 
+**\***Although the code is ready to receive either American or European options, it is **not recommended** to implement American options using the current pricing model applied on the Options AMM. Find more about this in the Pricing section.
 {% endhint %}
 
 {% embed url="https://www.youtube.com/watch?v=Yu27K3KB2Wo" caption="\"American vs. European Style Options\" by Option Alpha" %}

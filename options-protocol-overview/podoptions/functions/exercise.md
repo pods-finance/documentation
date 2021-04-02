@@ -27,7 +27,7 @@ This balance should reflect the new current strikeReserves, considering the inte
 
 This step calculates how many strike assets the user will receive in a put option after it requested the exercise.
 
-$$StrikeToSend=ExerciseAmount\cdot StrikePrice$$ 
+$$StrikeToSend=ExerciseAmount\cdot StrikePrice$$
 
 ### 3\) Calculate $$UnderlyingToReceive$$
 
@@ -39,15 +39,15 @@ $$UnderlyingToReceive=ExerciseAmount$$
 
 ### 4.1\) Update  $$StrikeReserves_i$$
 
-Using the current $$StrikeReserves$$ \(accrued with interest from the last period\), we'll deduct the amount  $$StrikeToSend$$ used while minting this option.
+Using the current $$StrikeReserves$$ \(accrued with interest from the last period\), we'll deduct the amount $$StrikeToSend$$ used while minting this option.
 
-#### $$StrikeReserves_i=StrikeReserves_n-StrikeToSend$$ 
+#### $$StrikeReserves_i=StrikeReserves_n-StrikeToSend$$
 
 ### 4.2\) Update $$underlyingReserves_i$$
 
 Using the current $$UnderlyingReserves$$ \(accrued with interest from the last period\), we'll add the amount of underlying to transfer used while minting this option. Also, now with the expiration, one can either receive tokens or send tokens. In the case of a put option, this balance should increase if the options were exercised. That means an option buyer chose to exercise options.
 
-$$UnderlyingReserves_i=UnderlyingReserves_n+UnderlyingToReceive$$ 
+$$UnderlyingReserves_i=UnderlyingReserves_n+UnderlyingToReceive$$
 
 ### 5\) Burn options
 
@@ -57,9 +57,7 @@ $$
 Burn = ExerciseAmount
 $$
 
-Note that exercise functions do not impact the $$TotalShares $$or any $$OwnerShares $$ .
-
-
+Note that exercise functions do not impact the $$TotalShares$$or any $$OwnerShares$$ .
 
 {% hint style="success" %}
 Exercise options ✅

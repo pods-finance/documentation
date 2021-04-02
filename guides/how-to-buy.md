@@ -7,7 +7,7 @@ There are few ways to buy options from our pool. In this tutorial, we will focus
 3. Allow the `tokensB` \(stable tokens\) to be spent by the `OptionAMMPool`
 4. Perform the trade
 
-### 1. Find `OptionAMMPool`
+## 1. Find `OptionAMMPool`
 
 You will need for this step:
 
@@ -28,16 +28,15 @@ address optionAddress = '0xe3...";
 
 // 3) Call the getPool function and receive the pool address in return.
 address optionAMMPoolAddress = optionAMMFactory.getPool(optionAddress);
-
 ```
 {% endtab %}
 {% endtabs %}
 
-### 2. Get the Trade Details 
+## 2. Get the Trade Details
 
-Now that you have the pool address from the previous step, you can call the view function  `getOptionTradeDetailsExactAOutput.` You should pass as input the number of options you will want to buy.
+Now that you have the pool address from the previous step, you can call the view function `getOptionTradeDetailsExactAOutput.` You should pass as input the number of options you will want to buy.
 
-In return, you will receive the amount of `tokensB` and `newIV`. `newIV` will be necessary later to perform the trade. 
+In return, you will receive the amount of `tokensB` and `newIV`. `newIV` will be necessary later to perform the trade.
 
 {% tabs %}
 {% tab title="Solidity" %}
@@ -49,7 +48,7 @@ IOptionAMMPool optionAMMPool = IOptionAMMPool(optionAMMPoolAddress);
 /*
  2) Call the getOptionTradeDetailsExactAOutput with
     the option amount you will want to buy as an input
-    
+
     That function returns:
     uint256 amountBIn - The amount of tokenB in order to buy amountOfOptions
     uint256 newIV - The new pool Implied volatility, also known as sigma
@@ -57,16 +56,15 @@ IOptionAMMPool optionAMMPool = IOptionAMMPool(optionAMMPoolAddress);
 
 uint256 amountOfOptions = 100000; // The option decimals can be found calling option.decimals()
 (uint256 amountBIn, uint256 newIV, , ,) = optionAMMPool.getOptionTradeDetailsExactAOutput(amountOfOptions);
-
 ```
 {% endtab %}
 {% endtabs %}
 
 {% hint style="info" %}
-TokenA in the optionAMMPool will always be the option token. TokenB will always be the stable token. 
+TokenA in the optionAMMPool will always be the option token. TokenB will always be the stable token.
 {% endhint %}
 
-### 3. Allow the `tokensB` \(stable tokens\) to be spent by the `OptionAMMPool`
+## 3. Allow the `tokensB` \(stable tokens\) to be spent by the `OptionAMMPool`
 
 If you are already familiar with Ethereum development, you can jump to step 4. We will only approve the tokenB to be spent by the pool.
 
@@ -88,12 +86,11 @@ IERC20 tokenB = IERC20(tokenBAddress);
 uint256 amountToApprove = 10000;
 
 tokenB.approve(optionAMMPoolAddress, amountToApprove);
-
 ```
 {% endtab %}
 {% endtabs %}
 
-### 4. Perform the trade
+## 4. Perform the trade
 
 Now, finally, you are ready to perform the trade. You can check the full function specification [here](../options-amm-overview/options-amm-sm/option-amm-pool.md#tradeexactaoutput).
 
@@ -116,10 +113,7 @@ optionAMMPool.tradeExactAOutput(
   owner,
   newIV
  );
- 
 ```
 {% endtab %}
 {% endtabs %}
-
-### 
 

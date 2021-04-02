@@ -19,10 +19,10 @@ The options instrument describes how a user can create and manage an option toke
 Users can `mint`, `unmint`, `exercise`, and `withdraw` both **calls** and **puts.** The implementation requires the options to be fully collateralized. The options can be **European** or **American\*** and have a **physical** settlement, leaving no liquidation systems exposure. The general functions are mint options tokens, unmint, exercise, and withdraw funds after expiration.
 
 {% hint style="warning" %}
-\*Although the code is ready to receive either American or European options, it is **not recommended** to implement American options using the current pricing model applied on the Options AMM. Find more about this in the Pricing section. 
+\*Although the code is ready to receive either American or European options, it is **not recommended** to implement American options using the current pricing model applied on the Options AMM. Find more about this in the Pricing section.
 {% endhint %}
 
-The Options Instrument only defines the functions that will impact the creation of an option and its exercise. The trading and pricing facilities are held in the Options AMM. 
+The Options Instrument only defines the functions that will impact the creation of an option and its exercise. The trading and pricing facilities are held in the Options AMM.
 
 * Options tokens are standard ERC20 tokens and can potentially be sold on another DEX or a P2P basis. 
 * Anyone can create new options series at any time. 
@@ -36,7 +36,7 @@ Pricing and trading options tokens happen in the [options AMM](https://app.gitbo
 * Update factors such as time to maturity and spot price.
 * Programmatically updates the Implied Volatility change over time based on the conditions of the pool. For more details, check [Pricing](https://app.gitbook.com/@pods-finance-1/s/teste/~/drafts/-MUJTd3NADF5p4jYrmxE/options-amm-overview/optionamm/pricing). 
 
-Like the assets it holds \(options\), the AMM pools are created and expire within the option's lifetime. After an option enters the exercise window, users can only withdraw funds from the pool. After users withdraw funds from the pool, they may use their options tokens to exercise an option or, in the case of a seller, it may wait until the end of the exercise window to withdraw the collateral \(or underlying asset, in case of an exercised option\) locked in the contract. 
+Like the assets it holds \(options\), the AMM pools are created and expire within the option's lifetime. After an option enters the exercise window, users can only withdraw funds from the pool. After users withdraw funds from the pool, they may use their options tokens to exercise an option or, in the case of a seller, it may wait until the end of the exercise window to withdraw the collateral \(or underlying asset, in case of an exercised option\) locked in the contract.
 
 ### **Overall System Flow**
 

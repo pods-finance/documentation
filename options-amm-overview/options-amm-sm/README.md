@@ -48,7 +48,7 @@ To find the sigma \(also known as implied volatility or IV\) for a given price i
 
 ### NormalDistribution
 
-Since we do not have libraries to deal with normal distribution functions, and our goal is to be as cost-efficient as possible, we can use  this contract to find probabilities given a Z using:
+Since we do not have libraries to deal with normal distribution functions, and our goal is to be as cost-efficient as possible, we can use this contract to find probabilities given a Z using:
 
 * getProbability\(\)
 

@@ -10,21 +10,21 @@ description: >-
 Please consider a put option ETH:USDC, strike price 320, and expiration one month to all scenarios.
 {% endhint %}
 
-### Scenario 1: Providing PodPuts and Removing Liquidity when Option is OTM 
+## Scenario 1: Providing PodPuts and Removing Liquidity when Option is OTM
 
 Consider the following pool position:
 
 * 50 option tokens
 * 10,000 USDC
 
-Of the total balance in the options tokens side, 10 had been provided by Rob in the past. 
+Of the total balance in the options tokens side, 10 had been provided by Rob in the past.
 
 After trades happened, the current pool position changed to:
 
 * 54 option tokens
 * 10,035.65 USDC
 
-Rob decided to remove 100% of the liquidity he provided initially.  Option tokens are priced at 0.65 USDC in the moment and it is _out-of-the-money_, considering that the spot price is 325 USDC and the strike price is 320 USDC. The option is live \(not expired\).
+Rob decided to remove 100% of the liquidity he provided initially. Option tokens are priced at 0.65 USDC in the moment and it is _out-of-the-money_, considering that the spot price is 325 USDC and the strike price is 320 USDC. The option is live \(not expired\).
 
 According to the AMM's logic, Rob will be removing the combination of:
 
@@ -42,28 +42,28 @@ _Position summary:_
 | 10 option tokens | 9 option tokens |
 |  | 0.67 USDC |
 
-### Scenario 2: Providing PodPuts and Removing Liquidity when Option is ITM 
+## Scenario 2: Providing PodPuts and Removing Liquidity when Option is ITM
 
 Consider the following pool position:
 
 * 50 option tokens
 * 10,000 USDC
 
-Of the total balance in the options tokens side, 10 had been provided by Gabriel in the past. 
+Of the total balance in the options tokens side, 10 had been provided by Gabriel in the past.
 
 After trades happened, the current pool position changed to:
 
 * 55 option tokens
 * 10,023.31 USDC
 
-Gabriel decided to remove 100% of the liquidity he provided initially. Options tokens are priced at 11.03 USDC, and it is _in-the-money_, considering that the spot price is 310 USDC and the strike price is 320 USDC. 
+Gabriel decided to remove 100% of the liquidity he provided initially. Options tokens are priced at 11.03 USDC, and it is _in-the-money_, considering that the spot price is 310 USDC and the strike price is 320 USDC.
 
 According to the AMM's logic, Gabriel will be removing a combination of:
 
 * 9.17 option tokens
 * 8.87 USDC 
 
-This translates into a different position from what was initially provided but keeps Gabriel's initial exposure. If Gabriel wanted to get back to his initial position of 10 options tokens, he could use the 8.87 USDC he received to buy back the "missing" portion. Then he can go back to the option instrument contract and unlock his 100% of collateral. 
+This translates into a different position from what was initially provided but keeps Gabriel's initial exposure. If Gabriel wanted to get back to his initial position of 10 options tokens, he could use the 8.87 USDC he received to buy back the "missing" portion. Then he can go back to the option instrument contract and unlock his 100% of collateral.
 
 _Position summary:_
 
@@ -72,29 +72,27 @@ _Position summary:_
 | 10 option tokens | 9.17 option tokens |
 |  | 8.87 USDC |
 
-### 
-
-### Scenario 3: Providing PodPuts and Removing Liquidity when Option is deeply OTM 
+## Scenario 3: Providing PodPuts and Removing Liquidity when Option is deeply OTM
 
 Consider the following pool position:
 
 * 50 option tokens
 * 10,000 USDC
 
-Of the total balance in the options tokens side, 10 had been provided by Babi in the past. 
+Of the total balance in the options tokens side, 10 had been provided by Babi in the past.
 
 After trades happened, the current pool position changed to:
 
 * 54 option tokens
 * 10,002.43 USDC
 
-Babi decided to remove 100% of the liquidity he provided initially. The option tokens are currently priced at 11.03 USDC, and it is _out-of-the-money_, considering that the spot price is 650 USDC and the strike price is 320 USDC. 
+Babi decided to remove 100% of the liquidity he provided initially. The option tokens are currently priced at 11.03 USDC, and it is _out-of-the-money_, considering that the spot price is 650 USDC and the strike price is 320 USDC.
 
 According to the AMM's logic, Babi will be removing:
 
 * 9 option tokens
 
-This translates into an impermanent loss of 1 option token. But, since the option is _out-of-the-money,_ Babi will be able to withdraw 100% off the collateral she provided initially. 
+This translates into an impermanent loss of 1 option token. But, since the option is _out-of-the-money,_ Babi will be able to withdraw 100% off the collateral she provided initially.
 
 _Position summary:_
 
@@ -102,9 +100,7 @@ _Position summary:_
 | :--- | :--- |
 | 10 option tokens | 9 option tokens |
 
-### 
-
-### Scenario 4: Providing PodPuts and Removing Liquidity when Option is deeply ITM 
+## Scenario 4: Providing PodPuts and Removing Liquidity when Option is deeply ITM
 
 Consider the following pool position:
 
@@ -118,14 +114,14 @@ After trades happened, the current pool balance when Eri decides to remove 100% 
 * 55 option tokens
 * 10,023.31 USDC
 
-Eri decided to remove 100% of the liquidity she provided initially. The option token is currently priced at 170 USDC, and it is _in the money_, considering that the spot price is 150 USDC and the strike price is 320 USDC. 
+Eri decided to remove 100% of the liquidity she provided initially. The option token is currently priced at 170 USDC, and it is _in the money_, considering that the spot price is 150 USDC and the strike price is 320 USDC.
 
 According to the AMM's logic, Eri will be removing a combination of:
 
 * 9.17 option tokens
 * 72.09 USDC
 
-This translates into a different position from what was initially provided but keeps Eri's initial exposure. If If Eri wanted to get back to his initial position of 10 options tokens, she could use the 72.09 USDC she received to buy back the "missing" portion. Then he can go back to the option instrument contract and unlock his 100% of collateral. 
+This translates into a different position from what was initially provided but keeps Eri's initial exposure. If If Eri wanted to get back to his initial position of 10 options tokens, she could use the 72.09 USDC she received to buy back the "missing" portion. Then he can go back to the option instrument contract and unlock his 100% of collateral.
 
 _Position summary:_
 
@@ -134,23 +130,21 @@ _Position summary:_
 | 10 option tokens | 9.17 option tokens |
 |  | 72.09 USDC |
 
-### 
-
-### Scenario 5: Providing USDC and Removing Liquidity when Option is OTM
+## Scenario 5: Providing USDC and Removing Liquidity when Option is OTM
 
 Consider the following pool position:
 
 * 50 option tokens
 * 10,000 USDC
 
-Of the total balance on the stablecoin side, 1,000 USD had been provided by Gui in the past. 
+Of the total balance on the stablecoin side, 1,000 USD had been provided by Gui in the past.
 
 After trades happened, the current pool position changed to:
 
 * 58 option tokens
 * 10,998.92 USDC
 
-Gui decided to remove 100% of the liquidity he provided initially. Options tokens are currently priced at 0 USDC, and it is _out-of-the-money_, considering that the spot price is 500 USDC and the strike price is 320 USDC. 
+Gui decided to remove 100% of the liquidity he provided initially. Options tokens are currently priced at 0 USDC, and it is _out-of-the-money_, considering that the spot price is 500 USDC and the strike price is 320 USDC.
 
 According to the AMM's logic, Gui will be removing a combination of:
 
@@ -166,9 +160,7 @@ _Position summary:_
 | 1,000 USDC | 0.73 option tokens |
 |  | 999.90 USDC |
 
-### 
-
-### Scenario 6: Providing USDC and Removing Liquidity when Option is ITM
+## Scenario 6: Providing USDC and Removing Liquidity when Option is ITM
 
 Let's see what happens to Dan when removing liquidity after providing only 1000 USDC to the following PodPut:USDC pool:
 

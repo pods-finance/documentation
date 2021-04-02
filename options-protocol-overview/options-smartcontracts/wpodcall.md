@@ -1,14 +1,14 @@
 # WPodCall
 
-WPodCall is the PodCall version made for dealing when the `underlying asset`  is ETH. Under the hood, it uses WETH in the option contract. 
+WPodCall is the PodCall version made for dealing when the `underlying asset` is ETH. Under the hood, it uses WETH in the option contract.
 
-The `exercise, unmint ,`and `withdraw` can be used exactly the same way as described on [PodCall](sm-podput.md). The only function with different signature will be  `mintWithETH`
+The `exercise, unmint ,`and `withdraw` can be used exactly the same way as described on [PodCall](sm-podput.md). The only function with different signature will be `mintWithETH`
 
 ## Methods
 
 ### mintETH
 
-Allow Call token holders to lock their `ETH` in a `1:1` ratio, meaning that 1 unit of `ETH` will mint 1 unit of option token  The contract will check if the `msg.value` is equal to the `amountOfOptions`. Otherwise, the transaction will revert.
+Allow Call token holders to lock their `ETH` in a `1:1` ratio, meaning that 1 unit of `ETH` will mint 1 unit of option token The contract will check if the `msg.value` is equal to the `amountOfOptions`. Otherwise, the transaction will revert.
 
 It is possible to mint on behalf of someone. In that case, the `msg.sender` still receive the tokens, but the owner will own the position \(amount of `shares`\). With this `owner` will be able to withdraw his deserved amount of collateral by the right time. \(After expiration for American options, and after the end of exercise window for European\).
 

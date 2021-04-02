@@ -1,8 +1,8 @@
 # WPodPut
 
-WPodPut is the PodPut version made for dealing when the `underlying asset`  is ETH. Under the hood, it uses WETH in the option contract. 
+WPodPut is the PodPut version made for dealing when the `underlying asset` is ETH. Under the hood, it uses WETH in the option contract.
 
-The functions `mint`, `unmint`, and `withdraw` can be used the same way as described on [PodPut](/@pods-finance-1/s/teste/~/drafts/-MU616VUJSGVBIAmhrla/options-protocol-overview/options-smartcontracts/sm-podput-1), but instead of receiving an ERC20 as payment, `msg.sender` could receive `ETH` instead. The only function with different signature will be `exerciseEth`
+The functions `mint`, `unmint`, and `withdraw` can be used the same way as described on [PodPut](https://github.com/pods-finance/documentation_v1/tree/21ad4a6155d7cc7386f6ef93020e1cf86ba807b1/@pods-finance-1/s/teste/~/drafts/-MU616VUJSGVBIAmhrla/options-protocol-overview/options-smartcontracts/sm-podput-1/README.md), but instead of receiving an ERC20 as payment, `msg.sender` could receive `ETH` instead. The only function with different signature will be `exerciseEth`
 
 ## Methods
 

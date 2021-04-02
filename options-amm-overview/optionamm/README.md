@@ -8,12 +8,12 @@ An options AMM implies a pool with USDC \(or aUSDC\) and options tokens \(PodPut
 
 The Options AMM has the following properties:
 
-* **Price discovery   
+* **Price discovery  
   The AMM algorithmically calculates premium**
 
   The algorithm accounts for the current spot price of the underlying asset \(leveraging ChainLink's oracle\), the time until expiration, the implied volatility \(calculated based on supply and the demand for options tokens observed in the pool\).
 
-* **Single-sided liquidity provision**  It is possible to add liquidity on one side of the pool. The pool will track the user's initial exposure and, by the time the user removes liquidity, the withdrawal position should reflect the initial exposure within a new distribution of assets. The new position will be composed of a new asset distribution \(stable coins and option tokens\), impermanent gain or loss \(depending on the pool's return\), and AMM fees. 
+* **Single-sided liquidity provision** It is possible to add liquidity on one side of the pool. The pool will track the user's initial exposure and, by the time the user removes liquidity, the withdrawal position should reflect the initial exposure within a new distribution of assets. The new position will be composed of a new asset distribution \(stable coins and option tokens\), impermanent gain or loss \(depending on the pool's return\), and AMM fees.
 * **Inventory imbalance and price changes**  If there is no inventory imbalance \(meaning canceling trades happened in the pool\), price changes due to price calculations should not take any value from liquidity providers.
 * **Fair distribution on pool returns among liquidity providers**  Pool returns should be distributed correctly across time and liquidity providers.
 

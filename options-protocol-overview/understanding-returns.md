@@ -10,7 +10,7 @@ description: >-
 
 Imagine Rob is very bullish on ETH. He frequently buys more ETH to increase his portfolio, and he usually thinks about an entry price that he feels is good to buy more ETH given the moment of the market. Instead of going to an order book or Matcha and placing a limit order, he prefers to sell Put options for the strike price equal to the entry price he has in his strategy. In that way, it is a win-win situation for him:
 
-**a\)** If the `spot price` hits the `strike price` and his position is exercised, he ended up buying the `underlying asset` \(`ETH`\) for the price he was willing to purchase AND earned a `premium` for that. 
+**a\)** If the `spot price` hits the `strike price` and his position is exercised, he ended up buying the `underlying asset` \(`ETH`\) for the price he was willing to purchase AND earned a `premium` for that.
 
 {% hint style="info" %}
 We say in this situation that the option was in the money \(ITM\)
@@ -24,9 +24,9 @@ We say in that case that the option was out of the money \(OTM\)
 
 ![Visualization for time-to-price evolution. Considering the seller&apos;s point of view.](../.gitbook/assets/sellingputs.png)
 
-### Scenario 
+### Scenario
 
-Here, we will follow a user flow of a seller \(Rob\) of a `PodPut`.  He will:
+Here, we will follow a user flow of a seller \(Rob\) of a `PodPut`. He will:
 
 * Lock `strike asset` as `collateral` to `mint` options and hold his position with  `shares` of the contract.
 * Rob will then get the new-minted options and `sell` them on our `AMM` for a `premium` \(For details on how the calculation for the premium works, check out the [how our price works section](../options-amm-overview/optionamm/pricing.md)\).
@@ -41,7 +41,7 @@ Let's add some numbers as an example to illustrate better:
 | underlying asset | WETH |
 | strike asset | aUSDC \(a collateral asset in case of Puts\) |
 | option type | Put |
-| exercise type |  European |
+| exercise type | European |
 | strike price | $400 |
 | spot price | $500 |
 | expiration | 31 Dec 2020 |
@@ -49,21 +49,16 @@ Let's add some numbers as an example to illustrate better:
 
 ### Minting options
 
-So, let's say that Rob  has `1200 aUSDC` and is willing to buy a max of 3 units of `ETH` at the `strike price`. The following steps will occur:
+So, let's say that Rob has `1200 aUSDC` and is willing to buy a max of 3 units of `ETH` at the `strike price`. The following steps will occur:
 
 * Rob calls the `mint` function with two parameters: `amountOfOptions` and `owner`.
 * `amountOfOptions`will be equal to 3 and `owner`will be Rob's address.
 * Rob needs to call `approve()` on the `strike asset aUSDC` contract allowing the `PodPut` contract to spend his `1200 aUSDC`.
 * The contract will calculate the `amountToTransfer` that will be equal to `amountOfOptions * strikePrice` that will equal `1200 aUSDC` in our case.
-* The contract will also store the number of `shares` Rob has from the `PodPut` contract using the following equation: 
-
+* The contract will also store the number of `shares` Rob has from the `PodPut` contract using the following equation:
   * `ownerShares = amountToTransfer * totalShares / (strikeReserves + underlyingReserves * strikePrice)`
   * Let's assume that in our case, the contract has 4000 `totalShares`and a`strikeReserves` of `4050 aUSDC.`
-
-
-
-  * Therefore, Rob has `1200 * 4000 / 4050 shares`. Resulting in `1185.185 shares.`
-
+* Therefore, Rob has `1200 * 4000 / 4050 shares`. Resulting in `1185.185 shares.`
 * The contract will then call the`transferFrom` function from the `strike asset` contract using`amountToTransfer` as a parameter.
 
 {% hint style="info" %}
@@ -72,7 +67,7 @@ So, let's say that Rob  has `1200 aUSDC` and is willing to buy a max of 3 units 
 
 ### Exercise
 
-Fast forward to Dec 31, 2020. Babi, who has bought two options in the secondary market, has 24h to exercise her options before the `exerciseWindow` ends. The spot price is currently at  $300
+Fast forward to Dec 31, 2020. Babi, who has bought two options in the secondary market, has 24h to exercise her options before the `exerciseWindow` ends. The spot price is currently at $300
 
 * Babi calls the `exercise` function, passing the `amountOfOptions` she wants to exercise.
 * She needs to call `approve()` on the `underlying asset WETH` contract, allowing the `PodPut` contract to spend her `underlying asset` and give her back an amount of the `strike asset`.
@@ -96,7 +91,7 @@ To calculate how many `strikeToReceive` and `underlyingToReceive` the contract w
 * `strikeToReceive = ownerShares * strikeReserves / totalShares`
 * `underlyingToReceive = ownerShares * underlyingReserves / totalShares`
 
-In this situation,  Rob will receive back `1185,185 * 4500 / 5185,185 = 1028,571 strike asset.` In addition to that, he will receive also `1185,185 * 2 / 5185,185 = 0,45714 underlying asset`
+In this situation, Rob will receive back `1185,185 * 4500 / 5185,185 = 1028,571 strike asset.` In addition to that, he will receive also `1185,185 * 2 / 5185,185 = 0,45714 underlying asset`
 
 ## Example 2 - Unminting Puts
 
@@ -357,10 +352,4 @@ Considering the conditions above, Gui would be able to buy the asset for 700 `US
 In case the option is `OTM`, which means that the `spot price` of `ETH` was below the strike price, there would be no reason for Gui to exercise his `call option` as he would be buying the asset for a higher price than what the market is currently offering. In this case, he would have lost only the amount of the `premium` paid for the options bought in Pods' AMM.
 
 ![ Visualization for time-to-price evolution from the calls buyer.](../.gitbook/assets/buyingcalls.png)
-
-
-
-
-
-
 

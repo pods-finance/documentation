@@ -4,7 +4,7 @@
 
 If you want to know in advance what is the average consumption of the main functions of our system and also what is the cost of deployment in case you want to deploy your own options series or pools, we created that table below using [eth-gas-reporter](https://github.com/cgewecke/eth-gas-reporter) \(and their buidler/harhad plugin\).
 
-| **Function** | Min | Max |  **Avg Gas Cost** |
+| **Function** | Min | Max | **Avg Gas Cost** |
 | :--- | :--- | :--- | :--- |
 | **Option Instrument** |  |  |  |
 | mint | 97,558 | 183,558 | 160k |
@@ -29,6 +29,4 @@ If you want to know how much USD it will cost, you can easily use one of the tra
 | Solc | 0.6.12 |
 | Buidler | 1.3.8 |
 | Open Zeppelin | 3.0.1 |
-
-
 

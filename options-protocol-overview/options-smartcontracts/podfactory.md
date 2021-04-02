@@ -10,15 +10,15 @@ This function is meant to be called by a caller who wants to deploy a new instan
 
 It returns a new instance of a PodPut.
 
-|  Input Name | Type | Required | Description |
+| Input Name | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
 | name | string | any | The option token name \(e.g., Pod BTC:USDC 300\) |
 | symbol | string | any | The option token symbol \(e.g., "PodPutBTC"\) |
 | optionType | uint8 | 0 / 1 | 0 for Put, 1 for Call |
 | exerciseType | uint8 | 0 / 1 | 0 for American / 1 for European |
-| underlyingAsset | address | contract address | Underlying asset address  |
+| underlyingAsset | address | contract address | Underlying asset address |
 | strikeAsset | address | contract address | Strike asset address. Works with interest-bearing tokens aToken from Aave. |
-| strikePrice | uint256 | any | Strike price \(units of strikeAsset that buy 1 unit of underlying\) \(e.g., 12000000000 means you need 12000000000 units of strike asset to exercise 1 unit of WBTC.\)   |
+| strikePrice | uint256 | any | Strike price \(units of strikeAsset that buy 1 unit of underlying\) \(e.g., 12000000000 means you need 12000000000 units of strike asset to exercise 1 unit of WBTC.\) |
 | expiration | uint256 | higher than current block timestamp | Expiration option date in UNIX timestamp \(e.g., 1609401600\) |
 | exerciseWindowSize | uint256 | higher than  86400 \(24h\) | Duration of the exercise windows in seconds. |
 
@@ -52,7 +52,7 @@ optionFactory.createOption(
         expiration,
         exerciseWindowSize
     )
-    
+
 // OptionFactory.sol
 /**
      * @notice creates a new PodPut Contract
@@ -86,8 +86,4 @@ optionFactory.createOption(
 ```
 {% endtab %}
 {% endtabs %}
-
-### 
-
-### 
 

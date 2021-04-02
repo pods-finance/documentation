@@ -6,7 +6,7 @@
 
 ### OptionFactory
 
-Contract responsible for creating/deploying new option contracts. This contract can create four different  option's contracts: `PodPut`, `WPodPut`, `PodCall`, `WPodCall`. It uses the "[Mega Factory](https://ethereum.stackexchange.com/questions/12698/need-help-to-break-down-large-contract)" pattern, where it uses auxiliary "builder" contracts \(`PodPutBuilder`, `WPodPutBuilder`, `PodCallBuilder`, `WPodCallBuilder`\). From the users/developer's perspective, they do not need to interact with those auxiliary contracts. OptionFactory has only one function:
+Contract responsible for creating/deploying new option contracts. This contract can create four different option's contracts: `PodPut`, `WPodPut`, `PodCall`, `WPodCall`. It uses the "[Mega Factory](https://ethereum.stackexchange.com/questions/12698/need-help-to-break-down-large-contract)" pattern, where it uses auxiliary "builder" contracts \(`PodPutBuilder`, `WPodPutBuilder`, `PodCallBuilder`, `WPodCallBuilder`\). From the users/developer's perspective, they do not need to interact with those auxiliary contracts. OptionFactory has only one function:
 
 * [createOption](podfactory.md#createoption)\(\) 
 
@@ -33,7 +33,7 @@ If you want to manage `WETH` / `ETH` conversion yourself, you can simply use **P
 {% endhint %}
 
 {% hint style="info" %}
-If you are using WPodPut on a testnet, you should use a contract address for the underlying asset with the same interface of the mainnet WETH. You can check our WETH address for testnets on our [deployed contracts page](../../developers/deployed-contracts.md).   
+If you are using WPodPut on a testnet, you should use a contract address for the underlying asset with the same interface of the mainnet WETH. You can check our WETH address for testnets on our [deployed contracts page](../../developers/deployed-contracts.md).
 {% endhint %}
 
 ### PodCall
@@ -59,7 +59,7 @@ If you want to manage `WETH` / `ETH` conversion yourself, you can use **PodCall*
 {% endhint %}
 
 {% hint style="info" %}
-If you are using **WPodCall** on a testnet, you should use a contract address for the underlying asset with the same interface of the mainnet `WETH`. You can check our `WETH` address for testnets on our [deployed contracts page](../../developers/deployed-contracts.md).  
+If you are using **WPodCall** on a testnet, you should use a contract address for the underlying asset with the same interface of the mainnet `WETH`. You can check our `WETH` address for testnets on our [deployed contracts page](../../developers/deployed-contracts.md).
 {% endhint %}
 
 ## Auxiliary Contracts

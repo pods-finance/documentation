@@ -27,7 +27,7 @@ The event of unminting options requires the following information:
 
 After the information was supplied to the contract, the `unmint` function will perform the following activities:
 
-### 1\) Consult Balances 
+### 1\) Consult Balances
 
 ### 1.1\) Consult current $$StrikeReserves_n$$
 
@@ -43,7 +43,7 @@ $$UnderlyingReserves_n$$ is a variable where we store the total amount of underl
 
 ### 2.1\) Calculate $$OwnerShares_w$$
 
-This step calculates the proportional shares the user will unmint from its current position, considering his contract shares. 
+This step calculates the proportional shares the user will unmint from its current position, considering his contract shares.
 
 $$\displaystyle OwnerShares_w=\frac{AmountOfOptionsToWithdraw\cdot OwnerShares_{i-1}}{UserMintedOptions}$$
 
@@ -51,9 +51,9 @@ $$\displaystyle OwnerShares_w=\frac{AmountOfOptionsToWithdraw\cdot OwnerShares_{
 
 This step is most fit with put options since the collateral in put options is in strike asset.
 
-This step calculates the number of strike assets a user would need to receive for this unminting process. 
+This step calculates the number of strike assets a user would need to receive for this unminting process.
 
-$$\displaystyle StrikeToSend=\frac{OwnerShares_w\cdot StrikeReserves_n}{TotalShares_{i-1}}$$ 
+$$\displaystyle StrikeToSend=\frac{OwnerShares_w\cdot StrikeReserves_n}{TotalShares_{i-1}}$$
 
 ### 2.3\) Calculate $$UnderlyingToSend$$
 
@@ -65,7 +65,7 @@ This step is most fit with call options since the collateral in calls is in the 
 
 $$TotalShares_i$$ is the sum of all the user's shares.
 
-$$TotalShares_i = TotalShares_{i-1} -OwnerShares_w $$
+$$TotalShares_i = TotalShares_{i-1} -OwnerShares_w$$
 
 Notice the negative sign here is different from the pure mint function since it removed funds and, therefore, should reduce the number of shares.
 
@@ -73,7 +73,7 @@ Notice the negative sign here is different from the pure mint function since it 
 
 This factor updates the current total amount of user shares.
 
-$$OwnerShares_i=OwnerShares_{i-1}-OwnerShares_w $$ 
+$$OwnerShares_i=OwnerShares_{i-1}-OwnerShares_w$$
 
 ### 3.3\) Update$$strikeReserves_n$$
 
@@ -81,10 +81,10 @@ They are used in the case of a put option.
 
 Using the current $$StrikeToSend$$ \(accrued with interest from the last period\), we'll deduct the amount of strike to transfer used while minting this option.
 
-#### $$StrikeReserves_i=StrikeReserves_{i-1} - StrikeToSend$$ 
+#### $$StrikeReserves_i=StrikeReserves_{i-1} - StrikeToSend$$
 
 {% hint style="info" %}
-This session described mathematically how the contract logic works. It is not needed to update the total ERC20 balances at the code level since tokens transfer to or from the contract is automatically updated with the ERC20 implementation.  
+This session described mathematically how the contract logic works. It is not needed to update the total ERC20 balances at the code level since tokens transfer to or from the contract is automatically updated with the ERC20 implementation.
 {% endhint %}
 
 ### 3.4\) Update $$UnderlyingReserves_i$$
@@ -93,10 +93,10 @@ They are used in the case of a call option.
 
 Using the current $$UnderlyingReserves_n$$ \(accrued with interest from the last period\), we'll deduct the amount of $$UnderlyingToSend$$ used while minting this option.
 
-#### $$UnderlyingReserves_i=UnderlyingReserves_n-UnderlyingToSend$$ 
+#### $$UnderlyingReserves_i=UnderlyingReserves_n-UnderlyingToSend$$
 
 {% hint style="info" %}
-This session described mathematically how the contract logic works. It is not needed to update the total ERC20 balances at the code level since tokens transfer to or from the contract is automatically updated with the ERC20 implementation.  
+This session described mathematically how the contract logic works. It is not needed to update the total ERC20 balances at the code level since tokens transfer to or from the contract is automatically updated with the ERC20 implementation.
 {% endhint %}
 
 ### 4\) Burn options
@@ -106,6 +106,4 @@ After the unmint function is processed, the options tokens will be burned.
 {% hint style="success" %}
 Unminting options ✅
 {% endhint %}
-
-
 

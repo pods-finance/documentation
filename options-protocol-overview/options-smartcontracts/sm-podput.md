@@ -8,7 +8,7 @@ PodCall is a contract that should inherit PodOption and override the four main f
 
 This function is meant to be called by underlying token holders wanting to write option tokens.
 
-Locks some amount of the underlying asset and writes option tokens. The issued amount ratio is 1:1 \(e.g., 1 option token for 1 underlying token\). It presumes the caller has already called`IERC20.approve()` on the underlying token contract to move caller funds. 
+Locks some amount of the underlying asset and writes option tokens. The issued amount ratio is 1:1 \(e.g., 1 option token for 1 underlying token\). It presumes the caller has already called`IERC20.approve()` on the underlying token contract to move caller funds.
 
 {% hint style="warning" %}
 This function can only be called **during** `tradeWindow` period depending on the exercise type.
@@ -91,7 +91,7 @@ During the process:
 
 * The `amountOfOptions` units of `underlying tokens` are transferred to the
 
-     caller
+  caller
 
 * The `amountOfOptions` option tokens are burned.
 * The `amountOfOptions * strikePrice` units of strike tokens are transferred into

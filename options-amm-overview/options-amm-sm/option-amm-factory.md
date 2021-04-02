@@ -10,13 +10,13 @@ This function is meant to be called by a caller who wants to deploy a new instan
 
 Returns a new instance of OptionAMMPool.
 
-|  input name | Type | Required | Description |
+| input name | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
 | \_optionAddress | address | PodOption contracts | The address of the option token \(PodOption\) |
 | \_stableAsset | address | ERC20 token | The ERC20 will be used as the pair of the option. Will be easier if the price of the option is denominated in any stablecoin. |
 | \_priceProvider | address | - | Contract address of the PriceProvider contract for spotPrice |
 | \_priceMethod | address | - | Contract address of the PriceMethod contract \(E.g: BlackScholes\) |
-| \_sigma | address | - | Contract address of the sigma \(Implied Volatility - IV\)  |
+| \_sigma | address | - | Contract address of the sigma \(Implied Volatility - IV\) |
 | \_initialSigma | uint256 |  | The Initial number of sigma \(Implied Volatility\) with 18 decimals |
 
 {% tabs %}
@@ -45,7 +45,7 @@ optionAMMFactory.createPool(
         sigma,
         initialSigma
     );
-    
+
 // OptionAMMFactory.sol
     /**
      * @notice Creates an option pool
@@ -118,13 +118,11 @@ await optionAMMFactory.createPool(
 
 ### getPool
 
-The function returns the address of the pool with given an `_optionAddress.` 
+The function returns the address of the pool with given an `_optionAddress.`
 
 | Input name | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
 | \_optionAddress | address | - | The address of the option token \(PodOption\) |
-
-
 
 {% tabs %}
 {% tab title="Solidity" %}
@@ -174,6 +172,4 @@ const poolAddress = await optionAMMFactory.getPool(optionAddress)
 ```
 {% endtab %}
 {% endtabs %}
-
-
 

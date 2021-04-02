@@ -12,7 +12,7 @@ The AMM contract charges a 0.3% fee on every trade that happens in the pool. Sin
 * The contract keeps track of the fee amount in a feePoolA and feePoolB.
 * The fair distribution of fees is tracked by the number of shares of each feePool a liquidity provider has. 
 
-### Charging fees
+## Charging fees
 
 The contract will always charge fees in token B. That means that fees will be charged slightly differently depending on the trade direction and exact input or output.
 
@@ -33,15 +33,13 @@ A user has 100 USDC and wants to buy all of it in options \(will use `exactInput
 
   \*\*\*\*
 
-### Issuing feePool Shares
+## Issuing feePool Shares
 
 When adding liquidity, a user is also "buying" shares of`feePool`it added liquidity for. The new shares emission formula is, for each token pool:
 
 $$
 NewShares(A)=\frac{A_i}{Fv_i}
 $$
-
-
 
 $$
 NewShares(B)=\frac{B_i}{Fv_i}

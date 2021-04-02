@@ -9,5 +9,3 @@ Pods has been implemented with security as priority. The system has been designe
 | v.2.0 Protocol | ​Quantstamp​ | Smart Contract | Jan. 2021 |
 | v.1.0 Protocol | ​Solidified​ | Smart Contract | Aug. 2020 |
 
-##   <a id="bug-bounty"></a>
-

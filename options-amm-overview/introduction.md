@@ -4,7 +4,7 @@ description: Options AMM overview
 
 # Overview
 
-### General Purpose AMM
+## General Purpose AMM
 
 A general-purpose AMM, such as Uniswap v1 and v2, is one of the essential building blocks in DeFi. Its model is capable of combining price discovery and bootstrap in any market in the world. It allows a market for even the most illiquid assets to exist and grow.
 
@@ -26,7 +26,7 @@ Although this model may have a perfect fit with non-volatile assets and highly v
 
 It's fair to understand that the most profitable combination for liquidity providers is a pool where the assets are **not volatile**, and there are **many trades per day**. The latest variable is explained by the fact that the higher amount of transactions happening per day, the closest the price of the assets within the pool will be from the spot price in the market.
 
-### Options Pools
+## Options Pools
 
 In a DeFi option \(specifically Pods options\), a user has to lock 100% in collateral and **mint** the option token. The option token represents the right for the buyer and the obligation for the seller. But, since the seller locked the collateral upfront, there is not much to be enforced; the smart contract holds the commitment.
 
@@ -42,11 +42,11 @@ DeFi is only starting, and DeFi options are also just beginning. This means that
 
 > But how would someone know that an option price is mispriced?
 
-**Learn more about pricing options** [**here**](https://app.gitbook.com/@pods-finance-1/s/teste/understand-options/pricing-options)**.** 
+**Learn more about pricing options** [**here**](https://app.gitbook.com/@pods-finance-1/s/teste/understand-options/pricing-options)**.**
 
-All methods are trying, to some extent, to calculate what is the probability the option will expire _in-the-money_ and, if it does, what that value would be at present. To calculate such theoretical price, authors incorporate factors like **underlying asset spot price,** **time to expiration**, **implied volatility**, **risk-free rate**, and strike price. Those factors, also known as greeks, have a different impact on the option price.  
+All methods are trying, to some extent, to calculate what is the probability the option will expire _in-the-money_ and, if it does, what that value would be at present. To calculate such theoretical price, authors incorporate factors like **underlying asset spot price,** **time to expiration**, **implied volatility**, **risk-free rate**, and strike price. Those factors, also known as greeks, have a different impact on the option price.
 
-### Options trading in General Purpose AMMs
+## Options trading in General Purpose AMMs
 
 Each trader treats the greeks and formulas as it seems fit. But most of them have some way of calculating the option price that can account for all the factors that impact an option price. Traders would likely find ways to open arbitrage opportunities, but liquidity providers ultimately could result in losses for allocating their capital to potential mispriced trades.
 

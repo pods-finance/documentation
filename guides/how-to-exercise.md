@@ -1,6 +1,6 @@
 # How to Exercise
 
-In order to exercise an option, is pretty simple. You just need to have the options address and PodOption interface. Do not forget to approve first the underlying 
+In order to exercise an option, is pretty simple. You just need to have the options address and PodOption interface. Do not forget to approve first the underlying
 
 `PodOption` Interface below:
 
@@ -63,7 +63,6 @@ interface IPodOption is IERC20 {
 
     function strikeReserves() external view returns (uint256);
 }
-
 ```
 {% endtab %}
 {% endtabs %}

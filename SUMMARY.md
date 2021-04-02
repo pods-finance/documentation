@@ -80,8 +80,6 @@
 
 ## Additional Resources
 
----
-
 * [Medium](https://medium.com/podsfinance)
 * [Discord](https://discord.gg/Qf7utym)
 * [Twitter](https://twitter.com/PodsFinance)

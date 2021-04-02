@@ -44,7 +44,7 @@ The strike price is commonly used to designate the price at which the underlying
 
 ## How is the options premium calculated? <a id="b95b"></a>
 
-In traditional finance, option premiums are rather hard to calculate, and there are several pricing models out there. The most widely used is Black-Scholes, and it takes into account factors like intrinsic value, time to expiration, and underlying asset volatility. Our protocol implemented the Black Scholes formula for pricing the options algorithmically, and it considers a 1-period delay for updating the implied volatility. The implied volatility is calculated based on the supply and demand observed in a pool. For more details about pricing, check [Pricing](https://app.gitbook.com/@pods-finance-1/s/teste/~/drafts/-MNRC2ZsPjFTrrRMLycS/options-amm-overview/optionamm/pricing). 
+In traditional finance, option premiums are rather hard to calculate, and there are several pricing models out there. The most widely used is Black-Scholes, and it takes into account factors like intrinsic value, time to expiration, and underlying asset volatility. Our protocol implemented the Black Scholes formula for pricing the options algorithmically, and it considers a 1-period delay for updating the implied volatility. The implied volatility is calculated based on the supply and demand observed in a pool. For more details about pricing, check [Pricing](https://app.gitbook.com/@pods-finance-1/s/teste/~/drafts/-MNRC2ZsPjFTrrRMLycS/options-amm-overview/optionamm/pricing).
 
 ## What asset can I offer as collateral for writing a put? <a id="4d0f"></a>
 
@@ -102,14 +102,10 @@ If you minted PodOptions and locked the equivalent amount of DAI our ETH, your o
 
 Using PodOptions to allow writing and trading options on-chain, we are also saying that the option contract is tokenized. That is an important feature to increase the system's overall liquidity, making it easier to integrate with other DEX and protocols since it's a generic ERC20 token.
 
-
-
-## Have more questions? 
+## Have more questions?
 
 Reach out to us on our channels:
 
 * [Twitter](https://twitter.com/PodsFinance)
 * [Discord](https://discord.gg/Qf7utym)
-
-
 

@@ -8,7 +8,7 @@ description: >-
 
 ## Create
 
-Since the logic and structure of PodOptions \(calls and puts\) are similar, one can use a generic factory and constructor for deploying these options. 
+Since the logic and structure of PodOptions \(calls and puts\) are similar, one can use a generic factory and constructor for deploying these options.
 
 ### Parameters
 
@@ -19,9 +19,9 @@ To create a brand new option is required to fill the following parameters:
 | `name` | The option token name \(e.g., Pod BTC:USDC 300\) |
 | `symbol` | The option token symbol \(e.g., "PodPutBTC"\) |
 | `exercise type` | 0 for American / 1 for European |
-| `underlying asset` | Underlying asset address  |
+| `underlying asset` | Underlying asset address |
 | `strike asset` | Strike asset address. It is enabled for interest-bearing tokens, Aave's aToken. |
-| `strike price` | The strike price \(units of strikeAsset that buy 1 unit of underlying\) \(e.g., 12000000000 means you need 12000000000 units of strike asset to exercise 1 unit of WBTC.\)   |
+| `strike price` | The strike price \(units of strikeAsset that buy 1 unit of underlying\) \(e.g., 12000000000 means you need 12000000000 units of strike asset to exercise 1 unit of WBTC.\) |
 | `expiration` | Expiration option date in UNIX timestamp \(e.g., 1609401600\) |
 | `(exercise) window size` | Duration of the exercise windows in seconds. The period that the buyer will have to exercise. |
 
@@ -57,9 +57,9 @@ Let's explore the example of setting up a call option.
 * **expiration:** December 30th
 * **window size:** 24 hours.
 
-The amount of collateral that should be held in a call option contract is: 
+The amount of collateral that should be held in a call option contract is:
 
-$$CallCollateral = Underlying Asset*MintedOptions$$ 
+$$CallCollateral = Underlying Asset*MintedOptions$$
 
 ### PodPut Example
 
@@ -79,9 +79,9 @@ Let's explore the example of setting up a call option.
 * **expiration:** December 30th
 * **window size:** 24 hours.
 
-The amount of collateral that should be held in a put option contract is: 
+The amount of collateral that should be held in a put option contract is:
 
-$$PutCollateral = StrikePrice*MintedOptions$$ 
+$$PutCollateral = StrikePrice*MintedOptions$$
 
 ### Comparing Collateral
 
@@ -98,6 +98,4 @@ Since puts represent the right to sell the underlying asset in the future, the c
 {% hint style="success" %}
 Now that you know how to create new options let's check their functions.
 {% endhint %}
-
-
 

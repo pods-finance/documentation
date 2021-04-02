@@ -4,8 +4,6 @@ description: Trade function step-by-step
 
 # Trade
 
-
-
 When, in a given instant $$i$$, a trade is initiated and the contract will check the following parameters to proceed:
 
 * Trade direction \(from token A to token B or the opposite\).
@@ -15,9 +13,9 @@ When, in a given instant $$i$$, a trade is initiated and the contract will check
 
 Once the contract gathered this information, it will start performing the following trade functions:
 
-### 1. Calculate factors
+## 1. Calculate factors
 
-### 1.1 Calculate Option Unit Price
+## 1.1 Calculate Option Unit Price
 
 The contract will supply our BS implementation with the following data:
 
@@ -31,23 +29,23 @@ And will get in return the updated option price \($$P_i)$$ based on the current 
 
 ![inside \_calculateNewABPrice function on optionAMMPool](../../../.gitbook/assets/screen-shot-2021-01-13-at-02.56.39.png)
 
-### 1.2 Calculate total price based on the transaction amount
+## 1.2 Calculate total price based on the transaction amount
 
-#### a\) Calculate pool amounts for each token:
+### a\) Calculate pool amounts for each token:
 
-$$\displaystyle poolAmountA = \min\left\{TB_{A};\frac{TB_{B}}{P_i}\right\}$$ 
+$$\displaystyle poolAmountA = \min\left\{TB_{A};\frac{TB_{B}}{P_i}\right\}$$
 
-$$\displaystyle poolAmountB = \min\left\{TB_{A};{TB_{A}}\cdot {P_i}\right\}$$ 
+$$\displaystyle poolAmountB = \min\left\{TB_{A};{TB_{A}}\cdot {P_i}\right\}$$
 
 ![\_getPoolAmounts at OptionAMMPool.sol](../../../.gitbook/assets/screen-shot-2021-01-13-at-03.00.16.png)
 
-#### b\) Calculate product constant
+### b\) Calculate product constant
 
-$$k=poolAmountA*poolAmountB$$ 
+$$k=poolAmountA*poolAmountB$$
 
-#### c\) Calculate total transaction price, in terms of B
+### c\) Calculate total transaction price, in terms of B
 
-#### $$\displaystyle B_i=\frac{k}{(poolAmountA-tradeAmountA)}-poolAmountB$$ 
+### $$\displaystyle B_i=\frac{k}{(poolAmountA-tradeAmountA)}-poolAmountB$$
 
 {% hint style="info" %}
 Note that on the contract level, for each of our 4 trade functions \(`exactAInput / exactAOutput / exactBInput / exactBOutput`\) the function above is slightly different.
@@ -55,22 +53,22 @@ Note that on the contract level, for each of our 4 trade functions \(`exactAInpu
 
 ![](../../../.gitbook/assets/screen-shot-2021-01-13-at-03.06.11.png)
 
-### 3. Calculate new sigma based on the new unit price
+## 3. Calculate new sigma based on the new unit price
 
 ![newIV variable on any of the trade functions at OptionAMMPool](../../../.gitbook/assets/screen-shot-2021-01-13-at-03.09.59.png)
 
-### 4. Updates
+## 4. Updates
 
-### 4.1 Update Total Balances
+## 4.1 Update Total Balances
 
-This step will update the pool's new total balances, considering the trade that just happened. 
+This step will update the pool's new total balances, considering the trade that just happened.
 
-$$TB_{A_{i}}=TB_{A_{i-1}} +A_i$$ 
+$$TB_{A_{i}}=TB_{A_{i-1}} +A_i$$
 
-$$TB_{B_{i}}=TB_{B_{i-1}} +B_i$$ 
+$$TB_{B_{i}}=TB_{B_{i-1}} +B_i$$
 
 {% hint style="info" %}
-At the contract level,  $$A_{i}$$ are usually `exactAmountIIn or exactAmountAOut and` $$B_{i}$$ is `amountBIn / amountBOut` since we do not handle negatives numbers on solidity.
+At the contract level, $$A_{i}$$ are usually `exactAmountIIn or exactAmountAOut and` $$B_{i}$$ is `amountBIn / amountBOut` since we do not handle negatives numbers on solidity.
 {% endhint %}
 
 ![](../../../.gitbook/assets/screen-shot-2021-01-13-at-02.46.54.png)

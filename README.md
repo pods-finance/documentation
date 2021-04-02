@@ -6,7 +6,7 @@ description: "\U0001F44B Welcome to Pods' docs. This documentation aims to provi
 
 ## What is Pods?
 
-Pods is a **decentralized non-custodial options protocol** that allows users to create calls and or puts and trade them in the **Options AMM**. Pods was implemented in a system of non-upgradable smart contracts in the Ethereum Blockchain. Pods is **open-source software** licensed under [GNU](https://en.wikipedia.org/wiki/GNU_General_Public_License). 
+Pods is a **decentralized non-custodial options protocol** that allows users to create calls and or puts and trade them in the **Options AMM**. Pods was implemented in a system of non-upgradable smart contracts in the Ethereum Blockchain. Pods is **open-source software** licensed under [GNU](https://en.wikipedia.org/wiki/GNU_General_Public_License).
 
 DeFi options users confront three major pain points today:
 
@@ -14,7 +14,7 @@ DeFi options users confront three major pain points today:
 * Placing and managing options orders in decentralized order books can be costly, and the current solutions are not liquid enough to compensate for the gas cost.
 * Providing options tokens as liquidity in Uniswap may translate into severe impermanent loss since it can only update the price based on a limited amount of inputs. That also means that users may not find reasonable market prices for buying or selling options in Uniswap.
 
-Pods Protocol core components, Options Instrument and Options AMM, were built to address these pain points differently. 
+Pods Protocol core components, Options Instrument and Options AMM, were built to address these pain points differently.
 
 Currently, users can participate:
 
@@ -35,7 +35,7 @@ Our [options AMM](https://app.gitbook.com/@pods-finance-1/s/teste/options-amm-ov
 * Keep options liquidity providers delta hedged during the provision period.
 * Maintain the liquidity provider's exposure over time and distribute the pool's results equitably among participants.
 
-Its implementation foresees an external price oracle's use to update the spot price of the underlying asset. 
+Its implementation foresees an external price oracle's use to update the spot price of the underlying asset.
 
 ### A Few Use Cases
 
@@ -49,7 +49,7 @@ Its implementation foresees an external price oracle's use to update the spot pr
 
 The team currently holds admin powers on the protocol. See the details [here](https://app.gitbook.com/@pods-finance-1/s/teste/the-protocol/cap-and-admin-keys).
 
-### This documentation 
+### This documentation
 
 > This documentation is a **work-in-progress**, and some parts **may be unfinished or pending updates**.
 >

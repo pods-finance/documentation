@@ -8,7 +8,7 @@ PodPut is a contract that should inherit PodOption and override the 4 main funct
 
 This function is meant to be called by strike token holders wanting to write option tokens.
 
-Locks some amount of the strike asset and writes option tokens. The issued amount ratio is 1 option token for `strikePrice`units of strike asset. It presumes the caller has already called `IERC20.approve()` on the strike token contract to move caller funds. 
+Locks some amount of the strike asset and writes option tokens. The issued amount ratio is 1 option token for `strikePrice`units of strike asset. It presumes the caller has already called `IERC20.approve()` on the strike token contract to move caller funds.
 
 {% hint style="warning" %}
 This function can only be called **during** `tradeWindow` period depending on the exercise type.

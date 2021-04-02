@@ -8,9 +8,9 @@ If you need development support, join the \#developers channel on our [Pods comm
 {% tab title="Mainnet" %}
 | Contracts | ABI | Address |
 | :--- | :--- | :--- |
-| PodFactory | [JSON]() | 0x |
-| WPodFactory | [JSON]() | [0x0]() |
-| OptionAMMFactory | [JSON]() | [0x]() |
+| PodFactory | [JSON](deployed-contracts.md) | 0x |
+| WPodFactory | [JSON](deployed-contracts.md) | [0x0](deployed-contracts.md) |
+| OptionAMMFactory | [JSON](deployed-contracts.md) | [0x](deployed-contracts.md) |
 | BlackScholes |  |  |
 | Sigma |  |  |
 | PriceProvider |  |  |
@@ -30,19 +30,17 @@ If you need development support, join the \#developers channel on our [Pods comm
 {% endtab %}
 {% endtabs %}
 
-## 
-
 ## Option Series
 
 Separate list only with the options that we have deployed during the last year.
 
 {% hint style="info" %}
-If you want the address of any option that is not on the list, talk to us on our Discord. 
+If you want the address of any option that is not on the list, talk to us on our Discord.
 {% endhint %}
 
 {% tabs %}
 {% tab title="Mainnet" %}
-| Name | Underlying | Strike  | Strike Price | Expiration | Address |
+| Name | Underlying | Strike | Strike Price | Expiration | Address |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | PodPut  WBTC 12k 31Dec 2020 | WBTC | USDC | 12000 | 31Dec 2020 |  |
 | DAI |  |  |  |  | [0x6b175474e89094c44da98b954eedeac495271d0f](https://etherscan.io/address/0x6b175474e89094c44da98b954eedeac495271d0f) |
