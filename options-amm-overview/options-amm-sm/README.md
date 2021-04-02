@@ -1,6 +1,6 @@
 # Smart Contracts
 
-![AMM architecture](../../.gitbook/assets/options-amm-v3-2-.png)
+![AMM Architecture](../../.gitbook/assets/options-amm-v3-2-.png)
 
 ## Main contracts
 

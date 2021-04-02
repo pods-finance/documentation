@@ -24,7 +24,7 @@ Below we are going to show the steps used in this algorithm to find the new sigm
 
 #### a\) Defining the boundaries
 
-We will need to define the upper and bottom boundaries for the sigma $$\sigma$$and his respective option price. We will call these variables $$\sigma_{higher}$$, $$\sigma_{lower}$$, $$price_{higher}$$and $$price_{lower}$$.
+We will need to define the upper and bottom boundaries for the sigma $$\sigma$$and its respective option price. We will call these variables $$\sigma_{higher}$$, $$\sigma_{lower}$$, $$price_{higher}$$and $$price_{lower}$$.
 
 That is no magic trick to define the initial boundaries. You can guess a very high sigma, calculate the Black Scholes equation using this sigma, and then check if the price is higher. If the price that you found is higher, then that price became your initial upper boundary.  To find the bottom boundary, repeat the same process with a very low sigma.
 

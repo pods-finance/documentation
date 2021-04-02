@@ -57,7 +57,7 @@ The target price will be the input for the SigmaGuesser contract.
 
 #### $$\displaystyle TargetPrice_i=\frac{poolAmountB-B_i}{poolAmountA+A_i}$$
 
-This part of our system is responsible for finding the new sigma \(IV\) based on the new option target price. It uses a numerical method to do that. If you want to deep dive on how it works, check the section Sigma Guesser.
+This part of our system is responsible for finding the new sigma \(IV\) based on the new option target price. It uses a numerical method to do that. If you want to deep dive into how it works, check the section Sigma Guesser.
 
 ![](../../../.gitbook/assets/screen-shot-2021-04-01-at-22.58.39.png)
 
