@@ -49,13 +49,25 @@ $$k=poolAmountA*poolAmountB$$
 
 #### $$\displaystyle B_i=\frac{k}{(poolAmountA-tradeAmountA)}-poolAmountB$$ 
 
-{% hint style="info" %}
-Note that on the contract level, for each of our 4 trade functions \(`exactAInput / exactAOutput / exactBInput / exactBOutput`\) the function above is slightly different.
-{% endhint %}
-
 ![](../../../.gitbook/assets/screen-shot-2021-01-13-at-03.06.11.png)
 
+#### d\) Calculate new option unit price \(aka target price\)
+
+The target price will be the input for the SigmaGuesser contract.
+
+#### $$\displaystyle TargetPrice_i=\frac{poolAmountB-B_i}{poolAmountA+A_i}$$
+
+This part of our system is responsible for finding the new sigma \(IV\) based on the new option target price. It uses a numerical method to do that. If you want to deep dive on how it works, check the section Sigma Guesser.
+
+![](../../../.gitbook/assets/screen-shot-2021-04-01-at-22.58.39.png)
+
+{% hint style="info" %}
+Note that on the contract level, for each of our 4 trade functions \(`exactAInput / exactAOutput / exactBInput / exactBOutput`\) the functions above are slightly different.
+{% endhint %}
+
 ### 3. Calculate new sigma based on the new unit price
+
+This part of our system is responsible for finding the new sigma \(IV\) based on the new option target price. It uses a numerical method to do that. If you want to deep dive into this topic, you can check our Find the next sigma section.
 
 ![newIV variable on any of the trade functions at OptionAMMPool](../../../.gitbook/assets/screen-shot-2021-01-13-at-03.09.59.png)
 
