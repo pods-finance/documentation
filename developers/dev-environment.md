@@ -15,7 +15,7 @@ If you want to know in advance what is the average consumption of the main funct
 | **Option AMM** | \*\*\*\* |  |  |
 | addLiquidity | 267,755 | 312,695 | 312k |
 | removeLiquidity | 262,078 | 277,044 | 270k |
-| trade \(exactInput / exactOutput\) | 493,390 | 975,030 | 500k |
+| trade \(exactInput / exactOutput\) | 493,390 | 975,030 | 800k |
 | createPool | 4,857,078 | 4,857,126 | 4857k |
 
 {% hint style="info" %}
