@@ -17,7 +17,7 @@ Once the contract gathered this information, it will start performing the follow
 
 ### 1. Calculate factors
 
-### 1.1 Calculate Option Unit Price
+### 1.1 Calculate Option Unit Theoretical Price
 
 The contract will supply our BS implementation with the following data:
 
