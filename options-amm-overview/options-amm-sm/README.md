@@ -1,6 +1,6 @@
 # Smart Contracts
 
-![AMM System overview](../../.gitbook/assets/options-amm-v3.png)
+![AMM architecture](../../.gitbook/assets/options-amm-v3-2-.png)
 
 ## Main contracts
 
@@ -39,7 +39,7 @@ Contract responsible for the calculation of the BlackScholes formula for Puts an
 * getCallPrice\(\)
 * getPutPrice\(\)
 
-### Sigma
+### SigmaGuesser
 
 To find the sigma \(also known as implied volatility or IV\) for a given price is not trivial. We need to use a numeric method. This contract is responsible for the interaction process that will find the sigma given a `targetPrice` depending if the option is a Call or a Put. For gas cost purposes, a variable called `sigmaInitialGuess` can be passed to help the numeric method converge faster.
 
