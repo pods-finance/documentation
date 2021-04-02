@@ -105,15 +105,15 @@ The contract will gather this information to feed the Black Scholes contract. Co
 
 #### 2. Calculate total price for trade amount
 
-For more details, check [Trade](https://app.gitbook.com/@pods-finance-1/s/teste/~/drafts/-MNMwlOe0wakQKTZXaXb/options-amm-overview/optionamm/functions/trade).
+For more details, check [Trade](functions/trade.md).
 
 #### 3. Calculate new price based on inventory balance after the trade
 
-For more details, check [Trade](https://app.gitbook.com/@pods-finance-1/s/teste/~/drafts/-MNMwlOe0wakQKTZXaXb/options-amm-overview/optionamm/functions/trade).
+For more details, check [Trade](functions/trade.md).
 
 #### 4. Guess new sigma \($$IV_i$$\) and store it in the contract for the next trade.
 
-After the trade, the pool's inventory changed, and it represents a new "virtual price." This price is used to guess the new sigma after the trade. In the next trade, the sigma calculated now will be used to calculate a new price then.
+After the trade, the pool's inventory changed, and it represents a new "virtual price." This price is used to guess the new sigma after the trade. In the next trade, the sigma calculated now will be used to calculate a new price then. If you want to deep dive into this topic, check our Find next sigma section.
 
 ### Pricing Flow
 

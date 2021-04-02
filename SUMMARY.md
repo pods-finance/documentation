@@ -47,6 +47,7 @@
     * [Remove Liquidity](options-amm-overview/optionamm/functions/remove-liquidity.md)
   * [Pricing](options-amm-overview/optionamm/pricing.md)
   * [Fees](options-amm-overview/optionamm/fees.md)
+  * [Find The Next Sigma](options-amm-overview/optionamm/find-the-next-sigma.md)
   * [Scenarios](options-amm-overview/optionamm/scenarios.md)
 * [Smart Contracts](options-amm-overview/options-amm-sm/README.md)
   * [OptionAMMPool](options-amm-overview/options-amm-sm/option-amm-pool.md)
