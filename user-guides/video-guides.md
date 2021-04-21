@@ -6,6 +6,12 @@ description: >-
 
 # Videos
 
+* \*\*\*\*[**How to Connect your Wallet and Get Kovan Faucet**](video-guides.md#how-to-connect-your-wallet-and-get-kovan-faucet)
+* \*\*\*\*[**How to Integrate Mumbai Testnet and Get Mumbai Matic**](video-guides.md#how-to-integrate-mumbai-testnet-and-get-mumbai-matic)\*\*\*\*
+* \*\*\*\*[**How to Get Mumbai Faucet**](video-guides.md#how-to-get-mumbai-faucet)
+* \*\*\*\*[**How to Buy?**](video-guides.md#how-to-buy)
+* \*\*\*\*[**How to Sell?**](video-guides.md#how-to-sell)
+
 ### How to Connect your Wallet and Get Kovan Faucet
 
 {% embed url="https://www.youtube.com/watch?v=kIhkkuS1nsI" %}
