@@ -1,4 +1,10 @@
-# Walk-through videos
+---
+description: >-
+  Find below a list to walk-through videos to assist users while interacting
+  with the app.
+---
+
+# Videos
 
 ### How to Connect your Wallet and Get Kovan Faucet
 

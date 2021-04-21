@@ -31,4 +31,5 @@ If we're missing any, please let us know on our [Discord channel](https://discor
 | **Implied Volatility** | Implied Volatility is the market's forecast of a likely movement in the underlying asset spot price. In our model, the IV derives from the pool's activities and imbalance.  |
 | **Time to expiration** | Amount of time left to the option expiration date. |
 | **Impermanent loss** | Potential loss a liquidity provider could get from providing liquidity to the AMM instead of holding the assets. |
+| **Impermanent gain** | Potential gain a liquidity provider could have from providing liquidity to the AMM instead of holding the assets. |
 

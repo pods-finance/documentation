@@ -72,7 +72,7 @@
 
 ## User Guides
 
-* [Walk-through videos](user-guides/video-guides.md)
+* [Videos](user-guides/video-guides.md)
 
 ## Security
 
