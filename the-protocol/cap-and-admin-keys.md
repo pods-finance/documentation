@@ -36,5 +36,5 @@ The admin is capable of:
 
 ## Architecture
 
-![System Overview](../.gitbook/assets/system-overview-v4.png)
+![System Architecture Design ](../.gitbook/assets/frame-3-1-.png)
 
