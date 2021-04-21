@@ -1,6 +1,12 @@
+---
+description: Find below the list of code audits done in the Pods contracts base.
+---
+
 # Audits
 
-Pods has been implemented with security as priority. The system has been designed to be safe and secure, and we have spent all the necessary resources in order to ensure that the protocol matches the highest security standards.
+{% hint style="warning" %}
+**Disclaimer:** This is an experimental technology, and the existence of code audits does not translate into a guarantee of safety. Beware of the multiple risks in DeFi and never allocate funds that you are not willing to lose. 
+{% endhint %}
 
 ## Audits <a id="audits"></a>
 
