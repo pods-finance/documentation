@@ -54,22 +54,25 @@
   * [OptionAMMFactory](options-amm-overview/options-amm-sm/option-amm-factory.md)
 * [Applied Math](options-amm-overview/examples.md)
 
-## Interfacing with Pods
-
-* [Brand Assets](interfacing-with-pods/brand-assets.md)
-
 ## Developers
 
 * [System Overview](developers/system-overview.md)
 * [Deployed Contracts](developers/deployed-contracts.md)
 * [Dev Environment](developers/dev-environment.md)
 
-## Guides
+## Interfacing with Pods
+
+* [Brand Assets](interfacing-with-pods/brand-assets.md)
+
+## Code Integration Guides <a id="guides"></a>
 
 * [How to Buy](guides/how-to-buy.md)
 * [How to Exercise](guides/how-to-exercise.md)
 * [How to Remove Liquidity](guides/how-to-remove-liquidity.md)
-* [Video Guides](guides/video-guides.md)
+
+## User Guides
+
+* [Walk-through videos](user-guides/video-guides.md)
 
 ## Security
 
