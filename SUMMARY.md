@@ -69,6 +69,7 @@
 * [How to Buy](guides/how-to-buy.md)
 * [How to Exercise](guides/how-to-exercise.md)
 * [How to Remove Liquidity](guides/how-to-remove-liquidity.md)
+* [Video Guides](guides/video-guides.md)
 
 ## Security
 
