@@ -26,17 +26,17 @@ For various other graphic compositions, we release our "elements kit". It contai
 
 ## Diagrams
 
-To explain the journey of a pod option through our system, we release a series of diagrams and sketches explaining the most important steps. 
+To explain the journey of an option through our system, we released a series of diagrams and sketches explaining the most important steps. 
 
 📦 Preview the latest version on Google Drive [here](https://drive.google.com/drive/folders/11w1Ru_e7G60HuCrKrdWPaG9JqEmAEnZS?usp=sharing). 
 
-![Option seller preview \(general\)](../.gitbook/assets/seller_general.png)
+![](../.gitbook/assets/seller_left_general_2x.png)
 
-![Option buyer preview \(general\)](../.gitbook/assets/buyer_general.png)
+![](../.gitbook/assets/buyer_right_general_2x.png)
 
-![Minter preview \(general\)](../.gitbook/assets/minter_general_2x.png)
+![](../.gitbook/assets/minter_left_general_2x.png)
 
-You can find a mobile-friendly version inside the kit. The diagrams will showcase the flow for buyer, seller and minter for both puts and calls. There will also be a general flow \(the one uploaded above\). 
+You can find a mobile-friendly version inside the kit. The diagrams will showcase the flow for buyer, seller and minter for both puts and calls. There will also be a general flow \(the one uploaded above\) and a simple version \(without text\) so you can apply your own explanations.
 
 ## Platform Kit
 
