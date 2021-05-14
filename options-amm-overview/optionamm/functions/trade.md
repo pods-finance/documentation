@@ -37,7 +37,7 @@ And will get in return the updated option price \($$P_i)$$ based on the current 
 
 $$\displaystyle poolAmountA = \min\left\{TB_{A};\frac{TB_{B}}{P_i}\right\}$$ 
 
-$$\displaystyle poolAmountB = \min\left\{TB_{A};{TB_{A}}\cdot {P_i}\right\}$$ 
+$$\displaystyle poolAmountB = \min\left\{TB_{B};{TB_{A}}\cdot {P_i}\right\}$$ 
 
 ![\_getPoolAmounts at OptionAMMPool.sol](../../../.gitbook/assets/screen-shot-2021-01-13-at-03.00.16.png)
 
