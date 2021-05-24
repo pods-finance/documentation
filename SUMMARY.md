@@ -48,6 +48,7 @@
   * [Pricing](options-amm-overview/optionamm/pricing.md)
   * [Find The Next Sigma](options-amm-overview/optionamm/find-the-next-sigma.md)
   * [Fees](options-amm-overview/optionamm/fees.md)
+  * [Fees \(updated\)](options-amm-overview/optionamm/fees-updated.md)
   * [Scenarios](options-amm-overview/optionamm/scenarios.md)
 * [Smart Contracts](options-amm-overview/options-amm-sm/README.md)
   * [OptionAMMPool](options-amm-overview/options-amm-sm/option-amm-pool.md)
