@@ -6,13 +6,13 @@ description: Find below the functions allowed by the options contracts.
 
 ## Main Functions
 
-Once an option was created, a set of 4 actions can happen within the options contract:
+Once an option is created, a set of 4 actions can happen within the options contract:
 
-* **mint** An option seller can lock collateral in the contract and mint option tokens \(PodCalls or PodPuts\) at any time before expiration.
-* **unmint** An option seller that _minted_ options previously can take action to leave the position at any time before expiration. Option tokens are burned during the _unmint_ process. If the option is American and any exercise happened between the moment the mint and the unmint, the seller will receive the collateral that was previously locked in the contract during the minting process. 
-* **exercise** An option buyer that holds options tokens in a wallet can call the exercise function during the exercise period. The contract will require the user to send options tokens and the strike asset \(in the case of a call\) or the underlying asset \(in the case of a put\) to unlock the collateral. The exercise period in an American option is equal to the options life and in a European option is only available during the exercise window. 
+* **mint** Users can lock collateral in the contract and mint \(or create\) option tokens \(PodCalls or PodPuts\) at any time before expiration.
+* **unmint** A user that _minted_ options previously can take action to leave the position at any time before expiration. To do so, the user must hold the options tokens amount in their wallet to unlock the unmint function. If the user sold those options previously they can buy them back on the AMM and leave the position. Option tokens are burned during the _unmint_ process. If the option is American and any exercise happened between the moment the mint and the unmint, the seller will receive the collateral that was previously locked in the contract during the minting process. 
+* **exercise** A user that bought or received options \(but not created\) in a wallet can call the exercise function during the exercise period. The contract will require the user to send options tokens and the strike asset \(in the case of a call\) or the underlying asset \(in the case of a put\) to unlock the collateral. Users can exercise American options at any time until expiration or European options during the exercise window period.
 * **withdraw**  
-  An option seller that previously minted options can withdraw the eligible funds after expiration. The withdrawal may be composed of a combination of strike assets and underlying assets. 
+  A user that previously minted options can withdraw the eligible funds after expiration. The withdrawal may be composed of a combination of strike assets and underlying assets. 
 
  
 
