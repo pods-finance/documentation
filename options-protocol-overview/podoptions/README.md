@@ -85,7 +85,7 @@ $$PutCollateral = StrikePrice*MintedOptions$$
 
 ### Comparing Collateral
 
-Note that the parameters are the same for calls and puts, and what changes is the collateral asset. Since we are doing physical settlement, it is crucial to make sure the options hold 100% of the maximum amount that the contract represents. Both calls and puts have to be fully collateralized.
+Note that the parameters are the same for calls and puts, and what changes is the collateral asset. Since we are doing a physical settlement, it is crucial to make sure the options hold 100% of the maximum amount that the contract represents. Both calls and puts have to be fully collateralized.
 
 #### Calls
 
