@@ -6,7 +6,7 @@ description: >-
 
 # Safety Measures
 
-There are many risks associated with Defi protocols, and Pods Protocol is no different. Users must be aware of them when using any decentralized application and never allocate funds they are unwilling to lose completely.
+There are many risks associated with DeFi protocols, and Pods Protocol is no different. Users must be aware of them when using any decentralized application and never allocate funds they are unwilling to lose completely.
 
 Pods will launch the protocol on mainnet in phases. The different phases is an attempt to increase users' safety and limit the community's losses in a bug, hack or exploit's situation. Safety measures allow for an interactive launch of a full-featured product with limited liquidity.
 
