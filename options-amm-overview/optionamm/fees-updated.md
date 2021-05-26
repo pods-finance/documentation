@@ -4,7 +4,7 @@ description: >-
   fee.
 ---
 
-# Fees v2
+# Fees
 
 The AMM contract charges a 2% base fee \(baseFee\) on every trade that happens in the pool. Additionally, an exponential fee \(dynamicFee\) is added to the base fee to deter economic attacks. 
 
@@ -65,7 +65,7 @@ A user wants to buy 3 options out of a pool of 30 options \( we will be using`ex
 A user has 50 USDC and wants to buy all of it in options \(will use `exactInputB`\)
 
 * The contract will calculate the new option price using BS per unit.
-* Before calculating the total price based on the transaction amount, the contract will calculate the total fees in the total amount of token B the user is using \(50\*0.04=2\) and use the discounted amount\(50-2=48\) to calculate the total price. 
+* Before calculating the total price based on the transaction amount, the contract will calculate the total fees in the total amount of token B the user is using \(50\*0.04=2\) and use the discounted amount \(50-2=48\) to calculate the total price. 
 * The total fee gets cut in half \(2/2\) and sent to feePoolA and feePoolB in equal amounts.
 
   \*\*\*\*
