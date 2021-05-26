@@ -44,7 +44,7 @@ By allowing single-sided liquidity provision, it is possible to have many differ
 
 There are many ways Pods can be used in the broader Ethereum ecosystem. One example is:
 
-* The open-source, accessible nature of the protocols developed at Pods means countless UX experiments and front-ends were built to offer access to Pods Protocol.
+* The open-source, accessible nature of the protocol developed at Pods means that developers from all over the world can integrate with our functionalities and experiment with new products, apps and front-ends. 
 
 
 
