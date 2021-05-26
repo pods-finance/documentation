@@ -1,5 +1,5 @@
 ---
-description: See below how options contracts rules were translated into ERC20 tokens.
+description: See below how options contracts rules are expressed into ERC20 tokens.
 ---
 
 # Overview
