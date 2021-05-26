@@ -8,7 +8,7 @@ description: >-
 
 There are many risks associated with Defi protocols, and Pods Protocol is no different. Users must be aware of them when using any decentralized application and never allocate funds they are unwilling to lose completely.
 
-Pods will launch the protocol on mainnet with a Guarded Launch. The Guarded Launch attempts to increase users' safety and limit the community's losses in a bug, hack or exploit's situation. Safety measures allow for an interactive launch of a full-featured product with limited liquidity.
+Pods will launch the protocol on mainnet in phases. The different phases is an attempt to increase users' safety and limit the community's losses in a bug, hack or exploit's situation. Safety measures allow for an interactive launch of a full-featured product with limited liquidity.
 
 Currently, the measures include the existence and control of **admin keys** and **caps.**
 
@@ -33,6 +33,8 @@ The admin is capable of:
   * Addresses are kept by the ConfigurationManager contract, which itself is secured by a multi-sig wallet.
 * **Emergency Stop**
   * The Emergency Stop power describes the ability to pause and resume all the OptionAMMPool contract operations \(add liquidity, trade, or remove liquidity\).
+* **Increase or decrease the Implied Volatility provided to the calculation of the Weighted Average IV**
+  * Holding this power allows us to work around problems like Implied Volatility manipulation on the AMM.
 
 ## Architecture
 
