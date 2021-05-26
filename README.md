@@ -6,7 +6,7 @@ description: "\U0001F44B Welcome to Pods' docs. This documentation aims to provi
 
 ## What is Pods?
 
-Pods is a **decentralized non-custodial options protocol** that allows users to create calls and or puts and trade them in the **Options AMM**. Pods is implemented in a system of non-upgradable smart contracts in the Ethereum Blockchain.
+Pods is a **decentralized non-custodial options protocol** that allows users to create calls and/or puts and trade them in the **Options AMM**. Pods is implemented in a system of non-upgradable smart contracts on the Ethereum Blockchain.
 
 DeFi options users confront three major pain points today:
 
