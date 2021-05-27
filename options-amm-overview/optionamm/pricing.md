@@ -87,7 +87,7 @@ We're leveraging Chainlink to update the underlying asset spot price.
 
 The contract will calculate how long it will take until the expiration date. 
 
-#### 3. Check latest sigma \($$IV_{i-1}$$\)
+#### 3. Check latest IV \($$IV_{i-1}$$\)
 
 The previous \(or initial\) calculated price saved an $$IV_i$$ factor of that time. This IV factor now is $$IV_{i-1}$$since a period has passed. This factor will be used as an input to calculate the new option price. Using the last period's IV means that the price always has a 1-period delay to its IV. 
 
@@ -111,9 +111,9 @@ For more details, check [Trade](functions/trade.md).
 
 For more details, check [Trade](functions/trade.md).
 
-#### 4. Guess new sigma \($$IV_i$$\) and store it in the contract for the next trade.
+#### 4. Guess new IV \($$IV_i$$\) and store it in the contract for the next trade.
 
-After the trade, the pool's inventory changed, and it represents a new "virtual price." This price is used to guess the new sigma after the trade. In the next trade, the sigma calculated now will be used to calculate a new price then. If you want to deep dive into this topic, check our Find next sigma section.
+After the trade, the pool's inventory changed, and it represents a new "virtual price." This price is used to guess the new IV after the trade. In the next trade, the IV calculated now will be used to calculate a new price then. If you want to deep dive into this topic, check our Find next IV section.
 
 ### Pricing Flow
 

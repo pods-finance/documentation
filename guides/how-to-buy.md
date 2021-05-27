@@ -107,7 +107,7 @@ the last parameter of the tradeExactAOutput function.
  uint256 exactAmountAOut - Amount of options to buy
  uint256 maxAmountBIn - Slippage control
  address owner - Amount of options to buy
- uint256 sigmaInitialGuess - mewIV found in previous step
+ uint256 ivInitialGuess - mewIV found in previous step
 */
 // Examples below;
 optionAMMPool.tradeExactAOutput(

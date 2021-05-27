@@ -25,7 +25,7 @@ The contract will supply our BS implementation with the following data:
 * time to maturity
 * strike price
 * risk-free rate
-* last sigma \($$IV_{i-1}$$\)
+* last IV \($$IV_{i-1}$$\)
 
 And will get in return the updated option price \($$P_i)$$ based on the current market scenario.
 
@@ -53,11 +53,11 @@ $$k=poolAmountA*poolAmountB$$
 
 #### d\) Calculate new option unit price \(aka target price\)
 
-The target price will be the input for the SigmaGuesser contract.
+The target price will be the input for the IVGuesser contract.
 
 #### $$\displaystyle TargetPrice_i=\frac{poolAmountB-B_i}{poolAmountA+A_i}$$
 
-This part of our system is responsible for finding the new sigma \(IV\) based on the new option target price. It uses a numerical method to do that. If you want to deep dive into how it works, check the section Sigma Guesser.
+This part of our system is responsible for finding the new IV \(IV\) based on the new option target price. It uses a numerical method to do that. If you want to deep dive into how it works, check the section IVGuesser.
 
 ![](../../../.gitbook/assets/screen-shot-2021-04-01-at-22.58.39.png)
 
@@ -65,9 +65,9 @@ This part of our system is responsible for finding the new sigma \(IV\) based on
 Note that on the contract level, for each of our 4 trade functions \(`exactAInput / exactAOutput / exactBInput / exactBOutput`\) the functions above are slightly different.
 {% endhint %}
 
-### 3. Calculate new sigma based on the new unit price
+### 3. Calculate new IV based on the new unit price
 
-This part of our system is responsible for finding the new sigma \(IV\) based on the new option target price. It uses a numerical method to do that. If you want to deep dive into this topic, you can check our Find the next sigma section.
+This part of our system is responsible for finding the new IV \(IV\) based on the new option target price. It uses a numerical method to do that. If you want to deep dive into this topic, you can check our Find the next IV section.
 
 ![newIV variable on any of the trade functions at OptionAMMPool](../../../.gitbook/assets/screen-shot-2021-01-13-at-03.09.59.png)
 
