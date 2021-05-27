@@ -53,9 +53,9 @@ Since we do not have libraries to deal with normal distribution functions, and o
 
 ### IVProvider
 
-Contract responsible for finding the `OracleIV` of a given option. That IV will represent the external market IV of a given option, taking into account the option strike price, maturity, and underlying asset. As of now, the oracle is updated by the team \(admin keys\) since the current solutions for IV oracles are nascent. The weight of the Oracle IV can be reduced in big liquidity scenarios or increased, in low liquidity scenarios. We looking forward to exploring TWAPs solutions in the future. This way users would need to do even more large transactions to manipulate the Pool's IV. 
+Contract responsible for finding the `OracleIV` of a given option. That IV will represent the external market IV of a given option, taking into account the option strike price, maturity, and underlying asset. As of now, the oracle is updated by the team \(admin keys\) since the current solutions for IV oracles are nascent. The weight of the Oracle IV can be reduced in big liquidity scenarios or increased, in low liquidity scenarios. We looking forward to exploring TWAP solutions in the future. This way users would need to do even more large transactions to manipulate the Pool's IV. 
 
-* getiV\(\)
+* getIV\(\)
 * updateIV\(\)
 * setUpdater\(\)
 
