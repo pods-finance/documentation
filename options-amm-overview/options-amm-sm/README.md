@@ -1,6 +1,6 @@
 # Smart Contracts
 
-![AMM Architecture](../../.gitbook/assets/options-amm-v3-2-.png)
+![Options AMM contracts diagram](../../.gitbook/assets/options-amm-v4-1-.png)
 
 ## Main contracts
 
@@ -13,7 +13,7 @@ Contract responsible for creating/deploying new AMM pair pools. It has only the 
 
 ### Configuration Manager
 
-Contract responsible for managing all the addresses for the auxiliary contracts. It contains BlackScholes, Sigma, NormalDistribution, and Price Provider setters and getters.
+Contract responsible for managing all the addresses for the auxiliary contracts. It contains BlackScholes, IVGuesser, IVProvider, NormalDistribution, and Price Provider setters and getters.
 
 ### OptionAMMPool
 
@@ -28,7 +28,6 @@ The contract pool responsible for trade, add and remove liquidity of a pair `Pod
 * getUserBalance\(\)
 * getPoolBalances\(\)
 * getRemoveLiquidityAmounts\(\)
-* getMaxRemoveLiquidityAmounts\(\)
 
 ## Auxiliary Contracts
 
@@ -39,11 +38,11 @@ Contract responsible for the calculation of the BlackScholes formula for Puts an
 * getCallPrice\(\)
 * getPutPrice\(\)
 
-### SigmaGuesser
+### IVGuesser
 
-To find the sigma \(also known as implied volatility or IV\) for a given price is not trivial. We need to use a numeric method. This contract is responsible for the interaction process that will find the sigma given a `targetPrice` depending if the option is a Call or a Put. For gas cost purposes, a variable called `sigmaInitialGuess` can be passed to help the numeric method converge faster.
+To find the IV \(also known as sigma\) for a given price is not trivial. We need to use a numeric method. This contract is responsible for the interaction process that will find the IV given a `targetPrice` depending if the option is a Call or a Put. For gas cost purposes, a variable called `IVInitialGuess` can be passed to help the numeric method converge faster.
 
-* getCallSigma\(\)
+* getCallIV\(\)
 * getCallPut\(\)
 
 ### NormalDistribution
@@ -51,6 +50,36 @@ To find the sigma \(also known as implied volatility or IV\) for a given price i
 Since we do not have libraries to deal with normal distribution functions, and our goal is to be as cost-efficient as possible, we can use  this contract to find probabilities given a Z using:
 
 * getProbability\(\)
+
+### IVProvider
+
+Contract responsible for finding the `OracleIV` of a given option. That IV will represent the external market IV of a given option, taking into account the option strike price, maturity, and underlying asset. As of now, the oracle is updated by the team \(admin keys\) since the current solutions for IV oracles are nascent. The weight of the Oracle IV can be reduced in big liquidity scenarios or increased, in low liquidity scenarios. We looking forward to exploring TWAPs solutions in the future. This way users would need to do even more large transactions to manipulate the Pool's IV. 
+
+* getiV\(\)
+* updateIV\(\)
+* setUpdater\(\)
+
+### PriceProvider
+
+Contract responsible for finding the `spotPrice` of a given asset that the `priceFeed` was previously registered. This contract can interact with many different price sources and even create an average between feeds. You can use it calling:
+
+* getPriceFeed\(\)
+* latestRoundData\(\)
+* getAssetPrice\(\)
+* getAssetDecimals\(\)
+* setAssetFeeds\(\)
+* removeAssetFeeds\(\)
+
+### PriceProvider
+
+Contract responsible for finding the `spotPrice` of a given asset that the `priceFeed` was previously registered. This contract can interact with many different price sources and even create an average between feeds. You can use it calling:
+
+* getPriceFeed\(\)
+* latestRoundData\(\)
+* getAssetPrice\(\)
+* getAssetDecimals\(\)
+* setAssetFeeds\(\)
+* removeAssetFeeds\(\)
 
 ### PriceProvider
 
