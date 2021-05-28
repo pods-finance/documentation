@@ -23,7 +23,7 @@ For simplicity, let's acknowledge that the option price is a function that requi
 
 $$P_i=f_p({IV_{i-1}},{MarketData_i})$$ 
 
-For more details about the pricing formula or its contract implementation for pricing the options, check [this section](https://app.gitbook.com/@pods-finance-1/s/teste/~/drafts/-MNH5EfMIG3zYkpvevUc/options-amm-overview/optionamm/pricing). 
+For more details about the pricing formula or its contract implementation for pricing the options, check [this section](../pricing.md). 
 
 ![ABPrice variable on \_addLiquidity at AMM.sol](../../../.gitbook/assets/screen-shot-2021-01-13-at-01.52.38.png)
 
