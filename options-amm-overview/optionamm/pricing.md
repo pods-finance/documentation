@@ -174,6 +174,9 @@ Note that on the contract level, for each of our 4 trade functions \(`exactAInpu
 
 At this point, the pool's inventory changed, and it represents a new "virtual price." The IV corresponding to this new virtual price reflects market information of supply and demand for this option. 
 
+### 4. Guess new IV \($$IV_i$$\) and store it in the contract for the next trade.
+
+After the trade, the pool's inventory changed, and it represents a new "virtual price." This price is used to guess the new IV after the trade. In the next trade, the IV calculated now will be used to calculate a new price then. If you want to deep dive into this topic, check our Find next IV section.
 So the AMM will input the new target price in the Black Scholes formula and find the new correspondent IV for this price. It uses a specific numerical method applied to Black Scholes. If you want to deep dive into how it works, explore [Find next IV.](https://app.gitbook.com/@pods-finance-1/s/pods_v1/~/drafts/-MakphibKovdOtH2XjQ4/options-amm-overview/optionamm/find-the-next-sigma)
 
 The IV found will be stored in the contracts to later feed the Weighted Average with 25% weight.

@@ -27,7 +27,7 @@ The admin is capable of:
 * **Increasing / Decreasing Cap**
   * The Option Instrument has a cap for the number of options \(tokenA\) users can mint on each live option series. Simultaneously, the Options AMM has a cap for the number of stablecoins \(tokenB\) that can be added as liquidity to the pool. The admin controller can decide the size of the cap at any time during the option's life.
 * **Change contract addresses of the peripherals contracts**
-  * Our core contract **OptionAMMPool** is supplied with data from other sources. For example, spot price feeds Black Scholes to calculate the premium and the next sigma.
+  * Our core contract **OptionAMMPool** is supplied with data from other sources. For example, spot price feeds Black Scholes to calculate the premium and the next IV.
   * Pricing Method, Oracles, and Implied Volatility contracts can be swapped if there's a future iteration with improvements.
   * The admin can change the address of those contracts, but not the logic of the OptionAMMPool itself.
   * Addresses are kept by the ConfigurationManager contract, which itself is secured by a multi-sig wallet.
