@@ -13,7 +13,7 @@ The following properties have to be defined to create a new pool:
 * TokenB
   * In the case of the optionAMM tokenA will always be the stable token.
 * $$IV_0$$
-  * The initial IV of the pool
+  * The initial sigma of the pool
 
 Once a pool was created, the following can happen in a given instant $$i$$:
 

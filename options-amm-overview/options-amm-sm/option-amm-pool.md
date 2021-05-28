@@ -40,10 +40,10 @@ The contract pool responsible for trade, add and remove liquidity of a pair `Pod
       <td style="text-align:left">Contract address of the PriceMethod contract (E.g: BlackScholes)</td>
     </tr>
     <tr>
-      <td style="text-align:left">IVGuesser</td>
+      <td style="text-align:left">impliedVolatility</td>
       <td style="text-align:left">address</td>
       <td style="text-align:left">-</td>
-      <td style="text-align:left">Contract address of the IV (Implied Volatility - IV)</td>
+      <td style="text-align:left">Contract address of the sigma (Implied Volatility - IV)</td>
     </tr>
     <tr>
       <td style="text-align:left">feePoolA</td>
@@ -68,9 +68,9 @@ The contract pool responsible for trade, add and remove liquidity of a pair `Pod
           <li>option strikePrice</li>
           <li>option underlyingAsset</li>
           <li>option type</li>
-          <li>pool current IV (sigma)</li>
+          <li>pool current sigma (IV)</li>
           <li>pool current risk-free rate</li>
-          <li>pool last IV initial guess</li>
+          <li>pool last sigma initial guess</li>
         </ul>
       </td>
     </tr>
@@ -123,7 +123,7 @@ optionAMMPool.addLiquidity(amountOfA, amountOfB, owner);
 {% tab title="Web3" %}
 ```javascript
 // Parameters example
-// You can check our deployed contracts of priceProvider, priceMethod and IV
+// You can check our deployed contracts of priceProvider, priceMethod and Sigma
 const amountOfA = 10000000; // Need to take in consideration asset decimals
 const amountOfB = 10000000000000; // Need to take in consideration asset decimals
 const owner = '0x3ab...';
@@ -194,7 +194,7 @@ optionAMMPool.removeLiquidity(percentA, percentB);
 {% tab title="Web3" %}
 ```javascript
 // Parameters example
-// You can check our deployed contracts of priceProvider, priceMethod and IV
+// You can check our deployed contracts of priceProvider, priceMethod and Sigma
 const amountOfA = 10000000; // Need to take in consideration asset decimals
 const amountOfB = 10000000000000; // Need to take in consideration asset decimals
 
@@ -227,14 +227,14 @@ await optionAMMPool.removeLiquidity(
 
 ### tradeExactAInput
 
-This function represents "selling token A to the pool" or "buying token B from the pool". `msg.sender` is able to trade exact amount of token A in exchange for minimum amount of token B and send the tokens B to the `owner`. After that, this function also updates the `priceProperties.currentIV.`
+This function represents "selling token A to the pool" or "buying token B from the pool". `msg.sender` is able to trade exact amount of token A in exchange for minimum amount of token B and send the tokens B to the `owner`. After that, this function also updates the `priceProperties.currentSigma.`
 
 |  input name | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
 | exactAmountAIn | uint256 | - | Exact amount of A token that will be transfer from `msg.sender` |
 | minAmountBOut | uint256 | - | Minimum acceptable amount of token B to transfer to `owner` |
 | owner | address |  | address that will receive the token in exchange |
-| ivInitialGuess | uint256 | != 0 | For gas cost-saving purpose, it is possible to run getOptinTradedDDetails before the trade in order to send the best iv possible |
+| sigmaInitialGuess | uint256 | != 0 | For gas cost-saving purpose, it is possible to run getOptinTradedDDetails before the trade in order to send the best sigma possible |
 
 {% tabs %}
 {% tab title="Solidity" %}
@@ -247,35 +247,35 @@ OptionAMMPool optionAMMPool = optionAMMPool("/*address*/");
 uint256 exactAmountAIn = 10000000; // Need to take in consideration asset decimals
 uint256 minAmountBOut = 10000000000000; // Need to take in consideration asset decimals
 address owner = 0x3a...
-uint256 ivInitialGuess = 660000000000 // should run getOptionTradeDetails before 
+uint256 sigmaInitialGuess = 660000000000 // should run getOptionTradeDetails before 
 
 optionAMMPool.tradeExactAInput(
     exactAmountAIn, 
     minAmountBOut, 
     owner,
-    ivInitialGuess
+    sigmaInitialGuess
     );
   
 // IOptionAMMPool.sol  
 /**
      * @notice tradeExactAInput msg.sender is able to trade exact amount of token A in exchange for minimum
      * amount of token B and send the tokens B to the owner. After that, this function also updates the
-     * priceProperties.currentIV
+     * priceProperties.currentSigma
      *
-     * @dev ivInitialGuess is a parameter for gas saving costs purpose. Instead of calculating the new IV
+     * @dev sigmaInitialGuess is a parameter for gas saving costs purpose. Instead of calculating the new sigma
      * out of thin ar, caller can help the Numeric Method achieve the result in less iterations with this parameter.
      * In order to know which guess the caller should use, call the getOptionTradeDetailsExactAInput first.
      *
      * @param exactAmountAIn exact amount of A token that will be transfer from msg.sender
      * @param minAmountBOut minimum acceptable amount of token B to transfer to owner
      * @param owner the destination address that will receive the token B
-     * @param ivInitialGuess The first guess that the Numeric Method (getPutIV / getCallIV) should use
+     * @param sigmaInitialGuess The first guess that the Numeric Method (getPutSigma / getCallSigma) should use
      */
     function tradeExactAInput(
         uint256 exactAmountAIn,
         uint256 minAmountBOut,
         address owner,
-        uint256 ivInitialGuess
+        uint256 sigmaInitialGuess
     ) external override beforeExpiration returns (uint256) {}
 ```
 {% endtab %}
@@ -283,14 +283,14 @@ optionAMMPool.tradeExactAInput(
 
 ### tradeExactAOutput
 
-This function represents "buying token A from the pool" or "selling token B to the pool". `owner` is able to receive exact amount of token A in exchange of a max acceptable amount of token B transfer from the `msg.sender`. After that, this function also updates the `priceProperties.currentIV`
+This function represents "buying token A from the pool" or "selling token B to the pool". `owner` is able to receive exact amount of token A in exchange of a max acceptable amount of token B transfer from the `msg.sender`. After that, this function also updates the `priceProperties.currentSigma`
 
 |  input name | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
 | exactAmountAOut | uint256 | - | Exact amount of token A that will be transfer to `owner` |
 | maxAmountBIn | uint256 | - | Maximum acceptable amount of token B to transfer from `msg.sender` |
 | owner | address |  | address that will receive the token in exchange |
-| ivInitialGuess | uint256 | != 0 | For gas cost-saving purpose, it is possible to run getOptionTradedDDetails before the trade in order to send the best IV possible |
+| sigmaInitialGuess | uint256 | != 0 | For gas cost-saving purpose, it is possible to run getOptionTradedDDetails before the trade in order to send the best sigma possible |
 
 {% tabs %}
 {% tab title="Solidity" %}
@@ -303,35 +303,35 @@ OptionAMMPool optionAMMPool = optionAMMPool("/*address*/");
 uint256 exactAmountAOut = 10000000; // Need to take in consideration asset decimals
 uint256 maxAmountBIn = 10000000000000; // Need to take in consideration asset decimals
 address owner = 0x3a...
-uint256 ivInitialGuess = 660000000000 // should run getOptionTradeDetails before 
+uint256 sigmaInitialGuess = 660000000000 // should run getOptionTradeDetails before 
 
 optionAMMPool.tradeExactAOutput(
     exactAmountAOut, 
     maxAmountBIn, 
     owner,
-    ivInitialGuess
+    sigmaInitialGuess
     );
     
 // IOptionAMMPool.sol
 /**
      * @notice _tradeExactAOutput owner is able to receive exact amount of token A in exchange of a max
      * acceptable amount of token B transfer from the msg.sender. After that, this function also updates
-     * the priceProperties.* currentIV
+     * the priceProperties.* currentSigma
      *
-     * @dev ivInitialGuess is a parameter for gas saving costs purpose. Instead of calculating the new IV
+     * @dev sigmaInitialGuess is a parameter for gas saving costs purpose. Instead of calculating the new sigma
      * out of thin ar, caller can help the Numeric Method achieve the result in less iterations with this parameter.
      * In order to know which guess the caller should use, call the getOptionTradeDetailsExactAOutput first.
      *
      * @param exactAmountAOut exact amount of token A that will be transfer to owner
      * @param maxAmountBIn maximum acceptable amount of token B to transfer from msg.sender
      * @param owner the destination address that will receive the token A
-     * @param ivInitialGuess The first guess that the Numeric Method (getPutIV / getCallIV) should use
+     * @param sigmaInitialGuess The first guess that the Numeric Method (getPutSigma / getCallSigma) should use
      */
     function tradeExactAOutput(
         uint256 exactAmountAOut,
         uint256 maxAmountBIn,
         address owner,
-        uint256 ivInitialGuess
+        uint256 sigmaInitialGuess
     ) external returns (uint256)';
 ```
 {% endtab %}
@@ -339,14 +339,14 @@ optionAMMPool.tradeExactAOutput(
 
 ### tradeExactBInput
 
-This function represents "selling token B to the pool" or "buying token A from the pool". `msg.sender` is able to trade exact amount of token B in exchange for minimum amount of token A and send the tokens B to the `owner`. After that, this function also updates the `priceProperties.currentIV.`
+This function represents "selling token B to the pool" or "buying token A from the pool". `msg.sender` is able to trade exact amount of token B in exchange for minimum amount of token A and send the tokens B to the `owner`. After that, this function also updates the `priceProperties.currentSigma.`
 
 |  input name | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
 | exactAmountBIn | uint256 | - | Exact amount of A token that will be transfer from `msg.sender` |
 | minAmountAOut | uint256 | - | Minimum acceptable amount of token B to transfer to `owner` |
 | owner | address |  | address that will receive the token in exchange |
-| ivInitialGuess | uint256 | != 0 | For gas cost-saving purpose, it is possible to run getOptionTradedDDetails before the trade in order to send the best IV possible |
+| sigmaInitialGuess | uint256 | != 0 | For gas cost-saving purpose, it is possible to run getOptionTradedDDetails before the trade in order to send the best sigma possible |
 
 {% tabs %}
 {% tab title="Solidity" %}
@@ -358,34 +358,34 @@ OptionAMMPool optionAMMPool = optionAMMPool("/*address*/");
 uint256 exactAmountBIn = 10000000; // Need to take in consideration asset decimals
 uint256 minAmountAOut = 10000000000000; // Need to take in consideration asset decimals
 address owner = 0x3a...
-uint256 ivInitialGuess = 660000000000 // should run getOptionTradeDetails before 
+uint256 sigmaInitialGuess = 660000000000 // should run getOptionTradeDetails before 
 
 optionAMMPool.tradeExactBInput(
     exactAmountBIn, 
     minAmountAOut, 
     owner,
-    ivInitialGuess
+    sigmaInitialGuess
     );
     
 // IOptionAMMPool.sol
 /**
      * @notice _tradeExactBInput msg.sender is able to trade exact amount of token B in exchange for minimum
-     * amount of token A sent to the owner. After that, this function also updates the priceProperties.currentIV
+     * amount of token A sent to the owner. After that, this function also updates the priceProperties.currentSigma
      *
-     * @dev ivInitialGuess is a parameter for gas saving costs purpose. Instead of calculating the new IV
+     * @dev sigmaInitialGuess is a parameter for gas saving costs purpose. Instead of calculating the new sigma
      * out of thin ar, caller can help the Numeric Method achieve the result ini less iterations with this parameter.
      * In order to know which guess the caller should use, call the getOptionTradeDetailsExactBInput first.
      *
      * @param exactAmountBIn exact amount of token B that will be transfer from msg.sender
      * @param minAmountAOut minimum acceptable amount of token A to transfer to owner
      * @param owner the destination address that will receive the token A
-     * @param ivInitialGuess The first guess that the Numeric Method (getPutIV / getCallIV) should use
+     * @param sigmaInitialGuess The first guess that the Numeric Method (getPutSigma / getCallSigma) should use
      */
     function tradeExactBInput(
         uint256 exactAmountBIn,
         uint256 minAmountAOut,
         address owner,
-        uint256 ivInitialGuess
+        uint256 sigmaInitialGuess
     ) external returns (uint256);
 ```
 {% endtab %}
@@ -393,14 +393,14 @@ optionAMMPool.tradeExactBInput(
 
 ### tradeExactBOutput
 
-This function represents "selling token A to the pool" or "buying token B from the pool". `owner` is able to receive exact amount of token B in exchange of a max acceptable amount of token A transfer from the `msg.sender`. After that, this function also updates the `priceProperties.currentIV`
+This function represents "selling token A to the pool" or "buying token B from the pool". `owner` is able to receive exact amount of token B in exchange of a max acceptable amount of token A transfer from the `msg.sender`. After that, this function also updates the `priceProperties.currentSigma`
 
 |  input name | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
 | exactAmountBOut | uint256 | - | Exact amount of token B that will be transfer to `owner` |
 | maxAmountAIn | uint256 | - | Maximum acceptable amount of token A to transfer from `msg.sender` |
 | owner | address |  | address that will receive the token in exchange |
-| ivInitialGuess | uint256 | != 0 | For gas cost-saving purpose, it is possible to run getOptionTradedDDetails before the trade in order to send the best IV possible |
+| sigmaInitialGuess | uint256 | != 0 | For gas cost-saving purpose, it is possible to run getOptionTradedDDetails before the trade in order to send the best sigma possible |
 
 {% tabs %}
 {% tab title="Solidity" %}
@@ -413,35 +413,35 @@ OptionAMMPool optionAMMPool = optionAMMPool("/*address*/");
 uint256 maxAmountBIn = 10000000; // Need to take in consideration asset decimals
 uint256 exactAmountBOut = 10000000000000; // Need to take in consideration asset decimals
 address owner = 0x3a...
-uint256 ivInitialGuess = 660000000000 // should run getOptionTradeDetails before 
+uint256 sigmaInitialGuess = 660000000000 // should run getOptionTradeDetails before 
 
 optionAMMPool.tradeExactBOutput(
     exactAmountBOut, 
     maxAmountBIn, 
     owner,
-    ivInitialGuess
+    sigmaInitialGuess
     );
     
 // IOptionAMMPool.sol
 /**
      * @notice _tradeExactAOutput owner is able to receive exact amount of token A in exchange of a max
      * acceptable amount of token B transfer from the msg.sender. After that, this function also updates
-     * the priceProperties.* currentIV
+     * the priceProperties.* currentSigma
      *
-     * @dev ivInitialGuess is a parameter for gas saving costs purpose. Instead of calculating the new IV
+     * @dev sigmaInitialGuess is a parameter for gas saving costs purpose. Instead of calculating the new sigma
      * out of thin ar, caller can help the Numeric Method achieve the result in less iterations with this parameter.
      * In order to know which guess the caller should use, call the getOptionTradeDetailsExactAOutput first.
      *
      * @param exactAmountAOut exact amount of token A that will be transfer to owner
      * @param maxAmountBIn maximum acceptable amount of token B to transfer from msg.sender
      * @param owner the destination address that will receive the token A
-     * @param ivInitialGuess The first guess that the Numeric Method (getPutIV / getCallIV) should use
+     * @param sigmaInitialGuess The first guess that the Numeric Method (getPutSigma / getCallSigma) should use
      */
     function tradeExactBOutput(
         uint256 exactAmountBOut,
         uint256 maxAmountAIn,
         address owner,
-        uint256 ivInitialGuess
+        uint256 sigmaInitialGuess
     ) external returns (uint256);
 ```
 {% endtab %}
@@ -530,7 +530,7 @@ function getUserDepositSnapshot(address user)
 
 ### getOptionTradeDetailsExactAInput
 
-View function that simulates a trade, in order the preview `amountBOut`, the new IV \(IV\), that will be used as the `ivInitialGuess` if the caller wants to perform a trade in the sequence. Also returns the amount of Fees that will be paid to liquidity pools A and B.
+View function that simulates a trade, in order the preview `amountBOut`, the new sigma \(IV\), that will be used as the `sigmaInitialGuess` if the caller wants to perform a trade in the sequence. Also returns the amount of Fees that will be paid to liquidity pools A and B.
 
 #### Input Parameters
 
@@ -543,7 +543,7 @@ View function that simulates a trade, in order the preview `amountBOut`, the new
 | Input name | Type | Description |
 | :--- | :--- | :--- |
 | `amountBOut` | uint256 | amount of B in exchange of the `exactAmountAIn` |
-| `newIV` | uint256 | New IV that this trade will result |
+| `newIV` | uint256 | New sigma that this trade will result |
 | `feesTokenA` | uint256 | Amount of fees of collected by token A |
 | `feesTokenB` | uint256 | amount of fees of collected by token B |
 
@@ -562,13 +562,13 @@ optionAMMPool.getOptionTradeDetailsExactAInput(exactAmountAIn);
 // IOptionAMMPool.sol
  /**
      * @notice getOptionTradeDetailsExactAInput view function that simulates a trade, in order the preview
-     * the amountBOut, the new IV (sigma), that will be used as the ivInitialGuess if caller wants to perform
+     * the amountBOut, the new sigma (IV), that will be used as the sigmaInitialGuess if caller wants to perform
      * a trade in sequence. Also returns the amount of Fees that will be payed to liquidity pools A and B.
      *
      * @param exactAmountAIn amount of token A that will by transfer from msg.sender to the pool
      *
      * @return amountBOut amount of B in exchange of the exactAmountAIn
-     * @return newIV the new IV that this trade will result
+     * @return newIV the new sigma that this trade will result
      * @return feesTokenA amount of fees of collected by token A
      * @return feesTokenB amount of fees of collected by token B
      */
@@ -588,7 +588,7 @@ optionAMMPool.getOptionTradeDetailsExactAInput(exactAmountAIn);
 
 ### getOptionTradeDetailsExactAOutput
 
-View function that simulates a trade, in order the preview the `amountBIn`, the new IV \(IV\), that will be used as the `ivInitialGuess` if the caller wants to perform a trade in the sequence. Also returns the amount of Fees that will be paid to liquidity pools A and B.
+View function that simulates a trade, in order the preview the `amountBIn`, the new sigma \(IV\), that will be used as the `sigmaInitialGuess` if the caller wants to perform a trade in the sequence. Also returns the amount of Fees that will be paid to liquidity pools A and B.
 
 #### Input Parameters
 
@@ -601,7 +601,7 @@ View function that simulates a trade, in order the preview the `amountBIn`, the 
 | Input name | Type | Description |
 | :--- | :--- | :--- |
 | `amountBIn` | uint256 | amount of B that will be transfer from `msg.sender` to the pool |
-| `newIV` | uint256 | New IV that this trade will result |
+| `newIV` | uint256 | New sigma that this trade will result |
 | `feesTokenA` | uint256 | Amount of fees of collected by token A |
 | `feesTokenB` | uint256 | amount of fees of collected by token B |
 
@@ -620,13 +620,13 @@ optionAMMPool.getOptionTradeDetailsExactAInput(exactAmountAOut);
 // IOptionAMMPool.sol
 /**
      * @notice getOptionTradeDetailsExactAOutput view function that simulates a trade, in order the preview
-     * the amountBIn, the new IV (sigma), that will be used as the ivInitialGuess if caller wants to perform
+     * the amountBIn, the new sigma (IV), that will be used as the sigmaInitialGuess if caller wants to perform
      * a trade in sequence. Also returns the amount of Fees that will be payed to liquidity pools A and B.
      *
      * @param exactAmountAOut amount of token A that will by transfer from pool to the msg.sender/owner
      *
      * @return amountBIn amount of B that will be transfer from msg.sender to the pool
-     * @return newIV the new IV that this trade will result
+     * @return newIV the new sigma that this trade will result
      * @return feesTokenA amount of fees of collected by token A
      * @return feesTokenB amount of fees of collected by token B
      */
@@ -646,7 +646,7 @@ optionAMMPool.getOptionTradeDetailsExactAInput(exactAmountAOut);
 
 ### getOptionTradeDetailsExactBInput
 
-View function that simulates a trade, in order the preview the `amountAOut`, the new IV \(IV\), that will be used as the `ivInitialGuess` if the caller wants to perform a trade in the sequence. Also returns the amount of Fees that will be paid to liquidity pools A and B.
+View function that simulates a trade, in order the preview the `amountAOut`, the new sigma \(IV\), that will be used as the `sigmaInitialGuess` if the caller wants to perform a trade in the sequence. Also returns the amount of Fees that will be paid to liquidity pools A and B.
 
 #### Input Parameters
 
@@ -659,7 +659,7 @@ View function that simulates a trade, in order the preview the `amountAOut`, the
 | Input name | Type | Description |
 | :--- | :--- | :--- |
 | `amountAOut` | uint256 | amount of A in exchange of the `exactAmountAIn` |
-| `newIV` | uint256 | New IV that this trade will result |
+| `newIV` | uint256 | New sigma that this trade will result |
 | `feesTokenA` | uint256 | Amount of fees of collected by token A |
 | `feesTokenB` | uint256 | amount of fees of collected by token B |
 
@@ -678,13 +678,13 @@ optionAMMPool.getOptionTradeDetailsExactAInput(exactAmountBIn);
 // IOptionAMMPool.sol
  /**
      * @notice getOptionTradeDetailsExactBInput view function that simulates a trade, in order the preview
-     * the amountAOut, the new IV (sigma), that will be used as the ivInitialGuess if caller wants to perform
+     * the amountAOut, the new sigma (IV), that will be used as the sigmaInitialGuess if caller wants to perform
      * a trade in sequence. Also returns the amount of Fees that will be payed to liquidity pools A and B.
      *
      * @param exactAmountBIn amount of token B that will by transfer from msg.sender to the pool
      *
      * @return amountAOut amount of A in exchange of the exactAmountAIn
-     * @return newIV the new IV that this trade will result
+     * @return newIV the new sigma that this trade will result
      * @return feesTokenA amount of fees of collected by token A
      * @return feesTokenB amount of fees of collected by token B
      */
@@ -704,7 +704,7 @@ optionAMMPool.getOptionTradeDetailsExactAInput(exactAmountBIn);
 
 ### getOptionTradeDetailsExactBOutput
 
-View function that simulates a trade, in order the preview the `amountAIn`, the new IV \(IV\), that will be used as the `ivInitialGuess` if the caller wants to perform a trade in the sequence. Also returns the amount of Fees that will be paid to liquidity pools A and B.
+View function that simulates a trade, in order the preview the `amountAIn`, the new sigma \(IV\), that will be used as the `sigmaInitialGuess` if the caller wants to perform a trade in the sequence. Also returns the amount of Fees that will be paid to liquidity pools A and B.
 
 #### Input Parameters
 
@@ -717,7 +717,7 @@ View function that simulates a trade, in order the preview the `amountAIn`, the 
 | Input name | Type | Description |
 | :--- | :--- | :--- |
 | `amountAIn` | uint256 | amount of A that will be transfer from `msg.sender` to the pool |
-| `newIV` | uint256 | New IV that this trade will result |
+| `newIV` | uint256 | New sigma that this trade will result |
 | `feesTokenA` | uint256 | Amount of fees of collected by token A |
 | `feesTokenB` | uint256 | amount of fees of collected by token B |
 
@@ -736,13 +736,13 @@ optionAMMPool.getOptionTradeDetailsExactAInput(exactAmountBOut);
 // IOptionAMMPool.sol
 /**
      * @notice getOptionTradeDetailsExactBOutput view function that simulates a trade, in order the preview
-     * the amountAIn, the new IV (sigma), that will be used as the ivInitialGuess if caller wants to perform
+     * the amountAIn, the new sigma (IV), that will be used as the sigmaInitialGuess if caller wants to perform
      * a trade in sequence. Also returns the amount of Fees that will be payed to liquidity pools A and B.
      *
      * @param exactAmountBOut amount of token B that will by transfer from pool to the msg.sender/owner
      *
      * @return amountAIn amount of B that will be transfer from msg.sender to the pool
-     * @return newIV the new IV that this trade will result
+     * @return newIV the new sigma that this trade will result
      * @return feesTokenA amount of fees of collected by token A
      * @return feesTokenB amount of fees of collected by token B
      */

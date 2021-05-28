@@ -12,8 +12,7 @@ If you need development support, join the \#developers channel on our [Pods comm
 | WPodFactory | [JSON]() | [0x0]() |
 | OptionAMMFactory | [JSON]() | [0x]() |
 | BlackScholes |  |  |
-| IVProvider |  |  |
-| IVGuesser |  |  |
+| Sigma |  |  |
 | PriceProvider |  |  |
 | NormalDistribution |  |  |
 {% endtab %}
@@ -25,8 +24,7 @@ If you need development support, join the \#developers channel on our [Pods comm
 | OptionAMMFactory | JSON | 0x1e4e2b156Bd15Db135c5F6F1f0adda4c185E8A3f |
 | OptionExchange | JSON | 0xEEd8e4824465a87d356e35B5ceB7Ab46A8a4B161 |
 | BlackScholes | JSON | 0x268238Fc16545298DE942DB6CA4A45D8D7ae5954 |
-| IVProvider | JSON | 0x80473756DF77b64EccC0008656e97cd5f64F066d |
-| IVGuesser | JSON | 0x80473756DF77b64EccC0008656e97cd5f64F066d |
+| Sigma | JSON | 0x80473756DF77b64EccC0008656e97cd5f64F066d |
 | NormalDistribution | JSON | 0x9074262d11c69F8001c4F5f773D16cc503db5AE3 |
 | PriceProvider | JSON | 0xD913AA8E5b443866c719EA36Eb447ebE96CC0144 |
 {% endtab %}

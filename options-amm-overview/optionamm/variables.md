@@ -116,7 +116,7 @@ Find below the variables matching with the contract names.
 | $$Fv_{du}$$  | `UserDepositSnapshot.fImp` | `AMM.sol` |
 | $$P_i$$ | `ABPrice` | `AMM.sol` |
 | $$f_p$$  | `_getABPrice()` | `AMM.sol` |
-| $$IV_{i-1}$$  | `PriceProperties.currentIV` | `OptionAMMPool.sol` |
+| $$IV_{i-1}$$  | `PriceProperties.currentSigma` | `OptionAMMPool.sol` |
 | $$IV_i$$  | `newIV` | `OptionAMMPool.sol` |
 | $$A_i$$   | `exactAmountAIn / exactAmountAOut / amountAIn / amountAOut` | `AMM.sol` |
 | \`\`$$B_i$$  | `exactAmountBIn / exactAmountBOut / amountBIn / amountBOut` | `AMM.sol` |

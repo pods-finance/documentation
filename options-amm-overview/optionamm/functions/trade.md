@@ -23,7 +23,7 @@ The contract will supply our BS implementation with the following data:
 * time to maturity
 * strike price
 * risk-free rate
-* last IV \($$IV_{i-1}$$\)
+* last sigma \($$IV_{i-1}$$\)
 
 And will get in return the updated option price \($$P_i)$$ based on the current market scenario.
 
@@ -51,11 +51,9 @@ $$k=poolAmountA*poolAmountB$$
 
 #### d\) Calculate new option unit price \(aka target price\)
 
-The target price will be the input for the IVGuesser contract.
+The target price will be the input for the SigmaGuesser contract.
 
 #### $$\displaystyle TargetPrice_i=\frac{poolAmountB-B_i}{poolAmountA+A_i}$$
-
-This part of our system is responsible for finding the new IV \(IV\) based on the new option target price. It uses a numerical method to do that. If you want to deep dive into how it works, check the section IVGuesser.
 
 ![](../../../.gitbook/assets/screen-shot-2021-04-01-at-22.58.39.png)
 

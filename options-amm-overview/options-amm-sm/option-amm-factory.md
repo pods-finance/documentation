@@ -17,7 +17,7 @@ Returns a new instance of OptionAMMPool.
 | \_priceProvider | address | - | Contract address of the PriceProvider contract for spotPrice |
 | \_priceMethod | address | - | Contract address of the PriceMethod contract \(E.g: BlackScholes\) |
 | \_sigma | address | - | Contract address of the sigma \(Implied Volatility - IV\)  |
-| \_initialIV | uint256 |  | The Initial number of IV \(Implied Volatility\) with 18 decimals |
+| \_initialSigma | uint256 |  | The Initial number of sigma \(Implied Volatility\) with 18 decimals |
 
 {% tabs %}
 {% tab title="Solidity" %}
@@ -26,14 +26,14 @@ Returns a new instance of OptionAMMPool.
 OptionAMMFactory optionAMMFactory = OptionAMMFactory("/*address*/");
 
 // Parameters example
-// You can check our deployed contracts of priceProvider, priceMethod and IV
+// You can check our deployed contracts of priceProvider, priceMethod and Sigma
 address optionAddress = 0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48; 
 address stableAsset = 0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48; 
 address priceProvider = 0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48; 
 address priceMethod = 0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48; 
-address ivGuesser = 0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48;
+address sigma = 0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48;
 
-address initialIV = '660000000000000000;  // 66% with 18 decimals
+address initialSigma = '660000000000000000;  // 66% with 18 decimals
 
 
 
