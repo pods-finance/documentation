@@ -118,7 +118,7 @@ We're leveraging Chainlink to update the underlying asset spot price.
 
 The contract will calculate how long it will take until the expiration date. 
 
-#### c\) Check latest sigma \($$IV_{i-1}$$\) or Updated Weighted Average IV
+#### c\) Check latest IV \($$IV_{i-1}$$\) or Updated Weighted Average IV
 
 The previous \(or initial\) calculated price saved an $$IV_i$$ factor of that time. This IV factor now is $$IV_{i-1}$$since a period has passed. This IV will be used in the Weighted Average IV calculation and the result of the weighted average will calculate the new option theoretical Black Scholes price. 
 
@@ -162,7 +162,7 @@ Calculating the new virtual price \(aka target price\) based on the inventory im
 
 #### $$\displaystyle TargetPrice_i=\frac{poolAmountB-B_i}{poolAmountA+A_i}$$
 
-The target price will be the input for the SigmaGuesser contract.
+The target price will be the input for the IVGuesser contract.
 
 ![](../../.gitbook/assets/screen-shot-2021-04-01-at-22.58.39.png)
 
