@@ -10,7 +10,7 @@ Pods is a **decentralized non-custodial options protocol** that allows users to 
 
 DeFi options users confront three major pain points today:
 
-* Users hold portfolios of volatile assets and want to hedge their risk to make sure they will keep their funds even in a black swan event. 
+* Users hold portfolios of volatile assets and want to hedge their risk to make sure they can keep their funds even in a black swan event. 
 * Placing and managing options orders in decentralized order books can be costly, and the current solutions are not liquid enough to compensate for the gas cost.
 * Providing options tokens as liquidity in Uniswap may translate into severe impermanent loss since it can only update the price based on a limited amount of inputs. That also means that users may not find reasonable market prices for buying or selling options in Uniswap.
 

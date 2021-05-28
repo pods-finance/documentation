@@ -4,8 +4,6 @@ description: Trade function step-by-step
 
 # Trade
 
-
-
 When, in a given instant $$i$$, a trade is initiated and the contract will check the following parameters to proceed:
 
 * Trade direction \(from token A to token B or the opposite\).
@@ -65,9 +63,13 @@ This part of our system is responsible for finding the new IV \(IV\) based on th
 Note that on the contract level, for each of our 4 trade functions \(`exactAInput / exactAOutput / exactBInput / exactBOutput`\) the functions above are slightly different.
 {% endhint %}
 
-### 3. Calculate new IV based on the new unit price
+### 3. Find new IV correspondent to the new unit price
 
-This part of our system is responsible for finding the new IV \(IV\) based on the new option target price. It uses a numerical method to do that. If you want to deep dive into this topic, you can check our Find the next IV section.
+At this point, the pool's inventory changed, and it represents a new "virtual price." The IV corresponding to this new virtual price reflects market information of supply and demand for this option. 
+
+So the AMM will input the new target price in the Black Scholes formula and find the new correspondent IV for this price. It uses a specific numerical method applied to Black Scholes. If you want to deep dive into how it works, explore [Find next IV.](https://app.gitbook.com/@pods-finance-1/s/pods_v1/~/drafts/-MakphibKovdOtH2XjQ4/options-amm-overview/optionamm/find-the-next-sigma)
+
+The IV found will be stored in the contracts to later feed the Weighted Average with 25% weight. 
 
 ![newIV variable on any of the trade functions at OptionAMMPool](../../../.gitbook/assets/screen-shot-2021-01-13-at-03.09.59.png)
 

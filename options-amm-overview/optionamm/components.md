@@ -8,8 +8,8 @@ description: This page will go over the components of the AMM and how they inter
 
 The Options AMM has four properties:
 
-1. The AMM will programmatically update the IV to reduce arbitrage opportunities. 
-2. The AMM allows for single-sided liquidity provision using exposure and not position point of view.
+1. The AMM will programmatically update the IV to price options more accurately according to market changes.
+2. The AMM allows for single-sided liquidity provision using an exposure position point of view.
 3. If there is no inventory imbalance, canceling trades \(not reflecting any arbitrage opportunity\) or price changes due to price calculations should not take nor add any value from or to the liquidity providers.
 4. Any gain or loss of the AMM pool should impact the LPs fairly across time.
 
@@ -23,7 +23,7 @@ Consider the case: when a user added liquidity to the pool, the $$F_{v_{i}}$$at 
 
 In short, we need this number to compare how the pool changed over time. By the moment of withdrawing, we'll compare the pool's factor to the user's factor \(got on a snapshot at the moment of entry into the pool\) and estimate if that resulted in a gain or loss. The user can experience an impermanent loss or gain depending on the moment they entered and what happened to the pool while they were there. It is important to highlight that even if a pool has an impermanent loss, a user that just joined will not face immediate impermanent loss. Instead, each user will have its own path of impermanent loss or gain calculation in a pool.
 
-The pool's value factor \($$F_{v_{i}}$$\) is always equals to 1 in the opening of the pool, representing initial balance in the pool.   
+The pool's value factor \($$F_{v_{i}}$$\) is always equals to 1 in the opening of the pool, representing the initial balance in the pool.   
 If $$i=0$$ , $$Fv_i=1$$ 
 
 Actions such as adding liquidity, re-add liquidity, and remove liquidity do not impact the $$F_{v_{i}}$$ since they impact equally the factors of $$TB$$and $$DB$$. Instead, what impacts this factor is the trades that may happen in the pool. 
@@ -63,7 +63,7 @@ $$UB_{F_{u}}=F_{v_i}$$
 
 ### Pool's Deamortized Balances
 
-The Deamortized Balance, $$DB_{A_i}$$and $$DB_{B_i}$$, are representations of what the pool owe's to the LPs. That could be seen as storing the original deposits provided by the LPs. 
+The Deamortized Balance, $$DB_{A_i}$$and $$DB_{B_i}$$, are representations of what the pool owe's to the LPs. One could understand this factor as the virtual debt the pool has with liquidity providers. That could be seen as storing the original deposits provided by the LPs.
 
 They are calculated upon the events of adding liquidity, re-adding liquidity, and removing liquidity. 
 
