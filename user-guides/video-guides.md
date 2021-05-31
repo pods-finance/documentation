@@ -11,6 +11,7 @@ description: >-
 * \*\*\*\*[**How to Get Mumbai Faucet**](video-guides.md#how-to-get-mumbai-faucet)
 * \*\*\*\*[**How to Buy?**](video-guides.md#how-to-buy)
 * \*\*\*\*[**How to Sell?**](video-guides.md#how-to-sell)
+* \*\*\*\*[**How to Provide Liquidity?**](https://youtu.be/seS5rZWhkoc)\*\*\*\*
 
 ### How to Connect your Wallet and Get Kovan Faucet
 
@@ -39,6 +40,10 @@ description: >-
 ### How to Sell?
 
 {% embed url="https://www.youtube.com/watch?v=EfrwUHivI0w" %}
+
+### How to Provide Liquidity?
+
+{% embed url="https://youtu.be/seS5rZWhkoc" %}
 
 
 
