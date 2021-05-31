@@ -6,7 +6,7 @@ description: See below how options contracts rules are expressed into ERC20 toke
 
 ## Financial Instrument
 
-Options, like any other derivative, have specific [contract rules](https://app.gitbook.com/@pods-finance-1/s/teste/~/drafts/-MUJTxilQ4CgSOs_VLiH/understand-options/how-options-work). 
+Options, like any other derivative, have specific [contract rules](https://docs.pods.finance/understand-options/how-options-work). 
 
 > PodOption is our primitive. They can be either PodPuts or PodCalls.
 
@@ -71,7 +71,7 @@ is a different series than
 
 ## Parameters
 
-To deploy a new option, one needs to describe the following parameters in the [factory contract](https://app.gitbook.com/@pods-finance-1/s/teste/~/drafts/-MUJTxilQ4CgSOs_VLiH/options-protocol-overview/options-smartcontracts/podfactory):
+To deploy a new option, one needs to describe the following parameters in the [factory contract](https://docs.pods.finance/understand-options/how-options-workhttps://docs.pods.finance/options-protocol-overview/options-smartcontracts/podfactory):
 
 * name
 * symbol
@@ -84,7 +84,7 @@ To deploy a new option, one needs to describe the following parameters in the [f
 
 ## Functions
 
-After creating a new option \(either being a Put or a Call\), there are [four main actions](https://app.gitbook.com/@pods-finance-1/s/teste/~/drafts/-MUJTxilQ4CgSOs_VLiH/options-protocol-overview/podoptions/functions) one can take using the basic contract structure:
+After creating a new option \(either being a Put or a Call\), there are [four main actions](https://docs.pods.finance/understand-options/how-options-workhttps://docs.pods.finance/options-protocol-overview/options-smartcontracts/podfactoryhttps://docs.pods.finance/options-protocol-overview/podoptions/functions) one can take using the basic contract structure:
 
 * `mint`
 * `unmint`
@@ -117,7 +117,7 @@ That is possible due to our architecture, which stores `shares` based on the use
 
 ### Options Pricing
 
-Pricing is a function of the [AMM component.](https://app.gitbook.com/@pods-finance-1/s/teste/~/drafts/-MUJTxilQ4CgSOs_VLiH/options-amm-overview/optionamm)
+Pricing is a function of the [AMM component.](https://docs.pods.finance/understand-options/how-options-workhttps://docs.pods.finance/options-protocol-overview/options-smartcontracts/podfactoryhttps://docs.pods.finance/options-protocol-overview/podoptions/functionshttps://docs.pods.finance/options-amm-overview/optionamm)
 
 ### Exercise Window
 

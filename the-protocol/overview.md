@@ -27,12 +27,12 @@ The Options Instrument only defines the functions that will impact the creation 
 
 ### **Options AMM**
 
-Pricing and trading options tokens happen in the [options AMM](https://app.gitbook.com/@pods-finance-1/s/teste/options-amm-overview/introduction). For that to happen, the Options AMM:
+Pricing and trading options tokens happen in the [options AMM](https://docs.pods.finance/options-amm-overview/optionamm). For that to happen, the Options AMM:
 
 * Enables single-sided liquidity provision.
 * Algorithmically prices the options using Black Scholes.
 * Update factors such as time to maturity and spot price.
-* Programmatically updates the Implied Volatility. For more details, check [Pricing](https://app.gitbook.com/@pods-finance-1/s/teste/~/drafts/-MUJTd3NADF5p4jYrmxE/options-amm-overview/optionamm/pricing). 
+* Programmatically updates the Implied Volatility. For more details, check [Pricing](https://docs.pods.finance/options-amm-overview/optionamm/pricing). 
 
 The AMM pools are created and expire within the option's lifetime. After an option enters the exercise window, trading stops, and users can only remove funds from the pool and exercise the options \(if they are in the money\). 
 
@@ -51,5 +51,5 @@ Users that created options can only withdraw the collateral \(or underlying asse
 5. **Remove liquidity from the pool** When the exercise window starts, the only possible action regarding the Options AMM is to withdraw funds from the pool. 
 6. **Withdraw collateral** After the expiration window closes, options sellers can withdraw the equivalent amount of funds they are eligible for. That could be a combination of the underlying asset and strike asset if the option was partially exercised.
 
-Different reasons engage different users in using the protocol. Let's take a close look at the [Ecosystem Participants](https://app.gitbook.com/@pods-finance-1/s/teste/~/drafts/-MUJTd3NADF5p4jYrmxE/the-protocol/ecosystem-participants) and the [Use Cases](https://app.gitbook.com/@pods-finance-1/s/teste/~/drafts/-MUJTd3NADF5p4jYrmxE/the-protocol/use-cases) next.
+Different reasons engage different users in using the protocol. Let's take a close look at the [Ecosystem Participants](https://docs.pods.finance/the-protocol/ecosystem-participants) and the [Use Cases](https://docs.pods.finance/the-protocol/use-cases) next.
 

@@ -24,7 +24,7 @@ For simplicity, consider the following information about the pool and the option
 | $$Fv_i$$  | 1 |
 
 {% hint style="warning" %}
-Please consider that the function "add" in this context stands for adding liquidity for the first time in a pool or when the pool has no imbalance, meaning, in both cases $$Fv_i=1$$ . Check [`add liquidity`](https://app.gitbook.com/@pods-finance-1/s/teste/~/drafts/-MNRwe7cZHIbL-jPcZGu/v/master/options-amm-overview/optionamm/functions/add-liquidity) for further details. 
+Please consider that the function "add" in this context stands for adding liquidity for the first time in a pool or when the pool has no imbalance, meaning, in both cases $$Fv_i=1$$ . Check [`add liquidity`](https://docs.pods.finance/options-amm-overview/optionamm/functions/add-liquidity) for further details. 
 {% endhint %}
 
 ## APR

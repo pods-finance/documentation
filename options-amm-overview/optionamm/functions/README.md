@@ -58,7 +58,7 @@ The price calculated by the AMM will impact the pool, and after the trade, it wi
 
 $$\displaystyle f_p(IV_i,MarketData_i)=\frac{-B_i}{A_i}$$
 
- Check [Trade](https://app.gitbook.com/@pods-finance-1/s/teste/~/drafts/-MN6HaWpBmzbOVxj8TTa/options-amm-overview/optionamm/functions/trade) function to understand the steps of how information is updated.
+ Check [Trade](https://docs.pods.finance/options-amm-overview/optionamm/functions/trade) function to understand the steps of how information is updated.
 
 {% hint style="success" %}
 Now that you know the functions let's learn about them in more detail.

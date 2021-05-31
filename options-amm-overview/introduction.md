@@ -42,7 +42,7 @@ DeFi is only starting, and DeFi options are also just beginning. This means that
 
 > But how would someone know that an option price is mispriced?
 
-**Learn more about pricing options** [**here**](https://app.gitbook.com/@pods-finance-1/s/teste/understand-options/pricing-options)**.** 
+**Learn more about pricing options** [**here**](https://docs.pods.finance/understand-options/pricing-options)**.** 
 
 All methods are trying, to some extent, to calculate what is the probability the option will expire _in-the-money_ and, if it does, what that value would be at present. To calculate such theoretical price, authors incorporate factors like **underlying asset spot price,** **time to expiration**, **implied volatility**, **risk-free rate**, and strike price. Those factors, also known as greeks, have a different impact on the option price.  
 
@@ -58,7 +58,7 @@ Some of the characteristics developed in the Options AMM are:
 
 * Allows for single-sided liquidity provision 
 * Calculates the options price using Black Scholes
-* Prices options using Black Scholes by updating factors such as time to maturity, spot price, and implied volatility change over time. For more details on pricing, check [Pricing](https://app.gitbook.com/@pods-finance-1/s/teste/options-amm-overview/optionamm/pricing). 
+* Prices options using Black Scholes by updating factors such as time to maturity, spot price, and implied volatility change over time. For more details on pricing, check [Pricing](https://docs.pods.finance/understand-options/pricing-options). 
 
 Like the assets it holds \(options\), the AMM pools are created and expire within the option's lifetime. After an option enters the exercise window, users can only withdraw funds from the pool. After users withdraw funds from the pool, they may use their options tokens to exercise an option or, in the case of a seller, it may wait until the end of the exercise window to withdraw the collateral \(or underlying asset, in case of an exercised option\) locked in the contract.
 

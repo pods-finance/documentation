@@ -8,7 +8,7 @@
 
 Contract responsible for creating/deploying new option contracts. This contract can create four different  option's contracts: `PodPut`, `WPodPut`, `PodCall`, `WPodCall`. It uses the "[Mega Factory](https://ethereum.stackexchange.com/questions/12698/need-help-to-break-down-large-contract)" pattern, where it uses auxiliary "builder" contracts \(`PodPutBuilder`, `WPodPutBuilder`, `PodCallBuilder`, `WPodCallBuilder`\). From the users/developer's perspective, they do not need to interact with those auxiliary contracts. OptionFactory has only one function:
 
-* [createOption](podfactory.md#createoption)\(\) 
+* [createOption](https://docs.pods.finance/options-protocol-overview/options-smartcontracts/podfactory#createoption)\(\) 
 
 ### PodPut
 
@@ -23,8 +23,8 @@ The contract for American or European **Put** options. It works with any `ERC20`
 
 Same logic as the **PodPut**, but with some special function to convert `ETH` into `WETH`. The underlying asset of that contract **must** be the [official WETH address](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2). The only function that has a different signature is the`exerciseEth.` Although the other functions work differently under the hood, they have the same signature of the `PodPut`:
 
-* [mint\(\) ](sm-podput-1.md#mint)
-* [unmint\(\)](sm-podput-1.md#unmint)
+* [mint\(\) ](https://docs.pods.finance/options-protocol-overview/options-smartcontracts/sm-podput-1#mint)
+* [unmint\(\)](https://docs.pods.finance/options-protocol-overview/options-smartcontracts/sm-podput-1#unmint)
 * [exerciseEth\(\)](sm-podput-1.md#exercise)
 * [withdraw\(\)](sm-podput-1.md#withdraw)
 

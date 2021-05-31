@@ -16,7 +16,7 @@ Once an option is created, a set of 4 actions can happen within the options cont
 
  
 
-Other actions such as trade and provide liquidity can happen in the [Options AMM](https://app.gitbook.com/@pods-finance-1/s/teste/~/drafts/-MUJTxilQ4CgSOs_VLiH/options-protocol-overview/podoptions/functions).
+Other actions such as trade and provide liquidity can happen in the [Options AMM](https://docs.pods.finance/options-amm-overview/optionamm).
 
 {% hint style="success" %}
 Now that you know the basics of the functions, let's learn about them in more detail. 
