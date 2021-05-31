@@ -12,7 +12,7 @@ description: Find below the list of code audits done in the Pods contracts base.
 
 | Description | Auditor | Audit Type | Date |
 | :--- | :--- | :--- | :--- |
-| v.2.0 Protocol | ​Quantstamp​ | Smart Contract | Jan. 2021 |
+| v.2.0 Protocol | ​Quantstamp​ | Smart Contract | Feb. 2021 |
 | v.1.0 Protocol | ​Solidified​ | Smart Contract | Aug. 2020 |
 
 ##   <a id="bug-bounty"></a>
