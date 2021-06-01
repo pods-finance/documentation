@@ -19,11 +19,11 @@ There are multiple ways of expressing one's belief in a portfolio. For instance,
 
 ### **Put Option Seller**
 
-A put option represents the right to sell an asset in the future. When a user mints and sells a Put option, they sold that right to a buyer. They commit to buying the underlying asset from the option buyer at a specific price. That means that the option seller must be confident and comfortable about buying the underlying asset at the strike price. Options sellers expect to receive a premium to perform such activity.
+A put option represents the right to sell an asset in the future. When a user mints and sells a Put option, they sold that right to a buyer. They commit to buying the underlying asset from the option buyer at a specific price, which means that the option seller must be confident and comfortable about buying the underlying asset at the strike price. Options sellers expect to receive a premium to perform such activity.
 
 #### Mint and Sell a Put Option
 
-By minting and right away selling an option in the AMM, a user is closer to a conventional experience where they will immediately receive the premium at market price. Also, by directly selling the options tokens, the user immediately takes on the **position** "sold in Put options" and will uphold this position until the end of the expiration window. If it decides to leave the position early, this user has to buy the equivalent amount of options tokens in the market and "unmint" his options. Note that in the latter situation, the user is exposed to the difference in the option premium.
+By minting and right away selling an option in the AMM, a user is closer to a conventional experience where they will immediately receive the premium at market price. Also, by directly selling the options tokens, the user immediately takes on the **position** "sold in Put options" and will uphold this position until the end of the expiration window. In case the seller decides to leave the position before expiration, the user has to buy the equivalent amount of options tokens in the market and "unmint" these options. Note that in the latter situation, the user is exposed to the difference in the option premium.
 
 For example, if a user is minting one put option on ETH:aDAI, strike 500 December 21st, they will lock 500 aDAI as collateral and sell it in the AMM for the current market price - let's assume it's 5 DAI. If the user decides to leave the position after a while \(and before expiration\), it has to "buy back" options tokens in the market and unmint its position. The options tokens could be worth 2 DAI or 11 DAI, depending on the market conditions. 
 
@@ -31,17 +31,17 @@ If you want to learn more about price discovery, check [Pricing](https://docs.po
 
 ### Call Option Buyer
 
-A call option represents the right to buy the underlying asset at the strike price in the future. Buying a call option allows the user to get exposed to an asset at a certain price level without necessarily holding that asset in the present moment. The user can buy call options tokens directly from the AMM and keep them in their wallet until expiration. If the user wants to leave the position early, they can resell the options on the AMM at market price. If the user held the options tokens until expiration, it could decide to exercise the options.
+A call option represents the right to buy the underlying asset at the strike price in the future. Buying a call option allows the user to get exposed to an asset at a certain price level without necessarily holding that asset in the present moment. The user can buy call options tokens directly from the AMM and keep them in their wallet until expiration. If the user wants to leave the hedged position before expiration or wishes to profit over the option's price changes, they can resell the options on the AMM at market price. If the user held the options tokens until expiration, they could decide to exercise the options.
 
 #### Buy Call Options 
 
-Buying a call option gives the user a right to buy the underlying asset at the strike price. A user can buy a call directly from the series AMM and pay the premium immediately. By expiration, it can choose whether or not it will exercise the option.
+Buying a call option gives the user a right to buy the underlying asset at the strike price. A user can buy a call directly from the series AMM and pay the premium immediately. By expiration, they can choose whether or not to exercise the option.
 
 #### Buy Call Options and Provide Liquidity 
 
 This possibility allows the options tokens to become interest-bearing assets within themselves.
 
-A user that bought options can provide the options tokens as liquidity to the AMM and earn fees on its tokens and potentially reduce the cost of their options. By the end of the period, the user can expect to receive back a position \(that could be a combination of options tokens and stablecoins\) that reflects their initial exposure, added trading fees, and impermanent gain or loss, depending on the pool's circumstances during the provision period.
+A user that bought options can provide the options tokens as liquidity to the AMM and earn fees on the tokens and potentially reduce the cost of the options. By the end of the period, the user can expect to receive back a position \(that could be a combination of options tokens and stablecoins\) that reflects their initial exposure, added trading fees, and impermanent gain or loss, depending on the pool's circumstances during the provision period.
 
 ## Bearish in the underlying asset
 
@@ -51,7 +51,7 @@ If a user believes that the asset will or could go down in price, they can add d
 
 #### Buy Put Option
 
-Buying a put option gives the user a right to sell the underlying asset at the strike price. A user can buy a put directly from the AMM and pay the premium immediately. The user can hold its options tokens in their wallets until expiration. If the user decides, it can resell the options at market price back to the AMM. If the user chose to hold the tokens until expiration, it could determine whether it will exercise the option. If it decides to exercise the option, it has to send both underlying asset and options tokens to the contract to unlock the collateral.
+Buying a put option gives the user the right to sell the underlying asset at the strike price. A user can buy a put directly from the AMM and pay the premium immediately. The user can hold its options tokens in their wallets until expiration. If the user decides, it can resell the options at market price back to the AMM. If the user chose to hold the tokens until expiration, it could determine whether it will exercise the option. If it decides to exercise the option, it has to send both underlying asset and options tokens to the contract to unlock the collateral.
 
 #### Buy Put Option and Add Liquidity  
 
@@ -91,7 +91,7 @@ The user will earn AMM fees over time and is subjected to the pool's impermanent
 
 #### Mint Call Options and Add Liquidity 
 
-Alternatively, a user can mint a call option and add the minted tokens as liquidity in the AMM pool. The user immediately gets a delta hedged **exposure** to the total option position but **not necessarily is in the position.** The AMM will track the initial exposure. By the time of the withdrawal, the user will receive a combination of options tokens and stable coins that should reflect the initial exposure. It means that the number of stablecoins received should be enough to "buy back" the lack of options tokens received by the time of the withdrawal. 
+Alternatively, a user can mint a call option and add the minted tokens as liquidity in the AMM pool. This user immediately gets a delta hedged **exposure** to the total option position but **not necessarily is in the position.** The AMM will track the initial exposure. By the time of the withdrawal, the user will receive a combination of options tokens and stable coins that should reflect the initial exposure. It means that the number of stablecoins received should be enough to "buy back" the lack of options tokens received by the time of the withdrawal. 
 
 The user will earn AMM fees over time and is subjected to the pool's impermanent loss or gain. Our [fee](https://docs.pods.finance/options-amm-overview/optionamm/fees-updated) mechanism was designed to reduce this possibility, but it is essential to state that it is possible.
 
