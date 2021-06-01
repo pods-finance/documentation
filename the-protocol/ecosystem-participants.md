@@ -30,6 +30,10 @@ Option buyers could be:
 
 ### Liquidity Providers
 
+{% hint style="info" %}
+Disclaimer: with the current UI, users can only provide or remove liquidity equally on both sides
+{% endhint %}
+
 By allowing single-sided liquidity provision, it is possible to have many different types of liquidity providers:
 
 * **Minted a put option and provided liquidity:** by minting options tokens and providing them as liquidity in the AMM, a user is interested in generating an additional yield on its funds based on the AMM fees. The AMM will track its initial exposure and will accrue trading fees. By the time the user decides to withdraw, they will receive a combination of options tokens and stablecoin representing virtually the same initial exposure the user had in the beginning. Meaning, if the user wanted all their options tokens back, the amount of stablecoin received is enough to cover the purchase amount of the current "missing" options tokens at the updated premium price of the options tokens. The user may incur impermanent loss or gain, depending on the pool conditions during the period of the provision. 

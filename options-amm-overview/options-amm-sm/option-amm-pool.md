@@ -83,6 +83,10 @@ The contract pool responsible for trade, add and remove liquidity of a pair `Pod
 
 This function is used to add new liquidity to the pool. Since we use a single-sided AMM, `amountOfA` or `amountOfB` can be 0 if you want to add liquidity to just one side of the pool. This function can only be called before option expiration.
 
+{% hint style="info" %}
+Disclaimer: with the current UI, users can only provide or remove liquidity equally on both sides
+{% endhint %}
+
 |  input name | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
 | amountOfA | uint256 | - | Amount of Token A to add |
@@ -160,6 +164,10 @@ await optionAMMPool.addLiquidity(
 ### removeLiquidity
 
 This function is used to remove liquidity from the pool. Since we use a single-sided AMM, `percentA` or `percentB` can be 0 if you want to remove liquidity from just one side of the pool. The percentA and percentB represent the percentage of the exposition in each asset you want to remove. If you want to check upfront what the amount represent certain exposition, you can call `getRemoveLiquidityAmounts.`
+
+{% hint style="info" %}
+Disclaimer: with the current UI, users can only provide or remove liquidity equally on both sides
+{% endhint %}
 
 |  input name | Type | Required | Description |
 | :--- | :--- | :--- | :--- |

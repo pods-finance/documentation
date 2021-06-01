@@ -6,6 +6,10 @@ description: >-
 
 # Remove Liquidity
 
+{% hint style="info" %}
+Disclaimer: with the current UI, users can only provide or remove liquidity equally on both sides
+{% endhint %}
+
 **Single-sided liquidity provision**  
 _Quick recap:_ it is possible to add liquidity on one side of the pool. The pool will track the user's initial exposure, and by the time the user removes liquidity, the withdrawal position will reflect the initial exposure within a new distribution of assets. It means that it is possible \(and likely\) to withdraw percentages of both assets.  
   

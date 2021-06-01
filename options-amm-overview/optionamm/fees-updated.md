@@ -39,6 +39,10 @@ function _getDynamicFees(uint256 tradeAmount, uint256 poolAmount) internal pure 
 
 ### Splitting Fees
 
+{% hint style="info" %}
+Disclaimer: with the current UI, users can only provide or remove liquidity equally on both sides
+{% endhint %}
+
 Since the pool is single-sided, the division of fees happens evenly among the two pools: 50% of the fees go to liquidity providers of token A and 50% of the fees go to liquidity providers of token B.
 
 * Fees are always calculated as a relation to token B amount. 

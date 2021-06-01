@@ -13,6 +13,10 @@ The Options AMM has four properties:
 3. If there is no inventory imbalance, canceling trades \(not reflecting any arbitrage opportunity\) or price changes due to price calculations should not take nor add any value from or to the liquidity providers.
 4. Any gain or loss of the AMM pool should impact the LPs fairly across time.
 
+{% hint style="info" %}
+Disclaimer: with the current UI, users can only provide or remove liquidity equally on both sides
+{% endhint %}
+
 The AMM is structured in 5 components that keep these properties over the lifetime of the pool. Find below a description of those components and their concepts.
 
 ### Pool Value Factor

@@ -77,6 +77,10 @@ If exercised, the user will withdraw the yield generated during the period by th
 
 ## Providing liquidity
 
+{% hint style="info" %}
+Disclaimer: with the current UI, users can only provide or remove liquidity equally on both sides
+{% endhint %}
+
 The Pods Options AMM allows for single-sided liquidity provision. This property enables a user to add options tokens or stablecoins, or both. The AMM charges trading fees from traders and distributes the trading fee equally to the options tokens side and stablecoins side.
 
 ‌ By minting an option token and adding it to the pool, a user is delta hedged and has exposure to earning trading fees.
