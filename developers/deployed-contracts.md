@@ -144,25 +144,27 @@ This is to ensure composability in case you want to build bridges like Flashloan
 {% tab title="Polygon" %}
 | Symbol | Address |
 | :--- | :--- |
-| DAI | 0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063 |
-| USDC | 0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174 |
-| aUSDC | 0x9719d867A500Ef117cC201206B8ab51e794d3F82 |
-| aDAI | 0xE0b22E0037B130A9F56bBb537684E6fA18192341 |
-| WETH | 0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619 |
-| WBTC | 0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6 |
-| WMATIC | 0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270 |
-| LINK | 0x53e0bca35ec356bd5dddfebbd1fc0fd03fabad39 |
+| DAI | [0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063](https://kovan.etherscan.io/address/0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063) |
+| USDC | [0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174](https://kovan.etherscan.io/address/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174) |
+| aUSDC | [0x9719d867A500Ef117cC201206B8ab51e794d3F82](https://kovan.etherscan.io/address/0x9719d867A500Ef117cC201206B8ab51e794d3F82) |
+| aDAI | [0xE0b22E0037B130A9F56bBb537684E6fA18192341](https://kovan.etherscan.io/address/0xE0b22E0037B130A9F56bBb537684E6fA18192341) |
+| WETH | [0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619](https://kovan.etherscan.io/address/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619) |
+| WBTC | [0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6](https://kovan.etherscan.io/address/0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6) |
+| WMATIC | [0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270](https://kovan.etherscan.io/address/0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270) |
+| LINK | [0x53e0bca35ec356bd5dddfebbd1fc0fd03fabad39](https://kovan.etherscan.io/address/0x53e0bca35ec356bd5dddfebbd1fc0fd03fabad39) |
+| SUSHI | [0x0b3f868e0be5597d5db7feb59e1cadbb0fdda50a](https://kovan.etherscan.io/address/0x0b3f868e0be5597d5db7feb59e1cadbb0fdda50a) |
 {% endtab %}
 
 {% tab title="Kovan" %}
 | Symbol | Address |
 | :--- | :--- |
-| DAI | [0xFf795577d9AC8bD7D90Ee22b6C1703490b6512FD](https://kovan.etherscan.io/address/0xFf795577d9AC8bD7D90Ee22b6C1703490b6512FD) |
-| USDC | 0xe22da380ee6b445bb8273c81944adeb6e8450422 |
-| aUSDC | [0x02f626c6ccb6d2ebc071c068dc1f02bf5693416a](https://kovan.etherscan.io/address/0x02f626c6ccb6d2ebc071c068dc1f02bf5693416a) |
-| aDAI | 0x58ad4cb396411b691a9aab6f74545b2c5217fe6a |
-| WETH | 0xD7FDf2747A855AC20b96A5cEDeA84b2138cEd280 |
-| WBTC | 0x0094e8cf72acf138578e399768879cedd1ddd33c |
+| DAI | [0xFf795577d9AC8bD7D90Ee22b6C1703490b6512FD](https://polygonscan.com/address/0xFf795577d9AC8bD7D90Ee22b6C1703490b6512FD) |
+| USDC | [0xe22da380ee6b445bb8273c81944adeb6e8450422](https://polygonscan.com/address/0xe22da380ee6b445bb8273c81944adeb6e8450422)  |
+| aUSDC | [0x02f626c6ccb6d2ebc071c068dc1f02bf5693416a](https://polygonscan.com/address/0x02f626c6ccb6d2ebc071c068dc1f02bf5693416a) |
+| aDAI | [0x58ad4cb396411b691a9aab6f74545b2c5217fe6a](https://polygonscan.com/address/0x58ad4cb396411b691a9aab6f74545b2c5217fe6a)  |
+| WETH | [0xD7FDf2747A855AC20b96A5cEDeA84b2138cEd280](https://polygonscan.com/address/0xD7FDf2747A855AC20b96A5cEDeA84b2138cEd280)  |
+| WBTC | [0x0094e8cf72acf138578e399768879cedd1ddd33c](https://polygonscan.com/address/0x0094e8cf72acf138578e399768879cedd1ddd33c)  |
+| SUSHI | [0x82e358324C91d6360d08Da5f85c63C6d131955C8](https://polygonscan.com/address/0x82e358324C91d6360d08Da5f85c63C6d131955C8)  |
 {% endtab %}
 
 {% tab title="Mumbai" %}
@@ -175,6 +177,7 @@ This is to ensure composability in case you want to build bridges like Flashloan
 | WETH | 0x2f9374157Ef337620b19a720019A6FDB0593d20B |
 | WBTC | 0x41Ec38673f377D8A8c28359CBEfc132791A6efC5 |
 | WMATIC | 0xfe7f1ef1386E6df3D462E30aa5709FB5Ef647eC9 |
+| SUSHI | 0x3F03fDFd189f972E23421F777dEa6Aeb2cA02205 |
 | LINK | - |
 {% endtab %}
 {% endtabs %}
