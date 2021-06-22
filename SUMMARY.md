@@ -66,6 +66,7 @@
 
 ## Code Integration Guides <a id="guides"></a>
 
+* [Integrating with Pods \(video\)](guides/integrating-with-pods-video.md)
 * [How to Buy](guides/how-to-buy.md)
 * [How to Exercise](guides/how-to-exercise.md)
 * [How to Remove Liquidity](guides/how-to-remove-liquidity.md)
