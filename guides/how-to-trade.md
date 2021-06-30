@@ -1,10 +1,10 @@
-# How to Buy
+# How to Trade \(Buy/Sell\)
 
-There are few ways to buy options from our pool. In this tutorial, we will focus on interacting directly with the [`OptionAMMPool`](../options-amm-overview/options-amm-sm/option-amm-pool.md). In order to do that, you will need to perform a few steps.
+There are few ways to trade options from our pool. In this tutorial, we will focus on interacting directly with the [`OptionAMMPool`](../options-amm-overview/options-amm-sm/option-amm-pool.md). In order to do that, you will need to perform a few steps.
 
 1. Find the `OptionAMMPool` address given a certain option using the `OptionAMMFactory`
-2. Get the trade details given a certain options amount you want to buy using the `OptionAMMPool`
-3. Allow the `tokensB` \(stable tokens\) to be spent by the `OptionAMMPool`
+2. Get the trade details given a certain options amount you want to trade using the `OptionAMMPool` with the function `getOptionTradeDetails`
+3. Allow the `tokensB` \(stable tokens\) or the `tokensA` \(option tokens\) to be spent by the `OptionAMMPool`
 4. Perform the trade
 
 ### 1. Find `OptionAMMPool`
@@ -20,13 +20,16 @@ You can also check this step directly on [getPool function](../options-amm-overv
 {% tabs %}
 {% tab title="Solidity" %}
 ```javascript
-// 1) Instantiate OptionAMMFactory.
+pragma solidity >0.6.0;
+// 1) Import IOptionAMMFactory interface
+import "../interfaces/IOptionAMMFactory.sol";
+// 2) Instantiate OptionAMMFactory.
 IOptionAMMFactory optionAMMFactory = IOptionAMMFactory("/factoryAddress*/");
 
-// 2) Get the option address you will want to buy.
+// 3) Get the option address you will want to buy.
 address optionAddress = '0xe3...";
 
-// 3) Call the getPool function and receive the pool address in return.
+// 4) Call the getPool function and receive the pool address in return.
 address optionAMMPoolAddress = optionAMMFactory.getPool(optionAddress);
 
 ```
@@ -35,19 +38,33 @@ address optionAMMPoolAddress = optionAMMFactory.getPool(optionAddress);
 
 ### 2. Get the Trade Details 
 
-Now that you have the pool address from the previous step, you can call the view function  `getOptionTradeDetailsExactAOutput.` You should pass as input the number of options you will want to buy.
+Now that you have the pool address from the previous step, you can call one of the following view functions:
 
-In return, you will receive the amount of `tokensB` and `newIV`. `newIV` will be necessary later to perform the trade. 
+| Function name | Description |
+| :--- | :--- |
+| `getOptionTradeDetailsExactAOutput` | You should pass as input the **exact** number of **options** you will want to **buy**. |
+| `getOptionTradeDetailsExactAInput` | You should pass as input the **exact** number of **options** you will want to **sell**. |
+| `getOptionTradeDetailsExactBOutput` | You should pass as input the **exact** number of **stable tokens** \(premium\) you will want to **receive** when **selling.** |
+| `getOptionTradeDetailsExactBInput` | You should pass as input the **exact** number of **stable tokens** \(premium\) you will want to **pay** when **buying.** |
+
+In return, you will receive the amount of `tokensB` \(stable assets\) ``or `tokensA` \(option tokens\) and `newIV`. `newIV` will be necessary later to perform the trade. 
 
 {% tabs %}
 {% tab title="Solidity" %}
 ```javascript
-// 1) Instantiate optionAMMPool using the address you
+pragma solidity >0.6.0;
+// 1) Import IOptionAMMFactory interface
+import "../interfaces/IOptionAMMPool.sol";
+
+// 2) Instantiate optionAMMPool using the address you
 // got from the previous step
 IOptionAMMPool optionAMMPool = IOptionAMMPool(optionAMMPoolAddress);
 
+
 /*
- 2) Call the getOptionTradeDetailsExactAOutput with
+ In this example we will perform a buyExactAOuput action.
+ 
+ 3) Call the getOptionTradeDetailsExactAOutput with
     the option amount you will want to buy as an input
     
     That function returns:
@@ -66,9 +83,9 @@ uint256 amountOfOptions = 100000; // The option decimals can be found calling op
 TokenA in the optionAMMPool will always be the option token. TokenB will always be the stable token. 
 {% endhint %}
 
-### 3. Allow the `tokensB` \(stable tokens\) to be spent by the `OptionAMMPool`
+### 3. Allow the `tokensB` \(stable tokens\) or `tokensA` \(option tokens\) to be spent by the `OptionAMMPool`
 
-If you are already familiar with Ethereum development, you can jump to step 4. We will only approve the tokenB to be spent by the pool.
+If you are already familiar with Ethereum development, you can jump to step 4. We will only approve the `tokenA/tokenB` to be spent by the pool. If you are selling, you will need to approve`tokenA`, but if you are buying, you will need to approve `tokenB.`
 
 {% tabs %}
 {% tab title="Solidity" %}
