@@ -135,8 +135,8 @@ So, let's say that Rob wants to leave his position on 1 put option he had previo
 
 * Rob calls the `unmint` function with two parameters: the amount of options to `unmint` and owner.
 * amount of options to `unmint` will be equal to `1` and owner will be Rob's address.
-* Rob needs to call \[function\] on the strike
-* The contract will calculate the `ownerSharesw` of Rob to have the number of the protocol's shares the user will unmint.
+* Rob needs to callc `unmint()` on the option contract
+* The contract will calculate the `ownerShares` of Rob to have the number of the protocol's shares the user will unmint.
   * `ownerShares_w =(amountOfOptionsToWithdraw ∗ ownerShares_i-1)/ userMintedOptions`
   * So: `amountOfOptionstoWithdraw` will be equal to 1 and `ownerShares_i-1` is equal to `1185.185` and the `userMintedOptions` will be equal to 3. Therefore, `ownerShares_w` will be equal to `395.06`.
 
