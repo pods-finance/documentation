@@ -1,14 +1,32 @@
-# OptionFactory
+# How To Create Your Own Option
 
-OptionFactory uses the "MegaFactory" pattern, it is a contract that creates 4 different types of option contracts: `PodPut, WPodPut, PodCall, WPodCall`. Under the hood, it calls 4 specific "sub-factory" \(aka builders\): `PodPutBuilder, WPodPutBuilder, PodCallBuilder, WPodCallBuilder.`
+You will need 4 steps to create your own option:
 
-## Methods
+1. Get the `OptionFactory`address 
+2. Get either the `OptionFactory ABI` \(web3\) or the `OptionFactory interface` \(solidity\)
+3. Define the parameters of your option
+4. Call the `createOption()` function with the parameters
 
-### createOption
+### 1. Get the OptionFactory address
 
-This function is meant to be called by a caller who wants to deploy a new instance of a Put Option \(aka PodPut\) contract. Here is the initial step if you're going to deploy your option flavor.
+You can find the OptionFactory address using two ways:
 
-It returns a new instance of a PodPut.
+1\) Check our deployed contracts page [here](../developers/deployed-contracts.md).
+
+2\) Instantiate our `ConfigurationManager` contract and call the function `getOptionFactory()`.
+
+### 2. Get OptionFactory ABI or Interface
+
+You can find both ABI and interface of OptionFactory in our Github repo. Always check if you are on the master branch to get our latest live update.
+
+* Interfaces [here](https://github.com/pods-finance/contracts/tree/master/contracts/interfaces).
+* ABIs [here](https://github.com/pods-finance/contracts/tree/master/abi).
+
+### 3. Define your options parameters
+
+In order to deploy a new option series, we need to define if the option will be a put, or call, expiration date and exercise size window are some of the option properties.
+
+Below you can find all the parameters that you will need to define:
 
 |  Input Name | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
@@ -22,6 +40,10 @@ It returns a new instance of a PodPut.
 | expiration | uint256 | higher than current block timestamp | Expiration option date in UNIX timestamp \(e.g., 1609401600\) |
 | exerciseWindowSize | uint256 | higher than  86400 \(24h\) | Duration of the exercise windows in seconds. |
 | isAave | bool |  | If true, deploys a different contract version that supports liquidity mining on Aave \(claim rewards\) |
+
+### 4. Call the `createOption()` function
+
+Now that we have the `OptionFactory` address, ABI, interface and we have also defined the initial parameters, its time call the `createOption()`function.
 
 {% tabs %}
 {% tab title="Solidity" %}
@@ -88,7 +110,37 @@ optionFactory.createOption(
 
 {% tab title="Web3" %}
 ```javascript
-// Soon
+// Parameters example
+const optionFactoryAddress = '0x3c...'
+
+const constructParameters = [
+"WBTC:USDC 12000 31Dec 2020"; // name
+"PodPut WBTC:USDC"; // symbol
+0; // OptionType: 0 for Put, 1 for Call
+0; // ExerciseType: 0 for American, 1 for European
+"0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"; // strikeAsset address
+"0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"; // underlyingAsset address
+"12000000000"; // StrikePrice: Using 6 decimals, equal to strikeAsset decimals
+1609401600; // timestamp in seconds: 31 Dec 2020 08AM
+86400; // exercise window size
+false; // if the collateral is Aave and you want to have liquidity mining support
+]
+
+/////////////
+// Web3.js
+
+// Instantiate contract
+const optionFactory = await web3.eth.Contract('Contract ABI', optionFactoryAddress)
+
+await optionFactory.methods.createOption(...constructorParameters).send({})
+
+/////////////
+// Ethers.js
+
+// Instantiate contract
+const optionFactory = await ethers.getContractAt(optionFactoryAddress, 'Contract ABI')
+
+await optionFactory.createOption(...constructorParameters)
 ```
 {% endtab %}
 {% endtabs %}
@@ -96,4 +148,6 @@ optionFactory.createOption(
 ### 
 
 ### 
+
+
 

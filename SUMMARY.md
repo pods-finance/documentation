@@ -67,9 +67,11 @@
 ## Code Integration Guides <a id="guides"></a>
 
 * [Integrating with Pods \(video\)](guides/integrating-with-pods-video.md)
-* [How to Trade \(Buy/Sell\)](guides/how-to-trade.md)
-* [How to Exercise](guides/how-to-exercise.md)
-* [How to Remove Liquidity](guides/how-to-remove-liquidity.md)
+* [How To Create Your Own Option](guides/how-to-create-own-option.md)
+* [How To Create Your Own Pool](guides/how-to-create-own-pool.md)
+* [How To Trade \(Buy/Sell\)](guides/how-to-trade.md)
+* [How To Exercise](guides/how-to-exercise.md)
+* [How To Remove Liquidity](guides/how-to-remove-liquidity.md)
 
 ## User Guides
 

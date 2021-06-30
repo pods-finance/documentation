@@ -1,4 +1,4 @@
-# How to Trade \(Buy/Sell\)
+# How To Trade \(Buy/Sell\)
 
 There are few ways to trade options from our pool. In this tutorial, we will focus on interacting directly with the [`OptionAMMPool`](../options-amm-overview/options-amm-sm/option-amm-pool.md). In order to do that, you will need to perform a few steps.
 
@@ -11,9 +11,9 @@ There are few ways to trade options from our pool. In this tutorial, we will foc
 
 You will need for this step:
 
-1. OptionAMMFactory contract address
-2. OptionAMMFactory interface or ABI
-3. Option series address
+1. [OptionAMMFactory contract address](../developers/deployed-contracts.md)
+2. [OptionAMMFactory interface or ABI](https://github.com/pods-finance/contracts/tree/develop/contracts/interfaces)
+3. [Option series address](../developers/deployed-contracts.md#option-series)
 
 You can also check this step directly on [getPool function](../options-amm-overview/options-amm-sm/option-amm-factory.md#getpool).
 

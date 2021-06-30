@@ -1,4 +1,4 @@
-# How to Exercise
+# How To Exercise
 
 In order to exercise an option, is pretty simple. You just need to have the options address and PodOption interface. Do not forget to approve first the underlying 
 

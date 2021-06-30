@@ -1,4 +1,4 @@
-# How to Remove Liquidity
+# How To Remove Liquidity
 
 In order to remove liquidity,  you will need to pass as inputs to the contract the percentage of the exposition on the options side and the token side you want to withdraw.
 
