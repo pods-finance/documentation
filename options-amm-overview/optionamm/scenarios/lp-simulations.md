@@ -16,5 +16,5 @@ In the real world what is more likely to take shape is uncertainty about the und
 
 ![](../../../.gitbook/assets/simulation_5000.png)
 
-TODO: include GIF of simulation for all scenarios for ease of understanding
+TODO: include GIF of simulation for all scenarios for ease of understanding.
 
