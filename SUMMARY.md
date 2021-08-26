@@ -82,7 +82,7 @@
 
 * [Audits](security/audits.md)
 
-## APENDIX <a id="glossary"></a>
+## APPENDIX <a id="glossary"></a>
 
 * [FAQ](glossary/options-protocol.md)
 * [Glossary of Terms](glossary/options-glossary.md)
