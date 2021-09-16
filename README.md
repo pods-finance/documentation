@@ -58,7 +58,7 @@ The following sections describe how options contracts work, how options work wit
 
 Please join the \#development room in the [Pods community Discord server](https://discord.gg/Ed9YMznmS6); our team and community members look forward to helping you build on top of Pods.
 
-{% hint style="success" %}
-Now you've got a high level! Time to dig a little deeper.
+{% hint style="info" %}
+A detailed and technical description can be found in the [whitepaper](https://pods.finance/pods_v1_whitepaper.pdf).
 {% endhint %}
 
