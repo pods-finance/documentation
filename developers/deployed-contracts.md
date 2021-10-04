@@ -8,22 +8,23 @@ If you need development support, join the \#developers channel on our [Pods comm
 {% tab title="Mainnet" %}
 | Contracts | ABI | Address |
 | :--- | :--- | :--- |
-| ConfigurationManager | JSON |  |
-| EmergencyStop | JSON |  |
-| CapProvider | JSON |  |
-| PodPutBuilder | JSON |  |
-| WPodPutBuilder | JSON |  |
-| PodCallBuilder | JSON |  |
-| WPodCallBuilder | JSON |  |
-| OptionFactory | JSON |  |
-| NormalDistribution | JSON |  |
-| BlackScholes | JSON |  |
-| IVGuesser | JSON |  |
-| IVProvider | JSON |  |
-| PriceProvider | JSON |  |
-| FeePoolBuilder | JSON |  |
-| OptionAMMFactory | JSON |  |
-| OptionHelper | JSON |  |
+| ConfigurationManager | JSON | 0xE4Da64757b2B29dB43429A52CaF7aD884c76f8b0 |
+| EmergencyStop | JSON | 0xE5C0954C5F6f011B0907d55d97B2D3a32ca5904c |
+| CapProvider | JSON | 0x83256a064d8ac5327f6248D8cE13404681387285 |
+| PodPutBuilder | JSON | 0x6b494573808f2A1FecAB1f40569756CA4593981E |
+| WPodPutBuilder | JSON | 0x91e56246f21286c5395800c8681F080c5a63528e |
+| PodCallBuilder | JSON | 0x699F2144f6fb54e6E9dB37306F2E304D662e15A9 |
+| WPodCallBuilder | JSON | 0x5098243A89d446ca4E30f45065744aC108b1f62b |
+| OptionFactory | JSON | 0x43fF98EB7Ec681A7DBF7e2b2C3589E79d5ce11E3 |
+| NormalDistribution | JSON | 0xa597EF1Ea59a90BEe07Eb4b2f0e72B6Ce55d07e1 |
+| BlackScholes | JSON | 0xc574A70638fF5428122AA6E709cA2B30e212D9b4 |
+| IVGuesser | JSON | 0x0e53949729F67cD0FeCC8a673671d9A362238b5A |
+| IVProvider | JSON | 0xDA9843Ec78B91f5874C75Eb2AFe94a756F3aBcF3 |
+| PriceProvider | JSON | 0x893C2B7658dD525Af3F78a02E1ec1Fb52d861a3F |
+| FeePoolBuilder | JSON | 0xE7C94D68C5F7656a6f7373F588AaF6483cc9E497 |
+| OptionAMMFactory | JSON | 0x0F6E8242FCb9445F7CF27ec9A2998A7c14638d95 |
+| OptionHelper | JSON | 0xCb674dF88EC8103fef28d1995efD400905c6adF6 |
+| OptionPoolRegistry | JSON | 0x8Bf2aE0C5fD85ac69b25a22f4A58d528414F03aD |
 {% endtab %}
 
 {% tab title="Polygon" %}
