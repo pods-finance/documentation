@@ -2,18 +2,16 @@
 
 You will need 4 steps to create your own option:
 
-1. Get the `OptionFactory`address 
-2. Get either the `OptionFactory ABI` \(web3\) or the `OptionFactory interface` \(solidity\)
+1. Get the `OptionFactory`address&#x20;
+2. Get either the `OptionFactory ABI` (web3) or the `OptionFactory interface` (solidity)
 3. Define the parameters of your option
 4. Call the `createOption()` function with the parameters
 
 ### 1. Get the OptionFactory address
 
-You can find the OptionFactory address using two ways:
+1\) Instantiate our `ConfigurationManager` contract. Check our deployed contracts page [here](../developers/deployed-contracts.md).
 
-1\) Check our deployed contracts page [here](../developers/deployed-contracts.md).
-
-2\) Instantiate our `ConfigurationManager` contract and call the function `getOptionFactory()`.
+2\) Call the function `getOptionFactory()`.
 
 ### 2. Get OptionFactory ABI or Interface
 
@@ -28,18 +26,18 @@ In order to deploy a new option series, we need to define if the option will be 
 
 Below you can find all the parameters that you will need to define:
 
-|  Input Name | Type | Required | Description |
-| :--- | :--- | :--- | :--- |
-| name | string | any | The option token name \(e.g., Pod BTC:USDC 300\) |
-| symbol | string | any | The option token symbol \(e.g., "PodPutBTC"\) |
-| optionType | uint8 | 0 / 1 | 0 for Put, 1 for Call |
-| exerciseType | uint8 | 0 / 1 | 0 for American / 1 for European |
-| underlyingAsset | address | contract address | Underlying asset address  |
-| strikeAsset | address | contract address | Strike asset address. Works with interest-bearing tokens aToken from Aave. |
-| strikePrice | uint256 | any | Strike price \(units of strikeAsset that buy 1 unit of underlying\) \(e.g., 12000000000 means you need 12000000000 units of strike asset to exercise 1 unit of WBTC.\)   |
-| expiration | uint256 | higher than current block timestamp | Expiration option date in UNIX timestamp \(e.g., 1609401600\) |
-| exerciseWindowSize | uint256 | higher than  86400 \(24h\) | Duration of the exercise windows in seconds. |
-| isAave | bool |  | If true, deploys a different contract version that supports liquidity mining on Aave \(claim rewards\) |
+|  Input Name        | Type    | Required                            | Description                                                                                                                                                          |
+| ------------------ | ------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| name               | string  | any                                 | The option token name (e.g., Pod BTC:USDC 300)                                                                                                                       |
+| symbol             | string  | any                                 | The option token symbol (e.g., "PodPutBTC")                                                                                                                          |
+| optionType         | uint8   | 0 / 1                               | 0 for Put, 1 for Call                                                                                                                                                |
+| exerciseType       | uint8   | 0 / 1                               | 0 for American / 1 for European                                                                                                                                      |
+| underlyingAsset    | address | contract address                    | Underlying asset address                                                                                                                                             |
+| strikeAsset        | address | contract address                    | Strike asset address. Works with interest-bearing tokens aToken from Aave.                                                                                           |
+| strikePrice        | uint256 | any                                 | Strike price (units of strikeAsset that buy 1 unit of underlying) (e.g., 12000000000 means you need 12000000000 units of strike asset to exercise 1 unit of WBTC.)   |
+| expiration         | uint256 | higher than current block timestamp | Expiration option date in UNIX timestamp (e.g., 1609401600)                                                                                                          |
+| exerciseWindowSize | uint256 | higher than  86400 (24h)            | Duration of the exercise windows in seconds.                                                                                                                         |
+| isAave             | bool    |                                     | If true, deploys a different contract version that supports liquidity mining on Aave (claim rewards)                                                                 |
 
 ### 4. Call the `createOption()` function
 
@@ -145,9 +143,7 @@ await optionFactory.createOption(...constructorParameters)
 {% endtab %}
 {% endtabs %}
 
-### 
+###
 
-### 
-
-
+###
 

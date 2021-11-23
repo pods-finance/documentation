@@ -2,18 +2,16 @@
 
 You will need 4 steps to create your own option:
 
-1. Get the `OptionAMMFactory`address 
-2. Get either the `OptionAMMFactory ABI` \(web3\) or the `OptionAAMMFactory interface` \(solidity\)
+1. Get the `OptionAMMFactory`address&#x20;
+2. Get either the `OptionAMMFactory ABI` (web3) or the `OptionAAMMFactory interface` (solidity)
 3. Define the parameters of your pool
 4. Call the `createPool()` function with the parameters
 
 ### 1. Get the OptionAMMFactory address
 
-You can find the OptionFactory address using two ways:
+1\) Instantiate our `ConfigurationManager` contract. Check our deployed contracts page [here](../developers/deployed-contracts.md).
 
-1\) Check our deployed contracts page [here](../developers/deployed-contracts.md).
-
-2\) Instantiate our `ConfigurationManager` contract and call the function `getAMMFactory()`.
+2\) Call the function `getAMMFactory()`.
 
 ### 2. Get OptionAMMFactory ABI or Interface
 
@@ -24,11 +22,11 @@ You can find both ABI and interface of OptionFactory in our Github repo. Always 
 
 ### 3. Define your pool parameters
 
-In order to deploy a new option amm pool you will need only 3 parameters: 
+In order to deploy a new option amm pool you will need only 3 parameters:&#x20;
 
 * OptionTokenAddress
-* StableTokenAddress \(We use the assumption that any stable token is equal to 1 USD\)
-* InitialIV =&gt; This is the initial implied volatility for the pool
+* StableTokenAddress (We use the assumption that any stable token is equal to 1 USD)
+* InitialIV => This is the initial implied volatility for the pool
 
 ### 4. Call the `createPool()` function
 
@@ -94,5 +92,4 @@ await optionAMMFactory.createPool(...constructorParameters)
 {% endtab %}
 {% endtabs %}
 
-### 
-
+###

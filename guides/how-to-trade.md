@@ -1,53 +1,64 @@
-# How To Trade \(Buy/Sell\)
+# How To Trade (Buy/Sell)
 
-There are few ways to trade options from our pool. In this tutorial, we will focus on interacting directly with the [`OptionAMMPool`](../options-amm-overview/options-amm-sm/option-amm-pool.md). In order to do that, you will need to perform a few steps.
+There are a few ways to trade options from our pool. In this tutorial, we will focus on interacting directly with the [`OptionAMMPool`](../options-amm-overview/options-amm-sm/option-amm-pool.md). In order to do that, you will need to perform a few steps.
 
-1. Find the `OptionAMMPool` address given a certain option using the `OptionAMMFactory`
-2. Get the trade details given a certain options amount you want to trade using the `OptionAMMPool` with the function `getOptionTradeDetails`
-3. Allow the `tokensB` \(stable tokens\) or the `tokensA` \(option tokens\) to be spent by the `OptionAMMPool`
+1. Find the `OptionAMMPool` address gave a certain option using the `OptionAMMFactory`
+2. Get the trade details given a certain options amount you want to trade using the `OptionAMMPool` with the function` getOptionTradeDetails`
+3. Allow the `tokensB` (stable tokens) or the `tokensA` (option tokens) to be spent by the `OptionAMMPool`
 4. Perform the trade
 
-### 1. Find `OptionAMMPool`
+### 1. Find `OptionAMMPool Address`
 
 You will need for this step:
 
-1. [OptionAMMFactory contract address](../developers/deployed-contracts.md)
-2. [OptionAMMFactory interface or ABI](https://github.com/pods-finance/contracts/tree/develop/contracts/interfaces)
-3. [Option series address](../developers/deployed-contracts.md#option-series)
+1. OptionPoolRegistry contract address and ABI
+2. [Option series address](../developers/deployed-contracts.md#option-series)
 
-You can also check this step directly on [getPool function](../options-amm-overview/options-amm-sm/option-amm-factory.md#getpool).
+In order to get OptionPoolRegistry you will need:
+
+1\) Instantiate our `ConfigurationManager` contract. Check our deployed contracts page [here](../developers/deployed-contracts.md).
+
+2\) Call the function `getOptionPoolRegistry()`.
+
+
+
+Now with the OptionPoolRegistry contract, you can call the function `getPool.`
+
+
+
+You can also check this step directly on [getPool function](../options-amm-overview/options-amm-sm/optionpoolregistry.md).
 
 {% tabs %}
 {% tab title="Solidity" %}
 ```javascript
 pragma solidity >0.6.0;
-// 1) Import IOptionAMMFactory interface
-import "../interfaces/IOptionAMMFactory.sol";
+// 1) Import IOptionPoolRegistry interface
+import "../interfaces/IOptionPoolRegistry.sol";
 // 2) Instantiate OptionAMMFactory.
-IOptionAMMFactory optionAMMFactory = IOptionAMMFactory("/factoryAddress*/");
+IOptionPoolRegistry optionPoolRegistry = IOptionPoolRegistry("/optionPoolRegistryAddress*/");
 
 // 3) Get the option address you will want to buy.
 address optionAddress = '0xe3...";
 
 // 4) Call the getPool function and receive the pool address in return.
-address optionAMMPoolAddress = optionAMMFactory.getPool(optionAddress);
+address optionAMMPoolAddress = optionPoolRegistry.getPool(optionAddress);
 
 ```
 {% endtab %}
 {% endtabs %}
 
-### 2. Get the Trade Details 
+### 2. Get the Trade Details&#x20;
 
 Now that you have the pool address from the previous step, you can call one of the following view functions:
 
-| Function name | Description |
-| :--- | :--- |
-| `getOptionTradeDetailsExactAOutput` | You should pass as input the **exact** number of **options** you will want to **buy**. |
-| `getOptionTradeDetailsExactAInput` | You should pass as input the **exact** number of **options** you will want to **sell**. |
-| `getOptionTradeDetailsExactBOutput` | You should pass as input the **exact** number of **stable tokens** \(premium\) you will want to **receive** when **selling.** |
-| `getOptionTradeDetailsExactBInput` | You should pass as input the **exact** number of **stable tokens** \(premium\) you will want to **pay** when **buying.** |
+| Function name                       | Description                                                                                                                 |
+| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `getOptionTradeDetailsExactAOutput` | You should pass as input the **exact** number of **options** you will want to **buy**.                                      |
+| `getOptionTradeDetailsExactAInput`  | You should pass as input the **exact** number of **options** you will want to **sell**.                                     |
+| `getOptionTradeDetailsExactBOutput` | You should pass as input the **exact** number of **stable tokens **(premium) you will want to **receive **when **selling.** |
+| `getOptionTradeDetailsExactBInput`  | You should pass as input the **exact** number of **stable tokens **(premium) you will want to **pay **when **buying.**      |
 
-In return, you will receive the amount of `tokensB` \(stable assets\) ``or `tokensA` \(option tokens\) and `newIV`. `newIV` will be necessary later to perform the trade. 
+In return, you will receive the amount of `tokensB `(stable assets)` `or`  tokensA  `(option tokens) and `newIV`. `newIV` will be necessary later to perform the trade.&#x20;
 
 {% tabs %}
 {% tab title="Solidity" %}
@@ -80,10 +91,10 @@ uint256 amountOfOptions = 100000; // The option decimals can be found calling op
 {% endtabs %}
 
 {% hint style="info" %}
-TokenA in the optionAMMPool will always be the option token. TokenB will always be the stable token. 
+TokenA in the optionAMMPool will always be the option token. TokenB will always be the stable token.&#x20;
 {% endhint %}
 
-### 3. Allow the `tokensB` \(stable tokens\) or `tokensA` \(option tokens\) to be spent by the `OptionAMMPool`
+### 3. Allow the `tokensB` (stable tokens) or `tokensA` (option tokens) to be spent by the `OptionAMMPool`
 
 If you are already familiar with Ethereum development, you can jump to step 4. We will only approve the `tokenA/tokenB` to be spent by the pool. If you are selling, you will need to approve`tokenA`, but if you are buying, you will need to approve `tokenB.`
 
@@ -138,5 +149,4 @@ optionAMMPool.tradeExactAOutput(
 {% endtab %}
 {% endtabs %}
 
-### 
-
+###

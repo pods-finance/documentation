@@ -1,6 +1,6 @@
 # OptionAMMFactory
 
-Contract responsible for creating/deploying new `OptionAMMpools`. This contract is supposed to be used along with Pods financial instrument `PodOption.` If you want to implement the Pool yourself, talk to us on our Discord channel and we will give you assistance.
+Contract responsible for creating/deploying new `OptionAMMpools`. This contract is supposed to be used along with Pods financial instrument `PodOption. `If you want to implement the Pool yourself, talk to us on our Discord channel and we will give you assistance.
 
 ## Methods
 
@@ -10,14 +10,14 @@ This function is meant to be called by a caller who wants to deploy a new instan
 
 Returns a new instance of OptionAMMPool.
 
-|  input name | Type | Required | Description |
-| :--- | :--- | :--- | :--- |
-| \_optionAddress | address | PodOption contracts | The address of the option token \(PodOption\) |
-| \_stableAsset | address | ERC20 token | The ERC20 will be used as the pair of the option. Will be easier if the price of the option is denominated in any stablecoin. |
-| \_priceProvider | address | - | Contract address of the PriceProvider contract for spotPrice |
-| \_priceMethod | address | - | Contract address of the PriceMethod contract \(E.g: BlackScholes\) |
-| \_sigma | address | - | Contract address of the sigma \(Implied Volatility - IV\)  |
-| \_initialSigma | uint256 |  | The Initial number of sigma \(Implied Volatility\) with 18 decimals |
+|  input name     | Type    | Required            | Description                                                                                                                   |
+| --------------- | ------- | ------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| \_optionAddress | address | PodOption contracts | The address of the option token (PodOption)                                                                                   |
+| \_stableAsset   | address | ERC20 token         | The ERC20 will be used as the pair of the option. Will be easier if the price of the option is denominated in any stablecoin. |
+| \_priceProvider | address | -                   | Contract address of the PriceProvider contract for spotPrice                                                                  |
+| \_priceMethod   | address | -                   | Contract address of the PriceMethod contract (E.g: BlackScholes)                                                              |
+| \_sigma         | address | -                   | Contract address of the sigma (Implied Volatility - IV)                                                                       |
+| \_initialSigma  | uint256 |                     | The Initial number of sigma (Implied Volatility) with 18 decimals                                                             |
 
 {% tabs %}
 {% tab title="Solidity" %}
@@ -112,65 +112,6 @@ await optionAMMFactory.createPool(
     sigma,
     initialSigma
 )
-```
-{% endtab %}
-{% endtabs %}
-
-### getPool
-
-The function returns the address of the pool with given an `_optionAddress.` 
-
-| Input name | Type | Required | Description |
-| :--- | :--- | :--- | :--- |
-| \_optionAddress | address | - | The address of the option token \(PodOption\) |
-
-
-
-{% tabs %}
-{% tab title="Solidity" %}
-```javascript
-/// Instantiate OptionAMMFactory
-OptionAMMFactory optionAMMFactory = OptionAMMFactory("/*address*/");
-
-address optionAddress = '0xe3..."
-
-optionAMMFactory.getPool(optionAddress)
-
-// OptionAMMFactory.sol
-     /**
-     * @notice Returns the address of a previously created pool
-     *
-     * @dev If the pool has not been created it will return address(0)
-     *
-     * @param _optionAddress The address of option token
-     * @return The address of the pool
-     */
-    function getPool(
-        address _optionAddress
-    ) external returns (address pool) {}
-```
-{% endtab %}
-
-{% tab title="Web3" %}
-```javascript
-// Parameters example
-const optionAddress = 0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48; 
-
-/////////////
-// Web3.js
-
-// Instantiate contract
-const optionAMMFactory = await web3.eth.Contract('Contract ABI', optionAMMFactoryAddress)
-
-const poolAddress = await optionAMMFactory.methods.getPool(optionAddress).call()
-
-/////////////
-// Ethers.js
-
-// Instantiate contract
-const optionAMMFactory = await ethers.getContractAt(optionAMMFactoryAddress, 'Contract ABI')
-
-const poolAddress = await optionAMMFactory.getPool(optionAddress)
 ```
 {% endtab %}
 {% endtabs %}

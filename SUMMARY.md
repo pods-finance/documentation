@@ -15,7 +15,7 @@
 * [Ecosystem Participants](the-protocol/ecosystem-participants.md)
 * [Use Cases](the-protocol/use-cases.md)
 
-## Options <a id="options-protocol-overview"></a>
+## Options <a href="options-protocol-overview" id="options-protocol-overview"></a>
 
 * [Overview](options-protocol-overview/introduction.md)
 * [Options Instrument](options-protocol-overview/podoptions/README.md)
@@ -34,7 +34,7 @@
 * [Applied Use Cases](options-protocol-overview/understanding-returns.md)
 * [Understanding Returns](options-protocol-overview/understanding-returns-1.md)
 
-## Options AMM <a id="options-amm-overview"></a>
+## Options AMM <a href="options-amm-overview" id="options-amm-overview"></a>
 
 * [Overview](options-amm-overview/introduction.md)
 * [Options AMM](options-amm-overview/optionamm/README.md)
@@ -53,6 +53,7 @@
 * [Smart Contracts](options-amm-overview/options-amm-sm/README.md)
   * [OptionAMMPool](options-amm-overview/options-amm-sm/option-amm-pool.md)
   * [OptionAMMFactory](options-amm-overview/options-amm-sm/option-amm-factory.md)
+  * [OptionPoolRegistry](options-amm-overview/options-amm-sm/optionpoolregistry.md)
 * [Applied Math](options-amm-overview/examples.md)
 
 ## Developers
@@ -65,12 +66,12 @@
 
 * [Brand Assets](interfacing-with-pods/brand-assets.md)
 
-## Code Integration Guides <a id="guides"></a>
+## Code Integration Guides <a href="guides" id="guides"></a>
 
-* [Integrating with Pods \(video\)](guides/integrating-with-pods-video.md)
+* [Integrating with Pods (video)](guides/integrating-with-pods-video.md)
 * [How To Create Your Own Option](guides/how-to-create-own-option.md)
 * [How To Create Your Own Pool](guides/how-to-create-own-pool.md)
-* [How To Trade \(Buy/Sell\)](guides/how-to-trade.md)
+* [How To Trade (Buy/Sell)](guides/how-to-trade.md)
 * [How To Exercise](guides/how-to-exercise.md)
 * [How To Remove Liquidity](guides/how-to-remove-liquidity.md)
 
@@ -82,19 +83,18 @@
 
 * [Audits](security/audits.md)
 
-## APPENDIX <a id="glossary"></a>
+## APPENDIX <a href="glossary" id="glossary"></a>
 
 * [FAQ](glossary/options-protocol.md)
 * [Glossary of Terms](glossary/options-glossary.md)
 
 ## Additional Resources
 
----
+***
 
-* [app.pods.finance](https://app.pods.finance/)
+* [app.pods.finance](https://app.pods.finance)
 * [Github](https://github.com/pods-finance)
 * [Blog](https://medium.com/podsfinance)
 * [Discord](https://discord.gg/Qf7utym)
 * [Twitter](https://twitter.com/PodsFinance)
-* [Pods v0 Docs](https://pods-finance-1.gitbook.io/pods_v0/)
-
+* [Pods v0 Docs](https://pods-finance-1.gitbook.io/pods\_v0/)
