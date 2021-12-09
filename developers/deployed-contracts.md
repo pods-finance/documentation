@@ -1,6 +1,6 @@
 # Deployed Contracts
 
-Pods Protocol is deployed to the Ethereum Kovan testnet, as well as the Polygon Mainnet. The following tables contain the details of the contracts on each of the networks.
+Pods Protocol is deployed to Ethereum, Polygon, and Arbitrum. Our system does complicated calculations like BlackScholes that by default uses more gas and computational power, so the system works better on scalability solutions.  The following tables contain the details of the contracts on each of the networks.
 
 If you need development support, join the #developers channel on our [Pods community Discord server.](https://discord.gg/Qf7utym)
 
@@ -20,6 +20,19 @@ If you need development support, join the #developers channel on our [Pods commu
 | Contracts            | ABI  | Address                                    |
 | -------------------- | ---- | ------------------------------------------ |
 | ConfigurationManager | JSON | 0x3294027E4849B1b3155f8B0477bFA37994BB322f |
+| OptionFactory        | JSON | Check ConfigurationManager                 |
+| NormalDistribution   | JSON | Check BlackScholes                         |
+| BlackScholes         | JSON | Check ConfigurationManager                 |
+| OptionAMMFactory     | JSON | Check ConfigurationManager                 |
+| OptionHelper         | JSON | Check ConfigurationManager                 |
+{% endtab %}
+
+{% tab title="Arbitrum" %}
+
+
+| Contracts            | ABI  | Address                                    |
+| -------------------- | ---- | ------------------------------------------ |
+| ConfigurationManager | JSON | 0x84601612702C7699c09bBF3C033747709F529008 |
 | OptionFactory        | JSON | Check ConfigurationManager                 |
 | NormalDistribution   | JSON | Check BlackScholes                         |
 | BlackScholes         | JSON | Check ConfigurationManager                 |
@@ -75,13 +88,13 @@ This is to ensure composability in case you want to build bridges like Flashloan
 
 {% tabs %}
 {% tab title="Mainnet" %}
-| Symbol | Address                                                                                                               |
-| ------ | --------------------------------------------------------------------------------------------------------------------- |
-| DAI    | [0x6b175474e89094c44da98b954eedeac495271d0f](https://etherscan.io/address/0x6b175474e89094c44da98b954eedeac495271d0f) |
-| USDC   | [0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48](https://etherscan.io/address/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) |
-| aUSDC  |                                                                                                                       |
-| WETH   |                                                                                                                       |
-| WBTC   |                                                                                                                       |
+| Symbol | Address                                                                                                             |
+| ------ | ------------------------------------------------------------------------------------------------------------------- |
+| USDC   | [0xff970a61a04b1ca14834a43f5de4533ebddb5cc8](https://etherscan.io/token/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) |
+| DAI    | [0x6b175474e89094c44da98b954eedeac495271d0f](https://etherscan.io/token/0x6b175474e89094c44da98b954eedeac495271d0f) |
+| aUSDC  |                                                                                                                     |
+| WETH   |                                                                                                                     |
+| WBTC   |                                                                                                                     |
 {% endtab %}
 
 {% tab title="Polygon" %}
@@ -95,6 +108,16 @@ This is to ensure composability in case you want to build bridges like Flashloan
 | WBTC   | 0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6 |
 | WMATIC | 0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270 |
 | LINK   | 0x53e0bca35ec356bd5dddfebbd1fc0fd03fabad39 |
+{% endtab %}
+
+{% tab title="Arbitrum" %}
+
+
+| Symbol | Address                                                                                                            |
+| ------ | ------------------------------------------------------------------------------------------------------------------ |
+| USDC   | [0xff970a61a04b1ca14834a43f5de4533ebddb5cc8](https://arbiscan.io/token/0xff970a61a04b1ca14834a43f5de4533ebddb5cc8) |
+| WETH   | [0x82af49447d8a07e3bd95bd0d56f35241523fbab1](https://arbiscan.io/token/0x82af49447d8a07e3bd95bd0d56f35241523fbab1) |
+| WBTC   |                                                                                                                    |
 {% endtab %}
 
 {% tab title="Kovan" %}
